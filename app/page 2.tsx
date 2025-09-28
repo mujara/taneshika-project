@@ -1,9 +1,12 @@
+"use client";
 import Image from "next/image";
 {
   /* import styles from "./page.module.css";*/
 }
 import { getHomeArchiveList } from "@/app/_libs/microcms";
 import { HOME_ARCHIVE_LIMIT } from "@/app/_constants";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import cx from "classnames";
 
 import HomeArchiveList from "@/app/_components/HomeArchiveList";
@@ -11,10 +14,19 @@ import ButtonLink from "@/app/_components/ButtonLink";
 import Footer from "./_components/Footer";
 import ButtonRise from "@/app/_components/ButtonRise";
 
-export default async function Home() {
+export default function Home() {
   const data = await getHomeArchiveList({
     limit: HOME_ARCHIVE_LIMIT,
   });
+
+  const [isActiveHomeArchive, setStatusHomeArchive] = useState<boolean>(false);
+  useEffect(() => {
+    window.addEventListener("scroll", function (): void {
+      if (700 < window.scrollY) {
+        setStatusHomeArchive(true);
+      }
+    });
+  }, []);
   return (
     <body className="home">
       <div id="wrapper">
@@ -191,7 +203,7 @@ export default async function Home() {
 
         <div id="contents" className="clearfix">
           <div
-            className={cx("homeArchiveBox", "is-active")}
+            className={cx("homeArchiveBox", isActiveHomeArchive && "is-active")}
             id="sectionHomeArchive"
           >
             <div className="homeArchiveBox__title">
