@@ -11,7 +11,7 @@ export default async function Page({
   params,
 }: {
   params: { yearMonth: string; current: string };
-}) {
+}): Promise<JSX.Element> {
   const { yearMonth, current } = params;
   const currentPage = parseInt(current, 10);
 
