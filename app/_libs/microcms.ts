@@ -16,7 +16,9 @@ export type Tag = {
 } & MicroCMSListContent;
 
 export type Archive = {
+  id: string;
   title: string;
+  publishedAt: string;
   category: Category;
   tag?: Tag[];
   content: string;
@@ -24,6 +26,10 @@ export type Archive = {
   mokuji: string;
 } & MicroCMSListContent;
 
+export interface ArchiveListResponse {
+  contents: Archive[];
+  totalCount: number;
+}
 export type Article = Archive & MicroCMSContentId & MicroCMSDate;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
@@ -50,7 +56,9 @@ export const getHomeArchiveList = async (queries?: MicroCMSQueries) => {
 };
 
 // アーカイブページで記事一覧を取得
-export const getArchiveList = async (queries?: MicroCMSQueries) => {
+export const getArchiveList = async (
+  queries?: MicroCMSQueries
+): Promise<ArchiveListResponse> => {
   const listData = await client.getList<Archive>({
     endpoint: "archive",
     queries,

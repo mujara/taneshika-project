@@ -1,16 +1,21 @@
 import { notFound } from "next/navigation";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
-import { getArchiveList } from "@/app/_libs/microcms";
+import { getArchiveList, Archive } from "@/app/_libs/microcms";
 import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
-export default async function Page({
-  params,
-}: {
-  params: { yearMonth: string; current: string };
-}) {
+interface PageParams {
+  yearMonth: string;
+  current: string;
+}
+
+interface Props {
+  params: PageParams;
+}
+
+export default async function Page({ params }: Props) {
   const { yearMonth, current } = params;
   const currentPage = parseInt(current, 10);
 
@@ -29,7 +34,11 @@ export default async function Page({
     endDate.getMonth() + 1
   ).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}T23:59:59Z`;
 
-  const { contents: archive, totalCount } = await getArchiveList({
+  // 型注釈を追加
+  const {
+    contents: archive,
+    totalCount,
+  }: { contents: Archive[]; totalCount: number } = await getArchiveList({
     limit: ARCHIVE_LIST_LIMIT,
     offset: (currentPage - 1) * ARCHIVE_LIST_LIMIT,
     filters: `publishedAt[greater_than]${startDate}[and]publishedAt[less_than]${endDateStr}`,
