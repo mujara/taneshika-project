@@ -7,11 +7,11 @@ import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
 type Props = {
-  params: Promise<{
+  params: {
     id: string;
     current: string;
     yearMonth: string;
-  }>;
+  };
 };
 
 export default async function Page(props: Props) {
