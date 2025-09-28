@@ -6,14 +6,15 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
-interface Props {
-  params: {
+type Props = {
+  params: Promise<{
     id: string;
     current: string;
-  };
-}
+  }>;
+};
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
   const current = parseInt(params.current, 10);
   if (Number.isNaN(current) || current < 1) {
     notFound();
