@@ -6,11 +6,14 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
-export default async function Page({
-  params,
-}: {
-  params: { yearMonth: string; current: string };
-}) {
+interface PageParams {
+  params: {
+    yearMonth: string;
+    current: string;
+  };
+}
+
+export default async function Page({ params }: PageParams) {
   const { yearMonth, current } = params;
   const currentPage = parseInt(current, 10);
 
@@ -23,14 +26,12 @@ export default async function Page({
     notFound();
   }
 
-  // 月初・月末を計算
   const startDate = `${year}-${month}-01T00:00:00Z`;
   const endDate = new Date(Number(year), Number(month), 0);
   const endDateStr = `${endDate.getFullYear()}-${String(
     endDate.getMonth() + 1
   ).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}T23:59:59Z`;
 
-  // microCMS からデータ取得
   const { contents: archive, totalCount } = await getArchiveList({
     limit: ARCHIVE_LIST_LIMIT,
     offset: (currentPage - 1) * ARCHIVE_LIST_LIMIT,
