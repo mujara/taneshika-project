@@ -18,17 +18,20 @@ export default async function Page({
     notFound();
   }
 
+  // 年・月を取得
   const [year, month] = yearMonth.split("-");
   if (!year || !month) {
     notFound();
   }
 
+  // 期間を作成（YYYY-MM-DDTHH:mm:ssZ）
   const startDate = `${year}-${month}-01T00:00:00Z`;
-  const endDate = new Date(Number(year), Number(month), 0);
+  const endDate = new Date(Number(year), Number(month), 0); // 月末日
   const endDateStr = `${endDate.getFullYear()}-${String(
     endDate.getMonth() + 1
   ).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}T23:59:59Z`;
 
+  // microCMS から記事取得
   const {
     contents: archive,
     totalCount,
@@ -38,7 +41,7 @@ export default async function Page({
     filters: `publishedAt[greater_than]${startDate}[and]publishedAt[less_than]${endDateStr}`,
   });
 
-  if (archive.length === 0) {
+  if (!archive || archive.length === 0) {
     notFound();
   }
 
