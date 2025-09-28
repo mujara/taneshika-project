@@ -6,12 +6,12 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
-type Props = {
+interface Props {
   params: {
     id: string;
     current: string;
   };
-};
+}
 
 export default async function Page({ params }: Props) {
   const current = parseInt(params.current, 10);
