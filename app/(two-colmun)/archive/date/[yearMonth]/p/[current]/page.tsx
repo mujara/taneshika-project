@@ -6,6 +6,7 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
+// async function Page で非同期処理に対応
 export default async function Page({
   params,
 }: {
@@ -18,20 +19,19 @@ export default async function Page({
     notFound();
   }
 
-  // 年・月を取得
   const [year, month] = yearMonth.split("-");
   if (!year || !month) {
     notFound();
   }
 
-  // 期間を作成（YYYY-MM-DDTHH:mm:ssZ）
+  // 月初・月末の日付を ISO 形式で作成
   const startDate = `${year}-${month}-01T00:00:00Z`;
-  const endDate = new Date(Number(year), Number(month), 0); // 月末日
+  const endDate = new Date(Number(year), Number(month), 0);
   const endDateStr = `${endDate.getFullYear()}-${String(
     endDate.getMonth() + 1
   ).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}T23:59:59Z`;
 
-  // microCMS から記事取得
+  // microCMS から記事を取得
   const {
     contents: archive,
     totalCount,
