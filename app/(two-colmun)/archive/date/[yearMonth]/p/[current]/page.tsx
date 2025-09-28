@@ -6,12 +6,14 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
-type Params = {
-  yearMonth: string;
-  current: string;
+type PageProps = {
+  params: {
+    yearMonth: string;
+    current: string;
+  };
 };
 
-export default async function Page({ params }: { params: Params }) {
+export default async function Page({ params }: PageProps) {
   const { yearMonth, current } = params;
   const currentPage = parseInt(current, 10);
 
@@ -70,3 +72,6 @@ export default async function Page({ params }: { params: Params }) {
     </section>
   );
 }
+
+// optional: 明示的に設定することでエラー防止に役立つ
+export const dynamicParams = true;
