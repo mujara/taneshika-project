@@ -6,14 +6,11 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
-interface PageParams {
-  params: {
-    yearMonth: string;
-    current: string;
-  };
-}
-
-export default async function Page({ params }: PageParams) {
+export default async function Page({
+  params,
+}: {
+  params: { yearMonth: string; current: string };
+}) {
   const { yearMonth, current } = params;
   const currentPage = parseInt(current, 10);
 
