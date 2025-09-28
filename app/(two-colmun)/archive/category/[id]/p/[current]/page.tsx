@@ -10,6 +10,7 @@ type Props = {
   params: Promise<{
     id: string;
     current: string;
+    yearMonth: string;
   }>;
 };
 
