@@ -6,7 +6,7 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
-type Props = {
+type PageProps = {
   params: {
     id: string;
     current: string;
@@ -14,7 +14,7 @@ type Props = {
   };
 };
 
-export default async function Page(props: Props) {
+export default async function Page({ params }: PageProps) {
   const params = await props.params;
   const current = parseInt(params.current, 10);
   if (Number.isNaN(current) || current < 1) {
