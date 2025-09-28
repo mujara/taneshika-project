@@ -10,12 +10,10 @@ type PageProps = {
   params: {
     id: string;
     current: string;
-    yearMonth: string;
   };
 };
 
 export default async function Page({ params }: PageProps) {
-  const params = await props.params;
   const current = parseInt(params.current, 10);
   if (Number.isNaN(current) || current < 1) {
     notFound();
