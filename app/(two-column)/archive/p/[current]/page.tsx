@@ -8,62 +8,46 @@ import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
 type Props = {
   params: Promise<{
-    yearMonth: string; // YYYY-MM形式
-    current: string; // ページ番号
+    slug: string;
+    current: string;
   }>;
 };
 
 export default async function Page(props: Props) {
   const params = await props.params;
-  const current = parseInt(params.current, 10);
-
-  // ページ番号のバリデーション
+  const current = parseInt(params.current as string, 10);
   if (Number.isNaN(current) || current < 1) {
     notFound();
   }
-
-  const yearMonth = params.yearMonth;
-  // YYYY-MM形式チェック
-  if (!/^\d{4}-\d{2}$/.test(yearMonth)) {
-    notFound();
-  }
-
-  const startDate = `${yearMonth}-01`;
-  const endDate = `${yearMonth}-31`; // 月末は簡易的に31日で指定
-
-  // microCMSで月別記事を取得
   const { contents: archive, totalCount } = await getArchiveList({
-    filters: `publishedAt[greater_than_or_equal_to]${startDate},publishedAt[less_than_or_equal_to]${endDate}`,
     limit: ARCHIVE_LIST_LIMIT,
     offset: ARCHIVE_LIST_LIMIT * (current - 1),
   });
-
   if (archive.length === 0) {
     notFound();
   }
-
   return (
     <section className="contents__main">
-      <PageTitle image="/img/common/iconCircle.svg" pageCategoty="Archive">
-        {yearMonth}の記事一覧
-      </PageTitle>
-      <Topicpath pageCategoty="Archive" pageCategotyLink="/archive">
-        {yearMonth}の記事一覧
-      </Topicpath>
+      <PageTitle
+        image="/img/common/iconCircle.svg"
+        pageCategoty="Archive"
+      >記事一覧</PageTitle>
+      <Topicpath pageCategoty="Archive" pageCategotyLink="/archive">記事一覧</Topicpath>
       <div className="contents__mainInner">
         <div className="contents__inBase">
           <div className="contents__inBase__inner">
             <div className="archiveListBox">
               <ArchiveList articles={archive} />
+              {/* /.archiveTitleBox */}
             </div>
-            <Pagination
-              totalCount={totalCount}
-              current={current}
-              basePath={`/archive/date/${yearMonth}`}
-            />
+            <Pagination totalCount={totalCount} current={current} />
+            {/* /.contents__inBase__inner */}
           </div>
+          {/* /.contents__inBase */}
         </div>
+        {/* /.contents__mainInner */}
       </div>
+      {/* /.contents__main */}
     </section>
   );
 }
