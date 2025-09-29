@@ -15,8 +15,8 @@ function getMonthRange(year: string, month: string) {
   };
 }
 
-// ページコンポーネントの Props 型
-interface PageProps {
+// ここで明示的に型を定義
+type PageParams = {
   params: {
     year: string;
     month: string;
@@ -24,9 +24,9 @@ interface PageProps {
   searchParams?: {
     page?: string;
   };
-}
+};
 
-export default async function Page({ params, searchParams }: PageProps) {
+export default async function Page({ params, searchParams }: PageParams) {
   const { year, month } = params;
   const currentPage = searchParams?.page ? parseInt(searchParams.page, 10) : 1;
 
