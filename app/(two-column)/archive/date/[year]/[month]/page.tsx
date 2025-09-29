@@ -5,6 +5,16 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
+// ここで明示的に型を定義
+type PageParams = {
+  params: Promise<{
+    year: string;
+    month: string;
+  }>;
+  searchParams?: Promise<{ page?: string }>;
+};
+
+// 指定年月の開始・終了日を計算
 function getMonthRange(year: string, month: string) {
   const start = new Date(Number(year), Number(month) - 1, 1);
   const end = new Date(Number(year), Number(month), 0);
@@ -14,21 +24,10 @@ function getMonthRange(year: string, month: string) {
   };
 }
 
-// ここで明示的に型を定義
-type PageParams = {
-  params: {
-    year: string;
-    month: string;
-  };
-  searchParams?: {
-    page?: string;
-  };
-};
-
 export default async function Page({ params, searchParams }: PageParams) {
-  const year = params.year;
-  const month = params.month;
-  const currentPage = searchParams?.page ? parseInt(searchParams.page, 10) : 1;
+  const { year, month } = await params;
+  const search = searchParams ? await searchParams : undefined;
+  const currentPage = search?.page ? parseInt(search.page, 10) : 1;
 
   const { start, end } = getMonthRange(year, month);
 
