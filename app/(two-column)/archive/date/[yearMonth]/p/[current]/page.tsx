@@ -1,51 +1,51 @@
 import { notFound } from "next/navigation";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
-import { getArchiveList, Archive } from "@/app/_libs/microcms";
+import { getArchiveList } from "@/app/_libs/microcms";
 import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
-export default async function Page({
-  params,
-}: {
-  params: { yearMonth: string; current: string };
-}) {
-  const { yearMonth, current } = params;
+type Props = {
+  params: {
+    yearMonth: string; // YYYY-MM形式
+    current: string; // ページ番号
+  };
+};
 
-  const currentPage = parseInt(current, 10);
-  if (!yearMonth || Number.isNaN(currentPage) || currentPage < 1) notFound();
+export default async function Page({ params }: Props) {
+  const current = parseInt(params.current, 10);
 
-  const [year, month] = yearMonth.split("-");
-  if (!year || !month) notFound();
+  if (Number.isNaN(current) || current < 1) {
+    notFound();
+  }
 
-  const startDate = `${year}-${month}-01T00:00:00Z`;
-  const endDate = new Date(Number(year), Number(month), 0);
-  const endDateStr = `${endDate.getFullYear()}-${String(
-    endDate.getMonth() + 1
-  ).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}T23:59:59Z`;
+  const yearMonth = params.yearMonth;
+  if (!/^\d{4}-\d{2}$/.test(yearMonth)) {
+    notFound();
+  }
 
-  const {
-    contents: archive,
-    totalCount,
-  }: { contents: Archive[]; totalCount: number } = await getArchiveList({
+  const startDate = `${yearMonth}-01`;
+  const endDate = `${yearMonth}-31`;
+
+  const { contents: archive, totalCount } = await getArchiveList({
+    filters: `publishedAt[greater_than_or_equal_to]${startDate},publishedAt[less_than_or_equal_to]${endDate}`,
     limit: ARCHIVE_LIST_LIMIT,
-    offset: (currentPage - 1) * ARCHIVE_LIST_LIMIT,
-    filters: `publishedAt[greater_than]${startDate}[and]publishedAt[less_than]${endDateStr}`,
+    offset: ARCHIVE_LIST_LIMIT * (current - 1),
   });
 
-  if (!archive || archive.length === 0) notFound();
+  if (archive.length === 0) {
+    notFound();
+  }
 
   return (
     <section className="contents__main">
       <PageTitle image="/img/common/iconCircle.svg" pageCategoty="Archive">
-        {year}年{month}月の記事一覧
+        {yearMonth}の記事一覧
       </PageTitle>
-
       <Topicpath pageCategoty="Archive" pageCategotyLink="/archive">
-        {year}年{month}月
+        {yearMonth}の記事一覧
       </Topicpath>
-
       <div className="contents__mainInner">
         <div className="contents__inBase">
           <div className="contents__inBase__inner">
@@ -54,7 +54,7 @@ export default async function Page({
             </div>
             <Pagination
               totalCount={totalCount}
-              current={currentPage}
+              current={current}
               basePath={`/archive/date/${yearMonth}`}
             />
           </div>
@@ -63,5 +63,3 @@ export default async function Page({
     </section>
   );
 }
-
-export const dynamic = "force-dynamic";
