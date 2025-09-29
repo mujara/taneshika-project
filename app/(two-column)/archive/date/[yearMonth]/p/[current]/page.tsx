@@ -1,5 +1,3 @@
-// app/(two-column)/archive/date/[yearMonth]/p/[current]/page.tsx
-
 import { notFound } from "next/navigation";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
@@ -16,9 +14,7 @@ export default async function Page({
   const { yearMonth, current } = params;
 
   const currentPage = parseInt(current, 10);
-  if (!yearMonth || Number.isNaN(currentPage) || currentPage < 1) {
-    notFound();
-  }
+  if (!yearMonth || Number.isNaN(currentPage) || currentPage < 1) notFound();
 
   const [year, month] = yearMonth.split("-");
   if (!year || !month) notFound();
