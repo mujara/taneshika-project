@@ -5,6 +5,15 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
+export const revalidate = 0;
+
+interface ArchivePageProps {
+  params: {
+    year: string;
+    month: string;
+  };
+  searchParams?: { page?: string };
+}
 // 指定年月の開始・終了日を計算
 function getMonthRange(year: string, month: string) {
   const start = new Date(Number(year), Number(month) - 1, 1);
@@ -15,13 +24,7 @@ function getMonthRange(year: string, month: string) {
   };
 }
 
-// 明示的に型注釈を付ける
-type PageProps = {
-  params: { year: string; month: string };
-  searchParams?: { page?: string };
-};
-
-export default async function Page(props: PageProps) {
+export default async function Page(props: ArchivePageProps) {
   const { params, searchParams } = props; // ここで分割代入
   const { year, month } = params;
   const currentPage = searchParams?.page ? parseInt(searchParams.page, 10) : 1;

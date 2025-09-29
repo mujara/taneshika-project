@@ -26,6 +26,23 @@ export type Archive = {
   mokuji: string;
 } & MicroCMSListContent;
 
+export interface ArchiveType {
+  id: string;
+  title: string;
+  content: string;
+  image: {
+    url: string;
+  };
+  category: Category;
+  tag?: Tag[];
+  ranking?: number;
+  isRecommended: boolean;
+  isSpecial: boolean;
+  createdAt: string;
+  publishedAt: string;
+  updatedAt: string;
+}
+
 export interface ArchiveListResponse {
   contents: Archive[];
   totalCount: number;
