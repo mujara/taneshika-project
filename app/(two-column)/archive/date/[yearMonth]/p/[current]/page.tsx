@@ -1,3 +1,5 @@
+// app/(two-column)/archive/date/[yearMonth]/p/[current]/page.tsx
+
 import { notFound } from "next/navigation";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
