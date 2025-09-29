@@ -5,16 +5,6 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
-type Props = {
-  params: {
-    year: string;
-    month: string;
-  };
-  searchParams?: {
-    page?: string;
-  };
-};
-
 // 指定年月の開始・終了日を計算
 function getMonthRange(year: string, month: string) {
   const start = new Date(Number(year), Number(month) - 1, 1);
@@ -25,10 +15,22 @@ function getMonthRange(year: string, month: string) {
   };
 }
 
-export default async function Page({ params, searchParams }: Props) {
+// ページコンポーネントの Props 型
+interface PageProps {
+  params: {
+    year: string;
+    month: string;
+  };
+  searchParams?: {
+    page?: string;
+  };
+}
+
+export default async function Page({ params, searchParams }: PageProps) {
+  const { year, month } = params;
   const currentPage = searchParams?.page ? parseInt(searchParams.page, 10) : 1;
 
-  const { start, end } = getMonthRange(params.year, params.month);
+  const { start, end } = getMonthRange(year, month);
 
   const { contents: archive, totalCount } = await getArchiveList({
     limit: ARCHIVE_LIST_LIMIT,
@@ -39,10 +41,10 @@ export default async function Page({ params, searchParams }: Props) {
   return (
     <section className="contents__main">
       <PageTitle image="/img/common/iconCircle.svg" pageCategoty="Archive">
-        {params.year}年{params.month}月の一覧
+        {year}年{month}月の一覧
       </PageTitle>
       <Topicpath pageCategoty="Archive" pageCategotyLink="/archive">
-        {params.year}年{params.month}月の一覧
+        {year}年{month}月の一覧
       </Topicpath>
       <div className="contents__mainInner">
         <div className="contents__inBase">
@@ -59,7 +61,7 @@ export default async function Page({ params, searchParams }: Props) {
             {totalCount > ARCHIVE_LIST_LIMIT && (
               <Pagination
                 totalCount={totalCount}
-                basePath={`/archive/date/${params.year}/${params.month}`}
+                basePath={`/archive/date/${year}/${month}`}
               />
             )}
           </div>
