@@ -15,15 +15,19 @@ function getMonthRange(year: string, month: string) {
   };
 }
 
-// 型注釈は付けずに受け取る
-export default async function Page({ params, searchParams }) {
-  // 内部でキャスト
-  const { year, month } = params as { year: string; month: string };
+// 明示的に型注釈を付ける
+type PageProps = {
+  params: { year: string; month: string };
+  searchParams?: { page?: string };
+};
+
+export default async function Page(props: PageProps) {
+  const { params, searchParams } = props; // ここで分割代入
+  const { year, month } = params;
   const currentPage = searchParams?.page ? parseInt(searchParams.page, 10) : 1;
 
   const { start, end } = getMonthRange(year, month);
 
-  // microCMS から記事取得
   const { contents: archive, totalCount } = await getArchiveList({
     limit: ARCHIVE_LIST_LIMIT,
     offset: (currentPage - 1) * ARCHIVE_LIST_LIMIT,
