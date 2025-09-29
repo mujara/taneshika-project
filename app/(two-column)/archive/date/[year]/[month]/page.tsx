@@ -15,19 +15,16 @@ function getMonthRange(year: string, month: string) {
   };
 }
 
-// ここで明示的に型を定義
-type PageParams = {
-  params: {
-    year: string;
-    month: string;
-  };
-  searchParams?: {
-    page?: string;
-  };
-};
-
-export default async function Page({ params, searchParams }: PageParams) {
-  const { year, month } = params;
+// 型を明示して暗黙 any を回避
+export default async function Page({
+  params,
+  searchParams,
+}: {
+  params: { year: string; month: string };
+  searchParams?: { page?: string };
+}) {
+  const year = params.year;
+  const month = params.month;
   const currentPage = searchParams?.page ? parseInt(searchParams.page, 10) : 1;
 
   const { start, end } = getMonthRange(year, month);
