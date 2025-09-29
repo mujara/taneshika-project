@@ -15,25 +15,22 @@ function getMonthRange(year: string, month: string) {
   };
 }
 
-// Props 型定義で暗黙 any 回避
-type PageProps = {
-  params: { year: string; month: string };
-  searchParams?: { page?: string };
-};
-
-export default async function Page({ params, searchParams }: PageProps) {
-  const year = params.year;
-  const month = params.month;
+// 型注釈は付けずに受け取る
+export default async function Page({ params, searchParams }) {
+  // 内部でキャスト
+  const { year, month } = params as { year: string; month: string };
   const currentPage = searchParams?.page ? parseInt(searchParams.page, 10) : 1;
 
   const { start, end } = getMonthRange(year, month);
 
-  // microCMS から記事を取得
+  // microCMS から記事取得
   const { contents: archive, totalCount } = await getArchiveList({
     limit: ARCHIVE_LIST_LIMIT,
     offset: (currentPage - 1) * ARCHIVE_LIST_LIMIT,
     filters: `publishedAt[greater_than]${start}[and]publishedAt[less_than]${end}`,
   }).catch(() => ({ contents: [], totalCount: 0 }));
+
+  const totalPages = Math.ceil(totalCount / ARCHIVE_LIST_LIMIT);
 
   return (
     <section className="contents__main">
@@ -58,7 +55,7 @@ export default async function Page({ params, searchParams }: PageProps) {
               )}
             </div>
 
-            {totalCount > ARCHIVE_LIST_LIMIT && (
+            {totalPages > 1 && (
               <Pagination
                 totalCount={totalCount}
                 basePath={`/archive/date/${year}/${month}`}
