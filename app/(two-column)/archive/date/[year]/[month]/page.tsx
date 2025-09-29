@@ -15,20 +15,20 @@ function getMonthRange(year: string, month: string) {
   };
 }
 
-// 型を明示して暗黙 any を回避
-export default async function Page({
-  params,
-  searchParams,
-}: {
+// Props 型定義で暗黙 any 回避
+type PageProps = {
   params: { year: string; month: string };
   searchParams?: { page?: string };
-}) {
+};
+
+export default async function Page({ params, searchParams }: PageProps) {
   const year = params.year;
   const month = params.month;
   const currentPage = searchParams?.page ? parseInt(searchParams.page, 10) : 1;
 
   const { start, end } = getMonthRange(year, month);
 
+  // microCMS から記事を取得
   const { contents: archive, totalCount } = await getArchiveList({
     limit: ARCHIVE_LIST_LIMIT,
     offset: (currentPage - 1) * ARCHIVE_LIST_LIMIT,
@@ -40,9 +40,11 @@ export default async function Page({
       <PageTitle image="/img/common/iconCircle.svg" pageCategoty="Archive">
         {year}年{month}月の一覧
       </PageTitle>
+
       <Topicpath pageCategoty="Archive" pageCategotyLink="/archive">
         {year}年{month}月の一覧
       </Topicpath>
+
       <div className="contents__mainInner">
         <div className="contents__inBase">
           <div className="contents__inBase__inner">
@@ -55,10 +57,13 @@ export default async function Page({
                 </p>
               )}
             </div>
+
             {totalCount > ARCHIVE_LIST_LIMIT && (
               <Pagination
                 totalCount={totalCount}
                 basePath={`/archive/date/${year}/${month}`}
+                currentPage={currentPage}
+                pageLimit={ARCHIVE_LIST_LIMIT}
               />
             )}
           </div>

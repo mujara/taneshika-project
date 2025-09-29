@@ -7,6 +7,8 @@ type Props = {
   current?: number;
   basePath?: string;
   q?: string;
+  currentPage?: number;
+  pageLimit?: number;
 };
 
 export default function Pagination({
