@@ -5,16 +5,13 @@ import { getArchiveList, Archive } from "@/app/_libs/microcms";
 import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
-import type { PageProps } from "next"; // ←追加
 
-type Params = {
-  yearMonth: string;
-  current: string;
-};
-
-export default async function Page({ params }: PageProps<Params>) {
+export default async function Page({
+  params,
+}: {
+  params: { yearMonth: string; current: string };
+}) {
   const { yearMonth, current } = params;
-
   const currentPage = parseInt(current, 10);
 
   if (!yearMonth || Number.isNaN(currentPage) || currentPage < 1) {
@@ -73,5 +70,5 @@ export default async function Page({ params }: PageProps<Params>) {
   );
 }
 
-// SSR を強制したい場合はこちら
+// SSR を強制したい場合
 export const dynamic = "force-dynamic";
