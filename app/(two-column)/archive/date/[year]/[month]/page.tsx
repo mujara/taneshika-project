@@ -5,16 +5,6 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
-export const revalidate = 0;
-
-interface ArchivePageProps {
-  params: {
-    year: string;
-    month: string;
-  };
-  searchParams?: { page?: string };
-}
-// 指定年月の開始・終了日を計算
 function getMonthRange(year: string, month: string) {
   const start = new Date(Number(year), Number(month) - 1, 1);
   const end = new Date(Number(year), Number(month), 0);
@@ -24,9 +14,20 @@ function getMonthRange(year: string, month: string) {
   };
 }
 
-export default async function Page(props: ArchivePageProps) {
-  const { params, searchParams } = props; // ここで分割代入
-  const { year, month } = params;
+// ここで明示的に型を定義
+type PageParams = {
+  params: {
+    year: string;
+    month: string;
+  };
+  searchParams?: {
+    page?: string;
+  };
+};
+
+export default async function Page({ params, searchParams }: PageParams) {
+  const year = params.year;
+  const month = params.month;
   const currentPage = searchParams?.page ? parseInt(searchParams.page, 10) : 1;
 
   const { start, end } = getMonthRange(year, month);
@@ -37,18 +38,14 @@ export default async function Page(props: ArchivePageProps) {
     filters: `publishedAt[greater_than]${start}[and]publishedAt[less_than]${end}`,
   }).catch(() => ({ contents: [], totalCount: 0 }));
 
-  const totalPages = Math.ceil(totalCount / ARCHIVE_LIST_LIMIT);
-
   return (
     <section className="contents__main">
       <PageTitle image="/img/common/iconCircle.svg" pageCategoty="Archive">
         {year}年{month}月の一覧
       </PageTitle>
-
       <Topicpath pageCategoty="Archive" pageCategotyLink="/archive">
         {year}年{month}月の一覧
       </Topicpath>
-
       <div className="contents__mainInner">
         <div className="contents__inBase">
           <div className="contents__inBase__inner">
@@ -61,13 +58,10 @@ export default async function Page(props: ArchivePageProps) {
                 </p>
               )}
             </div>
-
-            {totalPages > 1 && (
+            {totalCount > ARCHIVE_LIST_LIMIT && (
               <Pagination
                 totalCount={totalCount}
                 basePath={`/archive/date/${year}/${month}`}
-                currentPage={currentPage}
-                pageLimit={ARCHIVE_LIST_LIMIT}
               />
             )}
           </div>
