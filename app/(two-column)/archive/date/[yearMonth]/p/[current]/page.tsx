@@ -3,7 +3,7 @@
 import { notFound } from "next/navigation";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
-import { getArchiveList, Archive } from "@/app/_libs/microcms";
+import { getArchiveList } from "@/app/_libs/microcms";
 import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
