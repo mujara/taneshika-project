@@ -18,7 +18,6 @@ export default async function Page({ params }: Props) {
   const current = parseInt(currentStr, 10);
 
   if (Number.isNaN(current) || current < 1) notFound();
-
   if (!/^\d{4}-\d{2}$/.test(yearMonth)) notFound();
 
   const startDate = `${yearMonth}-01`;
