@@ -1,3 +1,5 @@
+// app/(two-column)/archive/date/[yearMonth]/p/[current]/page.tsx
+
 import { notFound } from "next/navigation";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
@@ -19,9 +21,7 @@ export default async function Page({
   }
 
   const [year, month] = yearMonth.split("-");
-  if (!year || !month) {
-    notFound();
-  }
+  if (!year || !month) notFound();
 
   const startDate = `${year}-${month}-01T00:00:00Z`;
   const endDate = new Date(Number(year), Number(month), 0);
@@ -29,18 +29,13 @@ export default async function Page({
     endDate.getMonth() + 1
   ).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}T23:59:59Z`;
 
-  const {
-    contents: archive,
-    totalCount,
-  }: { contents: Archive[]; totalCount: number } = await getArchiveList({
+  const { contents: archive, totalCount } = await getArchiveList({
     limit: ARCHIVE_LIST_LIMIT,
     offset: (currentPage - 1) * ARCHIVE_LIST_LIMIT,
     filters: `publishedAt[greater_than]${startDate}[and]publishedAt[less_than]${endDateStr}`,
   });
 
-  if (!archive || archive.length === 0) {
-    notFound();
-  }
+  if (!archive || archive.length === 0) notFound();
 
   return (
     <section className="contents__main">
