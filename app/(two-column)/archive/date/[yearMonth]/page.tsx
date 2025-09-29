@@ -4,18 +4,16 @@ import { getArchiveList } from "@/app/_libs/microcms";
 import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
+import type { PageProps } from "next"; // 追加
 
-type Props = {
-  params: {
-    yearMonth: string; // e.g. "2025-09"
-  };
-  searchParams?: {
-    page?: string;
-  };
+type Params = {
+  yearMonth: string; // e.g. "2025-09"
 };
 
-export default async function Page(props: Props) {
-  const { params, searchParams } = await props;
+export default async function Page({
+  params,
+  searchParams,
+}: PageProps<Params>) {
   const { yearMonth } = params;
   const currentPage = Number(searchParams?.page ?? "1");
 
