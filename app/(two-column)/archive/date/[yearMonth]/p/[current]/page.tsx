@@ -70,5 +70,4 @@ export default async function Page({
   );
 }
 
-// SSR を強制
 export const dynamic = "force-dynamic";
