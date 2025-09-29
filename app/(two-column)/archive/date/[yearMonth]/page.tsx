@@ -14,7 +14,8 @@ type Props = {
   };
 };
 
-export default async function Page({ params, searchParams }: Props) {
+export default async function Page(props: Props) {
+  const { params, searchParams } = await props;
   const { yearMonth } = params;
   const currentPage = Number(searchParams?.page ?? "1");
 
@@ -22,8 +23,6 @@ export default async function Page({ params, searchParams }: Props) {
   const [year, month] = yearMonth.split("-");
 
   // --- microCMS で月別の記事を取得する ---
-  // ここは microcms.ts 側の getArchiveList を拡張して
-  // publishedAt の範囲指定フィルタを使うのが一般的
   const startDate = `${year}-${month}-01T00:00:00Z`;
   const endDate = new Date(Number(year), Number(month), 0); // 月末日
   const endDateStr = `${endDate.getFullYear()}-${String(
