@@ -7,31 +7,27 @@ import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
 type Props = {
-  params: Promise<{
+  params: {
     yearMonth: string; // YYYY-MM形式
     current: string; // ページ番号
-  }>;
+  };
 };
 
-export default async function Page(props: Props) {
-  const params = await props.params;
+export default async function Page({ params }: Props) {
   const current = parseInt(params.current, 10);
 
-  // ページ番号のバリデーション
   if (Number.isNaN(current) || current < 1) {
     notFound();
   }
 
   const yearMonth = params.yearMonth;
-  // YYYY-MM形式チェック
   if (!/^\d{4}-\d{2}$/.test(yearMonth)) {
     notFound();
   }
 
   const startDate = `${yearMonth}-01`;
-  const endDate = `${yearMonth}-31`; // 月末は簡易的に31日で指定
+  const endDate = `${yearMonth}-31`;
 
-  // microCMSで月別記事を取得
   const { contents: archive, totalCount } = await getArchiveList({
     filters: `publishedAt[greater_than_or_equal_to]${startDate},publishedAt[less_than_or_equal_to]${endDate}`,
     limit: ARCHIVE_LIST_LIMIT,
