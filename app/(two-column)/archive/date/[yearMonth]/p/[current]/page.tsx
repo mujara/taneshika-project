@@ -6,36 +6,32 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
-export default async function Page({
-  params,
-}: {
-  params: { yearMonth: string; current: string };
-}) {
-  // ✅ props ではなく params を直接受け取る
+type PageProps = {
+  params: {
+    yearMonth: string;
+    current: string;
+  };
+};
+
+export default async function Page({ params }: PageProps) {
   const { yearMonth, current } = params;
 
-  // current を数値化
   const currentPage = parseInt(current, 10);
-
-  // バリデーション
   if (!yearMonth || Number.isNaN(currentPage) || currentPage < 1) {
     notFound();
   }
 
-  // YYYY-MM 分割
   const [year, month] = yearMonth.split("-");
   if (!year || !month) {
     notFound();
   }
 
-  // 日付範囲計算
   const startDate = `${year}-${month}-01T00:00:00Z`;
   const endDate = new Date(Number(year), Number(month), 0);
   const endDateStr = `${endDate.getFullYear()}-${String(
     endDate.getMonth() + 1
   ).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}T23:59:59Z`;
 
-  // microCMSから記事取得
   const {
     contents: archive,
     totalCount,
@@ -77,5 +73,4 @@ export default async function Page({
   );
 }
 
-// SSRを強制
 export const dynamic = "force-dynamic";
