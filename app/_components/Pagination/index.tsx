@@ -4,11 +4,9 @@ import styles from "./index.module.css";
 
 type Props = {
   totalCount: number;
-  current?: number;
+  current?: number; // ← これに統一
   basePath?: string;
   q?: string;
-  currentPage?: number;
-  pageLimit?: number;
 };
 
 export default function Pagination({
@@ -17,10 +15,10 @@ export default function Pagination({
   basePath = "/archive",
   q,
 }: Props) {
-  const pages = Array.from(
-    { length: Math.ceil(totalCount / ARCHIVE_LIST_LIMIT) },
-    (_, i) => i + 1
-  );
+  const totalPages = Math.ceil(totalCount / ARCHIVE_LIST_LIMIT);
+  if (totalPages <= 1) return null; // 1ページだけなら非表示
+
+  const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
     <nav>
@@ -29,7 +27,7 @@ export default function Pagination({
           <li className={styles.list} key={p}>
             {current !== p ? (
               <Link
-                href={`${basePath}/p/${p}` + (q ? `?q=${q}` : "")}
+                href={`${basePath}/p/${p}${q ? `?q=${q}` : ""}`}
                 className={styles.item}
               >
                 {p}

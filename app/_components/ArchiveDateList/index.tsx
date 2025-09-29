@@ -2,12 +2,12 @@
 import { useRouter } from "next/navigation";
 import { Archive } from "@/app/_libs/microcms";
 
-// ユーティリティ: YYYY-MM 形式に変換
+// ユーティリティ: YYYY/MM 形式に変換
 const formatYearMonth = (dateString: string): string => {
   const date = new Date(dateString);
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
-  return `${year}-${month}`;
+  return `${year}/${month}`;
 };
 
 type Props = {
@@ -49,7 +49,7 @@ export default function ArchiveDateList({ articles }: Props) {
           Ask for the moon
         </option>
         {sortedKeys.map((key) => {
-          const [year, month] = key.split("-");
+          const [year, month] = key.split("/");
           return (
             <option key={key} value={key}>
               {year}年{month}月 ({grouped[key].length})
