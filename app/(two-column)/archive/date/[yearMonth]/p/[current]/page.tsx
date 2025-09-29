@@ -14,6 +14,7 @@ type PageProps = {
 };
 
 export default async function Page({ params }: PageProps) {
+  // ✅ ここで直接分割代入
   const { yearMonth, current } = params;
 
   const currentPage = parseInt(current, 10);
@@ -72,5 +73,3 @@ export default async function Page({ params }: PageProps) {
     </section>
   );
 }
-
-export const dynamic = "force-dynamic";
