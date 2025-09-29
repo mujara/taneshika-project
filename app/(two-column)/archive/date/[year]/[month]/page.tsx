@@ -6,10 +6,10 @@ import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
 type Props = {
-  params: Promise<{
+  params: {
     year: string;
     month: string;
-  }>;
+  };
   searchParams?: {
     page?: string;
   };
@@ -18,17 +18,15 @@ type Props = {
 // 指定年月の開始・終了日を計算
 function getMonthRange(year: string, month: string) {
   const start = new Date(Number(year), Number(month) - 1, 1);
-  const end = new Date(Number(year), Number(month), 0); // 月末日
+  const end = new Date(Number(year), Number(month), 0);
   return {
     start: start.toISOString(),
     end: new Date(end.setHours(23, 59, 59, 999)).toISOString(),
   };
 }
 
-export default async function Page(props: Props) {
-  const params = await props.params;
-  const { page } = props.searchParams ?? {};
-  const currentPage = page ? parseInt(page, 10) : 1;
+export default async function Page({ params, searchParams }: Props) {
+  const currentPage = searchParams?.page ? parseInt(searchParams.page, 10) : 1;
 
   const { start, end } = getMonthRange(params.year, params.month);
 
