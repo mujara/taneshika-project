@@ -8,22 +8,18 @@ import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
 type Props = {
   params: {
-    yearMonth: string; // YYYY-MM形式
-    current: string; // ページ番号
+    yearMonth: string;
+    current: string;
   };
 };
 
 export default async function Page({ params }: Props) {
-  const current = parseInt(params.current, 10);
+  const { yearMonth, current: currentStr } = params;
+  const current = parseInt(currentStr, 10);
 
-  if (Number.isNaN(current) || current < 1) {
-    notFound();
-  }
+  if (Number.isNaN(current) || current < 1) notFound();
 
-  const yearMonth = params.yearMonth;
-  if (!/^\d{4}-\d{2}$/.test(yearMonth)) {
-    notFound();
-  }
+  if (!/^\d{4}-\d{2}$/.test(yearMonth)) notFound();
 
   const startDate = `${yearMonth}-01`;
   const endDate = `${yearMonth}-31`;
@@ -34,9 +30,7 @@ export default async function Page({ params }: Props) {
     offset: ARCHIVE_LIST_LIMIT * (current - 1),
   });
 
-  if (archive.length === 0) {
-    notFound();
-  }
+  if (archive.length === 0) notFound();
 
   return (
     <section className="contents__main">
