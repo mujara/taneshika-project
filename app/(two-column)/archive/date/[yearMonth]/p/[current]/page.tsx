@@ -6,14 +6,11 @@ import ArchiveList from "@/app/_components/ArchiveList";
 import Pagination from "@/app/_components/Pagination";
 import { ARCHIVE_LIST_LIMIT } from "@/app/_constants";
 
-type Props = {
-  params: {
-    yearMonth: string;
-    current: string;
-  };
-};
-
-export default async function Page({ params }: Props) {
+export default async function Page({
+  params,
+}: {
+  params: { yearMonth: string; current: string };
+}) {
   const { yearMonth, current } = params;
 
   const currentPage = parseInt(current, 10);
@@ -72,3 +69,6 @@ export default async function Page({ params }: Props) {
     </section>
   );
 }
+
+// SSR を強制
+export const dynamic = "force-dynamic";
