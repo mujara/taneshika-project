@@ -16,6 +16,19 @@ export default function HomeArchiveBox({ data }: Props) {
     const handleScroll = () => {
       if (window.outerHeight / 5 < window.scrollY) {
         setStatus(true);
+      } else {
+        setStatus(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.outerHeight / 5 < window.scrollY) {
+        setStatus(true);
+        // 一度条件を満たしたらリスナーを削除
         window.removeEventListener("scroll", handleScroll);
       }
     };
