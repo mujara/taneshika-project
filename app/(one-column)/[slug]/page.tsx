@@ -6,17 +6,19 @@ import Topicpath from "@/app/_components/Topicpath";
 import PageContent from "@/app/_components/PageContent";
 
 type Props = {
-  params: Record<string, string>; // slug が含まれる
-  searchParams?: Record<string, string>; // dk などのオプション
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ dk?: string }>;
 };
 
+// メタデータ
 export async function generateMetadata({
   params,
   searchParams,
 }: Props): Promise<Metadata> {
-  const data = await getPageDetail(params.slug, {
-    draftKey: searchParams?.dk,
-  });
+  const { slug } = await params;
+  const { dk } = (await searchParams) ?? {};
+
+  const data = await getPageDetail(slug, { draftKey: dk });
 
   return {
     title: data.title,
@@ -29,10 +31,12 @@ export async function generateMetadata({
   };
 }
 
+// ページ本体
 export default async function Page({ params, searchParams }: Props) {
-  const data = await getPageDetail(params.slug, {
-    draftKey: searchParams?.dk,
-  }).catch(notFound);
+  const { slug } = await params;
+  const { dk } = (await searchParams) ?? {};
+
+  const data = await getPageDetail(slug, { draftKey: dk }).catch(notFound);
 
   return (
     <section className="contents__main">
