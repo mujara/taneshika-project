@@ -11,11 +11,12 @@ export default async function Page() {
   });
   return (
     <section className="contents__main">
-      <PageTitle
-        image="/img/common/iconCircle.svg"
-        pageCategoty="Archive"
-      >記事一覧</PageTitle>
-      <Topicpath pageCategoty="Archive" pageCategotyLink="/archive">記事一覧</Topicpath>
+      <PageTitle image="/img/common/iconCircle.svg" pageCategoty="Archive">
+        記事一覧
+      </PageTitle>
+      <Topicpath pageCategoty="Archive" pageCategotyLink="/archive">
+        記事一覧
+      </Topicpath>
       <div className="contents__mainInner">
         <div className="contents__inBase">
           <div className="contents__inBase__inner">

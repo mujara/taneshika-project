@@ -39,8 +39,8 @@ export default async function ContentsSub() {
             <img src="/img/common/icon02.svg" alt="" />
           </figure>
           <span>
-            A Category that Experiences <br />
-            Great Suffering
+            Classification pizza mocks <br />
+            for flapping
           </span>
           {/* /.sideTitle */}
         </div>
@@ -51,7 +51,10 @@ export default async function ContentsSub() {
           <figure>
             <img src="/img/common/icon03.svg" alt="" />
           </figure>
-          <span>When did this tag get added?</span>
+          <span>
+            Tagging is between <br />
+            youth and later life.
+          </span>
           {/* /.sideTitle */}
         </div>
 

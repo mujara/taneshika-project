@@ -11,6 +11,8 @@ import ButtonLink from "@/app/_components/ButtonLink";
 import Footer from "./_components/Footer";
 import ButtonRise from "@/app/_components/ButtonRise";
 
+export const revalidate = 60;
+
 export default async function Home() {
   const data = await getHomeArchiveList({
     limit: HOME_ARCHIVE_LIMIT,
@@ -364,7 +366,7 @@ export default async function Home() {
                   Thank you for visiting.
                   <br />
                   This site serves as a memo pad, an output platform, <br />
-                  and a storage repository for parts related to AraRiver&apos;s
+                  and a storage repository for parts related to Arariver&apos;s
                   creations.
                 </p>
                 {/* /.homeAboutBox__content */}

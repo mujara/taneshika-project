@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getArchiveDetail } from "@/app/_libs/microcms";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
@@ -12,6 +13,29 @@ type Props = {
     dk: string;
   }>;
 };
+
+export async function generateMetadata(rawProps: {
+  params: { slug: string };
+  searchParams: { dk?: string };
+}): Promise<Metadata> {
+  // ここで Promise に変換して扱う
+  const params = await Promise.resolve(rawProps.params);
+  const searchParams = await Promise.resolve(rawProps.searchParams);
+
+  const data = await getArchiveDetail(params.slug, {
+    draftKey: searchParams.dk,
+  });
+
+  return {
+    title: data.title,
+    description: data.description,
+    openGraph: {
+      title: data.title,
+      description: data.description,
+      images: [data?.thumbnail?.url ?? ""],
+    },
+  };
+}
 
 export default async function Page(props: Props) {
   const searchParams = await props.searchParams;

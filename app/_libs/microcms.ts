@@ -2,6 +2,7 @@ import { createClient } from "microcms-js-sdk";
 
 import type {
   MicroCMSQueries,
+  MicroCMSImage,
   MicroCMSListContent,
   MicroCMSDate,
   MicroCMSContentId,
@@ -24,6 +25,7 @@ export type Archive = {
   content: string;
   description: string;
   mokuji: string;
+  thumbnail?: MicroCMSImage;
 } & MicroCMSListContent;
 
 export interface ArchiveType {
@@ -48,6 +50,15 @@ export interface ArchiveListResponse {
   totalCount: number;
 }
 export type Article = Archive & MicroCMSContentId & MicroCMSDate;
+
+export type Page = {
+  id: string;
+  title: string;
+  publishedAt: string;
+  content: string;
+  description: string;
+  thumbnail?: MicroCMSImage;
+} & MicroCMSListContent;
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error("MICROCMS_SERVICE_DOMAIN is required");
@@ -111,6 +122,19 @@ export const getArchiveDetail = async (
 ) => {
   const detailData = await client.getListDetail<Archive>({
     endpoint: "archive",
+    contentId,
+    queries,
+  });
+  return detailData;
+};
+
+// 固定用ページの詳細を取得
+export const getPageDetail = async (
+  contentId: string,
+  queries?: MicroCMSQueries
+) => {
+  const detailData = await client.getListDetail<Page>({
+    endpoint: "page",
     contentId,
     queries,
   });

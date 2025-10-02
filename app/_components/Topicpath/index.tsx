@@ -1,7 +1,7 @@
 import Link from "next/link";
 type Props = {
-  pageCategoty: string;
-  pageCategotyLink: string;
+  pageCategoty?: string;
+  pageCategotyLink?: string;
   children: React.ReactNode;
 };
 export default function Topicpath({
@@ -19,9 +19,12 @@ export default function Topicpath({
             </span>
           </Link>
         </li>
-        <li>
-          <Link href={pageCategotyLink}>{pageCategoty}</Link>
-        </li>
+        {/* pageCategoty と pageCategotyLink がある場合のみ表示 */}
+        {pageCategoty && pageCategotyLink && (
+          <li>
+            <Link href={pageCategotyLink}>{pageCategoty}</Link>
+          </li>
+        )}
         <li>{children}</li>
       </ul>
       {/* /.topicpathBox */}
