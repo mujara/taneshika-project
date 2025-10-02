@@ -6,22 +6,14 @@ import Topicpath from "@/app/_components/Topicpath";
 import PageContent from "@/app/_components/PageContent";
 
 type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
-  searchParams: Promise<{
-    dk: string;
-  }>;
-};
-
-export async function generateMetadata(rawProps: {
   params: { slug: string };
   searchParams: { dk?: string };
-}): Promise<Metadata> {
-  // ここで Promise に変換して扱う
-  const params = await Promise.resolve(rawProps.params);
-  const searchParams = await Promise.resolve(rawProps.searchParams);
+};
 
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
   const data = await getPageDetail(params.slug, {
     draftKey: searchParams.dk,
   });
@@ -37,12 +29,11 @@ export async function generateMetadata(rawProps: {
   };
 }
 
-export default async function Page(props: Props) {
-  const searchParams = await props.searchParams;
-  const params = await props.params;
+export default async function Page({ params, searchParams }: Props) {
   const data = await getPageDetail(params.slug, {
     draftKey: searchParams.dk,
   }).catch(notFound);
+
   return (
     <section className="contents__main">
       <PageTitle image="/img/common/iconStar.svg" pageCategoty="Unclassifiable">
@@ -58,13 +49,9 @@ export default async function Page(props: Props) {
         <div className="inBase">
           <div className="inBase__inner">
             <PageContent data={data} />
-            {/* /.inBase__inner */}
           </div>
-          {/* /.inBase */}
         </div>
-        {/* /.contents__mainInner */}
       </div>
-      {/* /.contents__main */}
     </section>
   );
 }
