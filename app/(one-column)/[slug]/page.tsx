@@ -5,17 +5,19 @@ import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
 import PageContent from "@/app/_components/PageContent";
 
+// Next.js が渡す Props 型
 type Props = {
   params: { slug: string };
-  searchParams: { dk?: string };
+  searchParams?: { dk?: string };
 };
 
+// generateMetadata も Props を使う
 export async function generateMetadata({
   params,
   searchParams,
 }: Props): Promise<Metadata> {
   const data = await getPageDetail(params.slug, {
-    draftKey: searchParams.dk,
+    draftKey: searchParams?.dk,
   });
 
   return {
@@ -29,9 +31,11 @@ export async function generateMetadata({
   };
 }
 
+// ページコンポーネント
 export default async function Page({ params, searchParams }: Props) {
+  // 非同期処理は関数内で await
   const data = await getPageDetail(params.slug, {
-    draftKey: searchParams.dk,
+    draftKey: searchParams?.dk,
   }).catch(notFound);
 
   return (
