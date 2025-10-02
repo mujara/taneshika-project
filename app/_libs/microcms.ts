@@ -48,6 +48,8 @@ export interface ArchiveType {
 export interface ArchiveListResponse {
   contents: Archive[];
   totalCount: number;
+  offset: number;
+  limit: number;
 }
 export type Article = Archive & MicroCMSContentId & MicroCMSDate;
 

@@ -2,21 +2,18 @@ import Image from "next/image";
 {
   /* import styles from "./page.module.css";*/
 }
+
+import cx from "classnames";
+import HomeArchiveBox from "@/app/_components/HomeArchiveBox";
 import { getHomeArchiveList } from "@/app/_libs/microcms";
 import { HOME_ARCHIVE_LIMIT } from "@/app/_constants";
-import cx from "classnames";
-
-import HomeArchiveList from "@/app/_components/HomeArchiveList";
-import ButtonLink from "@/app/_components/ButtonLink";
 import Footer from "./_components/Footer";
 import ButtonRise from "@/app/_components/ButtonRise";
 
 export const revalidate = 60;
 
 export default async function Home() {
-  const data = await getHomeArchiveList({
-    limit: HOME_ARCHIVE_LIMIT,
-  });
+  const data = await getHomeArchiveList({ limit: HOME_ARCHIVE_LIMIT });
   return (
     <body className="home">
       <div id="wrapper">
@@ -192,28 +189,7 @@ export default async function Home() {
         </header>
 
         <div id="contents" className="clearfix">
-          <div
-            className={cx("homeArchiveBox", "is-active")}
-            id="sectionHomeArchive"
-          >
-            <div className="homeArchiveBox__title">
-              <h2>Archive</h2>
-            </div>
-            <div className="breadthScrollBox">
-              <div className="inBase clearfix">
-                <HomeArchiveList archive={data.contents} />
-                {/* /.inBase */}
-              </div>
-              {/* /.breadthScrollBox */}
-            </div>
-            <div className="inBase clearfix">
-              <div className="button--type01">
-                <ButtonLink href="/archive">More</ButtonLink>
-              </div>
-              {/* /.inBase */}
-            </div>
-            {/* /.homeArchiveBox */}
-          </div>
+          <HomeArchiveBox data={data} />
 
           <div className="homeAboutBox">
             <div className="inBase clearfix">
@@ -366,12 +342,12 @@ export default async function Home() {
                   Thank you for visiting.
                   <br />
                   This site serves as a memo pad, an output platform, <br />
-                  and a storage repository for parts related to Arariver&apos;s
+                  and a storage repository for parts related to AraRiver&apos;s
                   creations.
                 </p>
                 {/* /.homeAboutBox__content */}
               </div>
-              <div className="homeAboutBox__portrait parallax--type05">
+              <div className={cx("homeAboutBox__portrait", "parallax--type05")}>
                 <figure>
                   <img src="/img/home/imgPortrait.png" alt="" />
                 </figure>
