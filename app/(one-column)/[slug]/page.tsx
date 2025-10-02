@@ -6,18 +6,22 @@ import Topicpath from "@/app/_components/Topicpath";
 import PageContent from "@/app/_components/PageContent";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
-  searchParams: {
-    dk?: string;
-  };
+  }>;
+  searchParams: Promise<{
+    dk: string;
+  }>;
 };
 
-export async function generateMetadata({
-  params,
-  searchParams,
-}: Props): Promise<Metadata> {
+export async function generateMetadata(rawProps: {
+  params: { slug: string };
+  searchParams: { dk?: string };
+}): Promise<Metadata> {
+  // ここで Promise に変換して扱う
+  const params = await Promise.resolve(rawProps.params);
+  const searchParams = await Promise.resolve(rawProps.searchParams);
+
   const data = await getPageDetail(params.slug, {
     draftKey: searchParams.dk,
   });
@@ -33,11 +37,12 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({ params, searchParams }: Props) {
+export default async function Page(props: Props) {
+  const searchParams = await props.searchParams;
+  const params = await props.params;
   const data = await getPageDetail(params.slug, {
     draftKey: searchParams.dk,
   }).catch(notFound);
-
   return (
     <section className="contents__main">
       <PageTitle image="/img/common/iconStar.svg" pageCategoty="Unclassifiable">
