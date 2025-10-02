@@ -6,25 +6,19 @@ import Topicpath from "@/app/_components/Topicpath";
 import Article from "@/app/_components/Article";
 
 type Props = {
-  params: Promise<{
-    slug: string;
-  }>;
-  searchParams: Promise<{
-    dk: string;
-  }>;
+  params: Promise<{ slug: string }>;
+  searchParams?: Promise<{ dk?: string }>;
 };
 
-export async function generateMetadata(rawProps: {
-  params: { slug: string };
-  searchParams: { dk?: string };
-}): Promise<Metadata> {
-  // ここで Promise に変換して扱う
-  const params = await Promise.resolve(rawProps.params);
-  const searchParams = await Promise.resolve(rawProps.searchParams);
+// メタデータ
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const { dk } = (await searchParams) ?? {};
 
-  const data = await getArchiveDetail(params.slug, {
-    draftKey: searchParams.dk,
-  });
+  const data = await getArchiveDetail(slug, { draftKey: dk });
 
   return {
     title: data.title,
@@ -37,12 +31,13 @@ export async function generateMetadata(rawProps: {
   };
 }
 
-export default async function Page(props: Props) {
-  const searchParams = await props.searchParams;
-  const params = await props.params;
-  const data = await getArchiveDetail(params.slug, {
-    draftKey: searchParams.dk,
-  }).catch(notFound);
+// ページ本体
+export default async function Page({ params, searchParams }: Props) {
+  const { slug } = await params;
+  const { dk } = (await searchParams) ?? {};
+
+  const data = await getArchiveDetail(slug, { draftKey: dk }).catch(notFound);
+
   return (
     <section className="contents__main">
       <PageTitle image="/img/common/iconCircle.svg" pageCategoty="Archive">
@@ -55,13 +50,9 @@ export default async function Page(props: Props) {
         <div className="contents__inBase">
           <div className="contents__inBase__inner">
             <Article data={data} />
-            {/* /.contents__inBase__inner */}
           </div>
-          {/* /.contents__inBase */}
         </div>
-        {/* /.contents__mainInner */}
       </div>
-      {/* /.contents__main */}
     </section>
   );
 }
