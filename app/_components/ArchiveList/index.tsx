@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Archive } from "@/app/_libs/microcms";
 import TagList from "../TagList";
@@ -32,9 +33,9 @@ export default function ArchiveList({ articles }: Props) {
               {article.description}
               {/* /.archiveListBox__sentence */}
             </div>
-            <figure className="archiveListBox__arrow">
-              <img src="/img/common/imgArrow01.svg" alt="more" />
-            </figure>
+            <figure className="archiveListBox__arrow"><span>
+              <Image src="/img/common/imgArrow01.svg" alt="more" fill />
+            </span></figure>
           </Link>
           {/* /.archiveListBox__inner */}
         </div>

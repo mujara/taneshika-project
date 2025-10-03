@@ -38,10 +38,12 @@ export default async function Home() {
         <div id="contents" className="clearfix">
           <HomeArchiveBox data={data} />
           <HomeAboutBox />
-        </div>{/* /#contents */}
+        </div>
+        {/* /#contents */}
         <Footer />
         <ButtonRise />
-      </div>{/* /#wrapper */}
+      </div>
+      {/* /#wrapper */}
     </body>
   );
 }
