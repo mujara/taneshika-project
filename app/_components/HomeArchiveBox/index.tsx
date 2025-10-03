@@ -16,8 +16,6 @@ export default function HomeArchiveBox({ data }: Props) {
     const handleScroll = () => {
       if (window.outerHeight / 5 < window.scrollY) {
         setStatus(true);
-      } else {
-        setStatus(false);
       }
     };
     window.addEventListener("scroll", handleScroll);
