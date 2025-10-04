@@ -1,12 +1,27 @@
+import Image from "next/image";
 import Link from "next/link";
 export default function Footer() {
   return (
     <footer id="footer">
       <figure className="footer__image">
-        <img src="/img/common/bgFooter.svg" alt="" />
+        <span>
+          <Image
+            src="/img/common/bgFooter.svg"
+            alt=""
+            fill
+            unoptimized={process.env.NODE_ENV === "development"}
+          />
+        </span>{" "}
       </figure>
       <div className="footer__siteTitle">
-        <img src="/img/common/siteTitle.svg" alt="タネも仕掛けも" />
+        <span>
+          <Image
+            src="/img/common/siteTitle.svg"
+            alt="タネも仕掛けも"
+            fill
+            unoptimized={process.env.NODE_ENV === "development"}
+          />
+        </span>
       </div>
       <ul className="footer__navi">
         <li>

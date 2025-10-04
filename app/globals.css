@@ -3045,6 +3045,13 @@ a.over:hover {
     z-index: 1;
   }
 }
+.footer__image span {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-top: 21.5%;
+}
 .footer__image img {
   width: 100%;
 }
@@ -3062,6 +3069,18 @@ a.over:hover {
   .footer__siteTitle {
     width: 15.8em;
     margin-top: 10em;
+  }
+}
+.footer__siteTitle span {
+  display: block;
+  position: relative;
+  width: 15em;
+  height: 4em;
+}
+@media print, screen and (min-width: 768px) {
+  .footer__siteTitle span {
+    width: 15.8em;
+    height: 4.3em;
   }
 }
 .footer__siteTitle img {
