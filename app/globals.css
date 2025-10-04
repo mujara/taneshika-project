@@ -6221,6 +6221,13 @@ _:lang(x) + _:-webkit-full-screen-document,
     filter: brightness(1);
   }
 }
+@-moz-document url-prefix() {
+  @media print, screen and (min-width: 768px) {
+    .home #wrapper .globalNavi {
+      animation: none;
+    }
+  }
+}
 @media print, screen and (min-width: 768px) {
   .contents__main__article {
     display: block;
