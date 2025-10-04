@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 type Props = {
   pageCategoty?: string;
@@ -15,7 +16,7 @@ export default function Topicpath({
         <li>
           <Link href="/">
             <span>
-              <img src="/img/common/iconHome.svg" alt="ホーム" />
+              <Image src="/img/common/iconHome.svg" alt="ホーム" fill />
             </span>
           </Link>
         </li>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 export default function Header() {
   return (
@@ -6,7 +7,14 @@ export default function Header() {
         <div className="header__siteTitleBox">
           <Link href="/">
             <h1 className="header__siteTitle">
-              <img src="/img/common/siteTitle.svg" alt="タネも仕掛けも" />
+              <span>
+                <Image
+                  src="/img/common/siteTitle.svg"
+                  alt="タネも仕掛けも"
+                  fill
+                  unoptimized={process.env.NODE_ENV === "development"}
+                />
+              </span>
             </h1>
           </Link>
           {/* <!-- /.header__siteTitleBox -->*/}
@@ -16,27 +24,67 @@ export default function Header() {
           <ul className="globalNavi__menu__main">
             <li>
               <Link href="/archive">
-                <img src="/img/common/iconCircle.svg" alt="Archive" />
+                <span>
+                  <Image
+                    src="/img/common/iconCircle.svg"
+                    alt="Archive"
+                    fill
+                    sizes="28.8px"
+                    unoptimized={process.env.NODE_ENV === "development"}
+                  />
+                </span>
               </Link>
             </li>
             <li>
               <Link href="/parts">
-                <img src="/img/common/iconCross.svg" alt="Parts" />
+                <span>
+                  <Image
+                    src="/img/common/iconCross.svg"
+                    alt="Parts"
+                    fill
+                    sizes="28.8px"
+                    unoptimized={process.env.NODE_ENV === "development"}
+                  />
+                </span>
               </Link>
             </li>
             <li>
               <Link href="/layout">
-                <img src="/img/common/iconWave.svg" alt="Layout" />
+                <span>
+                  <Image
+                    src="/img/common/iconWave.svg"
+                    alt="Layout"
+                    fill
+                    sizes="28.8px"
+                    unoptimized={process.env.NODE_ENV === "development"}
+                  />
+                </span>
               </Link>
             </li>
             <li>
               <Link href="/image">
-                <img src="/img/common/iconSquare.svg" alt="Image" />
+                <span>
+                  <Image
+                    src="/img/common/iconSquare.svg"
+                    alt="Image"
+                    fill
+                    sizes="28.8px"
+                    unoptimized={process.env.NODE_ENV === "development"}
+                  />
+                </span>
               </Link>
             </li>
             <li>
               <Link href="/unclassifiable">
-                <img src="/img/common/iconStar.svg" alt="Unclassifiable" />
+                <span>
+                  <Image
+                    src="/img/common/iconStar.svg"
+                    alt="Unclassifiable"
+                    fill
+                    sizes="28.8px"
+                    unoptimized={process.env.NODE_ENV === "development"}
+                  />
+                </span>
               </Link>
             </li>
           </ul>
@@ -64,30 +112,36 @@ export default function Header() {
           <dialog
             className="globalNaviSmall__content"
             id="modal-globalNaviSmall"
-            aria-hidden="true"
           >
             <div className="globalNaviSmall__menu">
               <div className="globalNaviSmall__menu__inner">
                 <div className="pageDecoration">
                   <figure>
-                    <img
+                    <Image
                       src="/img/common/imgEdgeDecoration.svg"
                       alt="「and what is the use of a book, 」thought Alice, 「without pictures or conversations?」Alice’s Adventures in Wonderland"
+                      fill
                     />
                   </figure>
                   <figure>
-                    <img src="/img/common/imgEdgeDecoration.svg" alt="" />
+                    <Image
+                      src="/img/common/imgEdgeDecoration.svg"
+                      alt=""
+                      fill
+                    />
                   </figure>
                   <figure>
-                    <img
+                    <Image
                       src="/img/common/imgEdgeDecoration_bottom.svg"
                       alt=""
+                      fill
                     />
                   </figure>
                   <figure>
-                    <img
+                    <Image
                       src="/img/common/imgEdgeDecoration_bottom.svg"
                       alt="俺は玄妙怪奇な幻を意のままにできるのだ ランボー「地獄の一季節」"
+                      fill
                     />
                   </figure>
                   {/* <!-- /.pageDecoration -->*/}
@@ -97,24 +151,46 @@ export default function Header() {
                   <Link href="/">
                     <div className="header__image">
                       <figure>
-                        <img
-                          src="/img/home/imgTambourine.png"
-                          alt="タンバリン"
-                        />
+                        <span>
+                          <Image
+                            src="/img/home/imgTambourine.png"
+                            alt="タンバリン"
+                            fill
+                            unoptimized={process.env.NODE_ENV === "development"}
+                          />
+                        </span>
                       </figure>
                       <figure>
-                        <img src="/img/home/imgViolin.png" alt="バイオリン" />
+                        <span>
+                          <Image
+                            src="/img/home/imgViolin.png"
+                            alt="バイオリン"
+                            fill
+                            unoptimized={process.env.NODE_ENV === "development"}
+                          />
+                        </span>
                       </figure>
                       <figure>
-                        <img src="/img/home/imgDrum.png" alt="ドラム" />
+                        <span>
+                          <Image
+                            src="/img/home/imgDrum.png"
+                            alt="ドラム"
+                            fill
+                            unoptimized={process.env.NODE_ENV === "development"}
+                          />
+                        </span>
                       </figure>
                       {/* <!-- /.header__image -->*/}
                     </div>
                     <h1 className="header__siteTitle">
-                      <img
-                        src="/img/common/siteTitle.svg"
-                        alt="タネも仕掛けも"
-                      />
+                      <span>
+                        <Image
+                          src="/img/common/siteTitle.svg"
+                          alt="タネも仕掛けも"
+                          fill
+                          unoptimized={process.env.NODE_ENV === "development"}
+                        />
+                      </span>
                     </h1>
                   </Link>
                   {/* <!-- /.header__siteTitleBox -->*/}
@@ -150,7 +226,13 @@ export default function Header() {
         <div className="header__bookmark" id="btnBookmark">
           <Link href="bookmark.html">
             <span>
-              <img src="/img/common/imgBookmark.png" alt="" />
+              <Image
+                src="/img/common/imgBookmark.png"
+                alt="ブックマーク"
+                fill
+                sizes="152px"
+                unoptimized={process.env.NODE_ENV === "development"}
+              />
             </span>
           </Link>
           {/* <!-- /.header__bookmark -->*/}

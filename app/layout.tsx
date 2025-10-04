@@ -29,5 +29,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <html lang="ja">{children}</html>;
+  return (
+    <html lang="ja" data-scroll-behavior="smooth">
+      {children}
+    </html>
+  );
 }

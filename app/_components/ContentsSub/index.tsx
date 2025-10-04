@@ -1,3 +1,4 @@
+import Image from "next/image";
 import SearchField from "@/app/_components/SearchField";
 import { getArchiveSideList } from "@/app/_libs/microcms";
 import { getCategoryList } from "@/app/_libs/microcms";
@@ -23,7 +24,7 @@ export default async function ContentsSub() {
 
         <div className="sideTitle">
           <figure>
-            <img src="/img/common/icon01.svg" alt="" />
+            <Image src="/img/common/icon01.svg" alt="最新の記事" fill />
           </figure>
           <span>
             The Interval Between <br />
@@ -36,7 +37,7 @@ export default async function ContentsSub() {
 
         <div className="sideTitle">
           <figure>
-            <img src="/img/common/icon02.svg" alt="" />
+            <Image src="/img/common/icon02.svg" alt="カテゴリー" fill />
           </figure>
           <span>
             Classification pizza mocks <br />
@@ -49,11 +50,11 @@ export default async function ContentsSub() {
 
         <div className="sideTitle">
           <figure>
-            <img src="/img/common/icon03.svg" alt="" />
+            <Image src="/img/common/icon03.svg" alt="タグ" fill />
           </figure>
           <span>
-            Tagging is between <br />
-            youth and later life.
+            What flavor was the roasted <br />
+            sweet potato you ate yesterday?
           </span>
           {/* /.sideTitle */}
         </div>

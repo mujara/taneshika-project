@@ -7,9 +7,10 @@ export default function HomeHeader() {
           <span>
             <Image
               src="/img/home/imgMainVisual01.png"
-              sizes="100vw"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               alt=""
               fill
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </span>
         </figure>
@@ -17,9 +18,10 @@ export default function HomeHeader() {
           <span>
             <Image
               src="/img/home/imgMainVisual02.png"
-              sizes="100vw"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               alt=""
               fill
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </span>
         </figure>
@@ -27,9 +29,10 @@ export default function HomeHeader() {
           <span>
             <Image
               src="/img/home/imgMainVisual03.png"
-              sizes="100vw"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               alt=""
               fill
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </span>
         </figure>
@@ -37,9 +40,10 @@ export default function HomeHeader() {
           <span>
             <Image
               src="/img/home/imgMainVisual04.png"
-              sizes="100vw"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               alt=""
               fill
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </span>
         </figure>
@@ -47,9 +51,10 @@ export default function HomeHeader() {
           <span>
             <Image
               src="/img/home/imgMainVisual05.png"
-              sizes="100vw"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               alt=""
               fill
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </span>
         </figure>
@@ -57,9 +62,10 @@ export default function HomeHeader() {
           <span>
             <Image
               src="/img/home/imgMainVisual06.png"
-              sizes="100vw"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               alt=""
               fill
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </span>
         </figure>
@@ -67,9 +73,10 @@ export default function HomeHeader() {
           <span>
             <Image
               src="/img/home/imgMainVisual07.png"
-              sizes="100vw"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               alt=""
               fill
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </span>
         </figure>
@@ -77,9 +84,10 @@ export default function HomeHeader() {
           <span>
             <Image
               src="/img/home/imgMainVisual08.png"
-              sizes="100vw"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               alt=""
               fill
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </span>
         </figure>
@@ -87,9 +95,10 @@ export default function HomeHeader() {
           <span>
             <Image
               src="/img/home/imgMainVisual09.png"
-              sizes="100vw"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               alt=""
               fill
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </span>
         </figure>
@@ -97,9 +106,10 @@ export default function HomeHeader() {
           <span>
             <Image
               src="/img/home/imgMainVisual10.png"
-              sizes="100vw"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               alt=""
               fill
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </span>
         </figure>
@@ -107,9 +117,11 @@ export default function HomeHeader() {
           <span>
             <Image
               src="/img/home/imgMainVisual11.png"
-              sizes="100vw"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               alt=""
               fill
+              unoptimized={process.env.NODE_ENV === "development"}
+              priority
             />
           </span>
         </figure>
@@ -117,9 +129,10 @@ export default function HomeHeader() {
           <span>
             <Image
               src="/img/home/imgMainVisual12.png"
-              sizes="100vw"
+              sizes="(max-width: 1200px) 100vw, 1200px"
               alt=""
               fill
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </span>
         </figure>
@@ -133,6 +146,7 @@ export default function HomeHeader() {
               alt="タンバリン"
               width={111}
               height={142}
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </figure>
           <figure>
@@ -141,6 +155,7 @@ export default function HomeHeader() {
               alt="バイオリン"
               width={184}
               height={298}
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </figure>
           <figure>
@@ -149,6 +164,7 @@ export default function HomeHeader() {
               alt="ドラム"
               width={176}
               height={186}
+              unoptimized={process.env.NODE_ENV === "development"}
             />
           </figure>
         </div>
@@ -227,7 +243,13 @@ export default function HomeHeader() {
       <div className="header__bookmark" id="btnBookmark">
         <a href="bookmark">
           <span>
-            <Image src="/img/common/imgBookmark.png" alt="" fill />
+            <Image
+              src="/img/common/imgBookmark.png"
+              alt="ブックマーク"
+              fill
+              sizes="152px"
+              unoptimized={process.env.NODE_ENV === "development"}
+            />
           </span>
         </a>
       </div>
