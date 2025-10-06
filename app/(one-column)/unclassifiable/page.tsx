@@ -4,11 +4,11 @@ import Topicpath from "@/app/_components/Topicpath";
 
 // ページ情報
 const data = {
-  title: "パーツ一覧",
-  description: "WEB制作で使用するパーツをここに置いています。",
+  title: "その他一覧",
+  description: "分類されないページをここに置いています。",
   image: "/img/sample.jpg",
-  classification01: "parts",
-  classification02: "Parts",
+  classification01: "unclassifiable",
+  classification02: "Unclassifiable",
 };
 
 // SEO メタデータ
@@ -29,7 +29,7 @@ export default async function Page() {
   return (
     <section className="contents__main">
       <PageTitle
-        image="/img/common/iconCross.svg"
+        image="/img/common/iconStar.svg"
         pageCategoty={data.classification02}
       >
         {data.title}
