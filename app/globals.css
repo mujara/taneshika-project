@@ -1562,15 +1562,18 @@ html {
   -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
   z-index: -1;
+  /* polygon(左上の角, 右上の角, 右下の角, 左下の角) */
+  -webkit-clip-path: polygon(2% 0%, 90% 0%, 98% 100%, 0% 90%);
+  clip-path: polygon(2% 0%, 90% 0%, 98% 100%, 0% 90%);
 }
 #wrapper .button--type02 a::after {
   content: "";
   display: block;
-  width: 1.5em;
-  height: 0.8em;
+  width: 0.6em;
+  height: 0.6em;
   position: absolute;
-  bottom: 0.3em;
-  right: 0.3em;
+  bottom: 0.4em;
+  right: 0.6em;
   background: url(/img/common/imgArrow02.svg) no-repeat center top;
   background-size: 100% auto;
   -webkit-transform: rotate(2deg);
@@ -1588,10 +1591,15 @@ html {
 
 .name__ara {
   display: inline-block;
-  width: 1em;
+  width: 0.7em;
   height: 1em;
   position: relative;
   line-height: 1.7;
+}
+@media print, screen and (min-width: 768px) {
+  .name__ara {
+    font-size: 2em;
+  }
 }
 .name__ara > span {
   display: inline-block;
@@ -1629,10 +1637,15 @@ html {
 
 .name__kawa {
   display: inline-block;
-  width: 1em;
+  width: 0.7em;
   height: 1em;
   position: relative;
   line-height: 1.7;
+}
+@media print, screen and (min-width: 768px) {
+  .name__kawa {
+    font-size: 1.5em;
+  }
 }
 .name__kawa > span {
   display: inline-block;
@@ -1646,7 +1659,7 @@ html {
   transform: rotate(90deg);
 }
 .name__kawa > span:nth-child(2) {
-  top: -0.2em;
+  top: -0.4em;
   left: 50%;
   margin-left: -0.55em;
   font-size: 1.1em;
@@ -1655,7 +1668,7 @@ html {
 }
 .name__kawa > span:nth-child(3) {
   top: -0.2em;
-  right: -0.1em;
+  right: -0.5em;
   font-size: 0.9em;
   -webkit-transform: rotate(83deg);
   transform: rotate(83deg);
@@ -2159,11 +2172,11 @@ a.over:hover {
 #wrapper .archiveTitleBox__inner a::after {
   content: "";
   display: block;
-  width: 1.5em;
-  height: 0.8em;
+  width: 0.5em;
+  height: 0.5em;
   position: absolute;
   bottom: 0.3em;
-  right: 0.8em;
+  right: 0.3em;
   background: url(/img/common/imgArrow02.svg) no-repeat center top;
   background-size: 100% auto;
   -webkit-transform: rotate(2deg);
@@ -2175,7 +2188,7 @@ a.over:hover {
   color: #74ba97;
 }
 #wrapper .archiveTitleBox__inner a:hover::after {
-  right: 0.4em;
+  right: 0em;
 }
 
 .home::before {
@@ -4731,10 +4744,19 @@ _:lang(x) + _:-webkit-full-screen-document,
 @media print, screen and (min-width: 768px) {
   #wrapper .homeAboutBox__title + p {
     font-size: 1.25em;
-    -webkit-transform: rotate(-20deg);
-    transform: rotate(-20deg);
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
     margin-top: -1em;
-    margin-left: -3em;
+    margin-left: -0.5em;
+  }
+}
+#wrapper .homeAboutBox__title + p small {
+  font-size: 1em;
+}
+@media print, screen and (min-width: 768px) {
+  #wrapper .homeAboutBox__title + p small {
+    font-size: 0.8em;
+    opacity: 0.8;
   }
 }
 #wrapper .homeAboutBox__title + p + p {
@@ -4746,11 +4768,139 @@ _:lang(x) + _:-webkit-full-screen-document,
 }
 @media print, screen and (min-width: 768px) {
   #wrapper .homeAboutBox__title + p + p {
-    font-size: 0.65em;
+    font-size: 0.6em;
     -webkit-transform: rotate(5deg);
     transform: rotate(5deg);
     margin-left: 20em;
-    margin-top: -2em;
+    margin-top: -3em;
+  }
+}
+#wrapper .homeAboutBox__sentence01 {
+  display: block;
+}
+@media print, screen and (min-width: 768px) {
+  #wrapper .homeAboutBox__sentence01 {
+    line-height: 1.3;
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+    text-indent: -0.3em;
+    opacity: 0.9;
+  }
+}
+#wrapper .homeAboutBox__sentence02 {
+  display: block;
+  position: relative;
+}
+@media print, screen and (min-width: 768px) {
+  #wrapper .homeAboutBox__sentence02 {
+    font-size: 1.4em;
+    letter-spacing: 0.2em;
+    line-height: 1.1em;
+    text-indent: 0.5em;
+    margin-bottom: 0.5em;
+  }
+}
+@media print, screen and (min-width: 768px) {
+  #wrapper .homeAboutBox__sentence02::before {
+    content: "";
+    width: 8em;
+    height: 0.5em;
+    display: block;
+    position: absolute;
+    top: 0.5em;
+    left: 0;
+    background: #000;
+    z-index: 1;
+    opacity: 0.8;
+    mix-blend-mode: multiply;
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+    /* polygon(左上の角, 右上の角, 右下の角, 左下の角) */
+    -webkit-clip-path: polygon(1% 0%, 97% 0%, 98% 100%, 0% 99%);
+    clip-path: polygon(1% 0%, 97% 0%, 98% 100%, 0% 99%);
+  }
+}
+@media print, screen and (min-width: 768px) {
+  #wrapper .homeAboutBox__sentence02::after {
+    content: "";
+    width: 7em;
+    height: 1em;
+    display: block;
+    position: absolute;
+    top: 0.4em;
+    left: 3em;
+    background: #000;
+    z-index: 1;
+    opacity: 0.7;
+    mix-blend-mode: multiply;
+    /* polygon(左上の角, 右上の角, 右下の角, 左下の角) */
+    -webkit-clip-path: polygon(0% 10%, 100% 5%, 100% 90%, 0% 90%);
+    clip-path: polygon(0% 10%, 100% 5%, 100% 90%, 0% 90%);
+  }
+}
+@media print, screen and (min-width: 768px) {
+  #wrapper .homeAboutBox__sentence02 small:nth-child(1) {
+    font-size: 0.7em;
+    position: relative;
+    opacity: 1;
+    z-index: 1;
+  }
+}
+@media print, screen and (min-width: 768px) {
+  #wrapper .homeAboutBox__sentence02 small:nth-child(1)::before {
+    content: "";
+    width: 2.3em;
+    height: 2.5em;
+    display: block;
+    position: absolute;
+    top: -0.4em;
+    left: -0.2em;
+    background: #000;
+    z-index: 1;
+    opacity: 0.8;
+    mix-blend-mode: multiply;
+    /* polygon(左上の角, 右上の角, 右下の角, 左下の角) */
+    -webkit-clip-path: polygon(2% 0%, 90% 0%, 98% 100%, 0% 96%);
+    clip-path: polygon(2% 0%, 90% 0%, 98% 100%, 0% 96%);
+  }
+}
+@media print, screen and (min-width: 768px) {
+  #wrapper .homeAboutBox__sentence02 small:nth-child(2) {
+    font-size: 0.9em;
+    position: relative;
+  }
+}
+@media print, screen and (min-width: 768px) {
+  #wrapper .homeAboutBox__sentence02 small:nth-child(2)::before {
+    content: "";
+    width: 2em;
+    height: 1em;
+    display: block;
+    position: absolute;
+    top: 0.3em;
+    left: -3.7em;
+    background: #000;
+    z-index: 1;
+    opacity: 0.9;
+    /* polygon(左上の角, 右上の角, 右下の角, 左下の角) */
+    -webkit-clip-path: polygon(1% 10%, 100% 5%, 100% 90%, 0% 90%);
+    clip-path: polygon(1% 10%, 100% 5%, 100% 90%, 0% 90%);
+  }
+}
+@media print, screen and (min-width: 768px) {
+  #wrapper .homeAboutBox__sentence03 {
+    line-height: 1.2em;
+    display: inline-block;
+  }
+}
+@media print, screen and (min-width: 768px) {
+  #wrapper .homeAboutBox__sentence04 {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+    display: inline-block;
+    text-indent: -0.5em;
+    letter-spacing: 0.3em;
+    opacity: 0.8;
   }
 }
 #wrapper .homeAboutBox__portrait {

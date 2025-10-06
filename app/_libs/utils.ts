@@ -6,7 +6,7 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 export const formatDate = (date: string) => {
-  return dayjs.utc(date).tz("Asia/Tokyo").format("YYYY/MM/DD");
+  return dayjs.utc(date).tz("Asia/Tokyo").format("YYYY.MM.DD");
 };
 
 // 日付文字列を "YYYY-MM" 形式に変換

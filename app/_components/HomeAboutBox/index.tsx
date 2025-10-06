@@ -274,29 +274,36 @@ export default function HomeAboutBox() {
             {/* /.homeAboutBox__title */}
           </div>
           <p>
-            ヤッホー！元気ですか？
-            <br />
-            当ページにご訪問いただき
-            <br />
-            誠にありがとうございます。
-            <br />
-            当サイトはご機嫌な
-            <span className="name__ara">
-              <span>十</span>
-              <span>十</span>
-              <span>亡</span>
-              <span>川</span>
+            <span className="homeAboutBox__sentence01">
+              ヤッホー！当ページ<small>に</small>
+              <br />
+              ご訪問<small>いただき</small>、ありがとうございます。
             </span>
-            <span className="name__kawa">
-              <span>一</span>
-              <span>一</span>
-              <span>一</span>
+            <span className="homeAboutBox__sentence02">
+              感謝<small>感</small>
+              <small>激</small>雨<small>あら</small>れ！
             </span>
-            が備忘や
-            <br />
-            アウトプット的なかんじで
-            <br className="hidden-sp" />
-            利用しています。
+            <span className="homeAboutBox__sentence03">
+              当サイト<small>は</small>ご機嫌<small>な</small>
+              <span className="name__ara">
+                <span>十</span>
+                <span>十</span>
+                <span>亡</span>
+                <span>川</span>
+              </span>
+              <span className="name__kawa">
+                <span>一</span>
+                <span>一</span>
+                <span>一</span>
+              </span>
+              <small>が</small>備忘<small>や</small>
+              <br className="hidden-sp" />
+              アウトプット<small>的なかんじを</small>目的に
+              <br className="hidden-sp" />
+              <span className="homeAboutBox__sentence04">
+                <small>利用して</small>います。
+              </span>
+            </span>
           </p>
           <p>
             Thank you for visiting.

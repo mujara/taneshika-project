@@ -1,7 +1,13 @@
 .date {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 0.8rem 0;
-  font-size: 1rem;
+  justify-content: flex-end;
+  gap: 0.2em;
+  margin-right: -0.3em;
+}
+
+.date img {
+  opacity: 0.5;
+  width: 1em;
+  height: auto;
 }
