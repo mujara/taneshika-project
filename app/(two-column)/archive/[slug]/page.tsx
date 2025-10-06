@@ -19,7 +19,6 @@ export async function generateMetadata({
   const { dk } = (await searchParams) ?? {};
 
   const data = await getArchiveDetail(slug, { draftKey: dk });
-
   return {
     title: data.title,
     description: data.description,

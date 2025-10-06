@@ -153,15 +153,6 @@ export const getCategoryList = async () => {
 };
 
 // タグの一覧を取得
-// export const getTagPageList = async () => {
-//  const listData = await client.getAllContents<Tag>({
-//    endpoint: "tag",
-//   });
-
-//   return listData;
-// };
-
-// タグの一覧を取得
 export const getTagList = async () => {
   const listData = await client.getList<Tag>({
     endpoint: "tag",
