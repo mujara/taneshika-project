@@ -1,3 +1,4 @@
+
 import { createClient } from "microcms-js-sdk";
 
 import type {
@@ -16,13 +17,22 @@ export type Tag = {
   name: string;
 } & MicroCMSListContent;
 
+export type ContentBlock =
+  | {
+      fieldType: "richEditor";
+      richEditor: string;
+    }
+  | {
+      fieldType: "textarea";
+      textarea: string;
+    };
 export type Archive = {
   id: string;
   title: string;
   publishedAt: string;
   category: Category;
   tag?: Tag[];
-  content: string;
+  content: ContentBlock[];
   description: string;
   mokuji: string;
   thumbnail?: MicroCMSImage;
@@ -31,7 +41,7 @@ export type Archive = {
 export interface ArchiveType {
   id: string;
   title: string;
-  content: string;
+  content: ContentBlock[];
   image: {
     url: string;
   };

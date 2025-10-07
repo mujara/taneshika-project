@@ -15,6 +15,7 @@ export default function Article({ data }: Props) {
       <Link href={`/archive/category/${data.category.id}`}>
         <Category category={data.category} />
       </Link>
+
       {data.mokuji && data.mokuji.trim() !== "" && (
         <div
           className="contents__main__mokuji"
@@ -23,12 +24,27 @@ export default function Article({ data }: Props) {
           }}
         />
       )}
-      <div
-        className="contents__main__article"
-        dangerouslySetInnerHTML={{
-          __html: data.content,
-        }}
-      />
+
+      <div className="contents__main__article">
+        {data.content.map((block, index) => {
+          if (block.fieldType === "richEditor") {
+            return (
+              <div
+                key={index}
+                dangerouslySetInnerHTML={{ __html: block.richEditor }}
+              />
+            );
+          } else if (block.fieldType === "textarea") {
+            return (
+              <pre key={index} className="whitespace-pre-wrap">
+                {block.textarea}
+              </pre>
+            );
+          }
+          return null;
+        })}
+      </div>
+
       <TagList tags={data.tag} />
     </main>
   );
