@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="CSS,中心,設定" />
+<meta name="description" content="幅指定せずに上下左右中心に配置にするCSS" />
+<title>幅指定せずに上下左右中心に配置にするCSS</title>
+
+    <style>
+	body{margin:0;}
+        .wrapper__inner { background:#000; height:100vh; width:100vw; display:block; position:relative; }
+        .center-box { background:#FFF; padding:1em; width:80%;}
+        .center-box { position: absolute; top: 50%; left: 50%; transform: translateY(-50%) translateX(-50%);}
+	@media print, screen and (min-width: 768px) {
+        	.center-box { padding:3em; width:auto;}
+	}
+    </style>
+
+</head>
+
+<body>
+<div id="wrapper"><div class="wrapper__inner">
+
+    <!-- センターボックスここから -->
+    <div class="center-box">
+	
+	幅指定せずに上下左右中心に配置にするCSS<br>
+	・画面全体をrelativeに設定<br>
+        ・中心になる要素を絶対配置<br>
+        ・要素をtransformで中心に位置調整<br>
+	<br><br><br>
+        テキストテキストテキスト<br>
+        テキストテキストテキスト<br>
+        テキストテキスト<br>
+        テキストテキストテキスト<br><br>
+        <a href="../index.html">元のページにもどる</a>
+        
+    <!-- /.wrapper__inner --></div><!-- /.center-box --></div>
+    <!-- センターボックスここまで -->
+	
+
+        
+        
+        
+
+
+<!-- /#wrapper --></div>
+
+</body>
+</html>

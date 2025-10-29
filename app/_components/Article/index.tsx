@@ -27,18 +27,19 @@ export default function Article({ data }: Props) {
 
       <div className="contents__main__article">
         {data.content.map((block, index) => {
-          if (block.fieldType === "richEditor") {
+          if (block.fieldId === "richEditor") {
             return (
               <div
                 key={index}
                 dangerouslySetInnerHTML={{ __html: block.richEditor }}
               />
             );
-          } else if (block.fieldType === "textarea") {
+          } else if (block.fieldId === "htmlEditor") {
             return (
-              <pre key={index} className="whitespace-pre-wrap">
-                {block.textarea}
-              </pre>
+              <div
+                key={index}
+                dangerouslySetInnerHTML={{ __html: block.htmlEditor }}
+              />
             );
           }
           return null;

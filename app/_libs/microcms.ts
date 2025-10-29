@@ -19,13 +19,14 @@ export type Tag = {
 
 export type ContentBlock =
   | {
-      fieldType: "richEditor";
+      fieldId: "richEditor";
       richEditor: string;
     }
   | {
-      fieldType: "textarea";
-      textarea: string;
+      fieldId: "htmlEditor";
+      htmlEditor: string;
     };
+
 export type Archive = {
   id: string;
   title: string;
