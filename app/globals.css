@@ -6748,11 +6748,13 @@ _:lang(x) + _:-webkit-full-screen-document,
 }
 #wrapper .topicpathBox ul li span {
   display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
   position: relative;
 }
-#wrapper .topicpathBox ul li span img {
+#wrapper .topicpathBox ul li:nth-child(1) span {
+  width: 1.5em;
+  height: 1.5em;
+}
+#wrapper .topicpathBox ul li:nth-child(1) span img {
   width: 100%;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
