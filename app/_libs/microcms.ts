@@ -107,16 +107,38 @@ export const getArchiveList = async (
   return listData;
 };
 
+// microCMS 全件取得（汎用関数）
+const fetchAll = async <T>(endpoint: string): Promise<T[]> => {
+  const limit = 100;
+  let offset = 0;
+
+  let allContents: T[] = [];
+
+  while (true) {
+    const res = await client.getList<T>({
+      endpoint,
+      queries: { limit, offset },
+    });
+
+    allContents = [...allContents, ...res.contents];
+
+    if (res.contents.length < limit) break;
+    offset += limit;
+  }
+
+  return allContents;
+};
+
 // アーカイブページで記事一覧を全件取得
-export const getArchiveAllList = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList<Archive>({
-    endpoint: "archive",
-    queries: {
-      limit: 9999, // ここで全件取得（必要に応じて増やす）
-      ...queries,
-    },
-  });
-  return listData;
+export const getArchiveAllList = async () => {
+  const contents = await fetchAll<Archive>("archive");
+
+  return {
+    contents,
+    totalCount: contents.length,
+    offset: 0,
+    limit: 100,
+  };
 };
 
 // サイドで記事一覧を取得
@@ -156,20 +178,26 @@ export const getPageDetail = async (
 
 // カテゴリーの一覧を取得
 export const getCategoryList = async () => {
-  const listData = await client.getList<Category>({
-    endpoint: "category",
-  });
+  const contents = await fetchAll<Category>("category");
 
-  return listData;
+  return {
+    contents,
+    totalCount: contents.length,
+    offset: 0,
+    limit: 100,
+  };
 };
 
 // タグの一覧を取得
 export const getTagList = async () => {
-  const listData = await client.getList<Tag>({
-    endpoint: "tag",
-  });
+  const contents = await fetchAll<Tag>("tag");
 
-  return listData;
+  return {
+    contents,
+    totalCount: contents.length,
+    offset: 0,
+    limit: 100,
+  };
 };
 
 // アーカイブ　カテゴリーの内容を取得
