@@ -1,5 +1,4 @@
 
-
 /* =======================================
 
 	Base CSS
@@ -1399,12 +1398,19 @@ html {
   -webkit-transform: rotate(20deg);
           transform: rotate(20deg);
 }
-.contents__inBase__inner main ul:nth-last-child(1) {
-  display: block;
+.contents__inBase__inner main > ul:nth-last-child(1) {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.1em 0.2em;
   position: relative;
   padding-top: 1em;
+  margin-top: 4em;
 }
-.contents__inBase__inner main ul:nth-last-child(1)::before {
+.contents__inBase__inner main > ul:nth-last-child(1)::before {
   content: " ";
   width: 30%;
   height: 1px;
@@ -1414,14 +1420,14 @@ html {
   top: 0;
   left: 0;
 }
-.contents__inBase__inner main ul:nth-last-child(1) li a {
+.contents__inBase__inner main > ul:nth-last-child(1) li a {
   font-size: 1em;
   background: #eaece6;
   padding: 0.1em 0.5em;
   border-radius: 0.3em;
   color: #0f1d02;
 }
-.contents__inBase__inner main ul:nth-last-child(1) li a:hover {
+.contents__inBase__inner main > ul:nth-last-child(1) li a:hover {
   background: #d7dfc7;
 }
 .contents__mainInner {
@@ -1588,7 +1594,7 @@ html {
   font-family: "Beth Ellen", cursive;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.25em;
+  font-size: 1em;
   position: relative;
   padding-bottom: 0.5em;
   padding-right: 1.5em;
@@ -2823,6 +2829,7 @@ a.over:hover {
   font-family: "Alike Angular", serif;
   font-weight: 400;
   font-style: normal;
+  padding-right: 0.5em;
 }
 #wrapper .archiveListBox__title {
   display: block;
