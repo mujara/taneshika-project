@@ -9,22 +9,23 @@
 <title>幅指定せずに上下左右中心に配置にするCSS</title>
 
     <style>
-	body{margin:0;}
-        .wrapper__inner { background:#000; height:100vh; width:100vw; display:block; position:relative; }
-        .center-box { background:#FFF; padding:1em; width:80%;}
-        .center-box { position: absolute; top: 50%; left: 50%; transform: translateY(-50%) translateX(-50%);}
-	@media print, screen and (min-width: 768px) {
-        	.center-box { padding:3em; width:auto;}
-	}
+        body{margin:0;}
+        .center-box { background:#000; height:100vh; width:100vw; display:block; position:relative; }
+        .center-box__inner { background:#FFF; padding:1em; width:80%;}
+        .center-box__inner { position: absolute; top: 50%; left: 50%; transform: translateY(-50%) translateX(-50%);}
+        @media print, screen and (min-width: 768px) {
+                .center-box__inner { padding:3em; width:auto;}
+        }
     </style>
 
 </head>
 
 <body>
-<div id="wrapper"><div class="wrapper__inner">
+<div id="wrapper">
 
+<div class="center-box">
     <!-- センターボックスここから -->
-    <div class="center-box">
+    <div class="center-box__inner">
 	
 	幅指定せずに上下左右中心に配置にするCSS<br>
 	・画面全体をrelativeに設定<br>
@@ -37,13 +38,9 @@
         テキストテキストテキスト<br><br>
         <a href="#" onclick="window.history.back(); return false;">前のページに戻る</a>
         
-    <!-- /.wrapper__inner --></div><!-- /.center-box --></div>
+    <!-- /.center-box__inner --></div>
     <!-- センターボックスここまで -->
-	
-
-        
-        
-        
+<!-- /.center-box --></div>
 
 
 <!-- /#wrapper --></div>
