@@ -1,5 +1,4 @@
 
-
 /* =======================================
 
 	Base CSS
@@ -1867,7 +1866,7 @@ html {
 #wrapper .contents__mainInner h2 {
   display: block;
   font-size: 1.4em;
-  margin-bottom: 0.4em;
+  margin: 2em 0 1.5em;
   padding-top: 0.2em;
   position: relative;
   line-height: 1.5em;
@@ -2849,7 +2848,7 @@ a.over:hover {
   font-style: normal;
   padding: 0.25em 0.5em 0;
   line-height: 1.5em;
-  margin-bottom: 1em;
+  margin: 0 0 1em 0;
   -webkit-transition: 0.3s all ease;
   transition: 0.3s all ease;
 }

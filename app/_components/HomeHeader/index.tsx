@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 export default function HomeHeader() {
   return (
     <header id="header" className="clearfix">
@@ -241,7 +242,7 @@ export default function HomeHeader() {
         </dialog>
       </nav>
       <div className="header__bookmark" id="btnBookmark">
-        <a href="bookmark">
+        <Link href="/bookmark">
           <span>
             <Image
               src="/img/common/imgBookmark.png"
@@ -251,7 +252,7 @@ export default function HomeHeader() {
               unoptimized={process.env.NODE_ENV === "development"}
             />
           </span>
-        </a>
+        </Link>
       </div>
       <div className="header__bottom">
         <div className="header__bottom__inner"></div>

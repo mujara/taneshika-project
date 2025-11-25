@@ -224,7 +224,7 @@ export default function Header() {
           {/* <!-- /.globalNaviSmall -->*/}
         </nav>
         <div className="header__bookmark" id="btnBookmark">
-          <Link href="bookmark.html">
+          <Link href="/bookmark">
             <span>
               <Image
                 src="/img/common/imgBookmark.png"
