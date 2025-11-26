@@ -39,6 +39,11 @@
 .itemLoopBox__inner>ul.--typeLeft.--typeText {
     animation: animeItemLoopLeftText 80s infinite linear 0.5s both;
 }
+.itemLoopBox:hover .itemLoopBox__inner>ul.--typeLeft,
+.itemLoopBox:hover .itemLoopBox__inner>ul.--typeRight,
+.itemLoopBox:hover .itemLoopBox__inner>ul.--typeLeft.--typeText{
+animation-play-state: paused;
+}
 
 @keyframes animeItemLoopLeft {
     from {

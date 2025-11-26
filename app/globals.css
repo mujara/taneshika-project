@@ -1849,6 +1849,44 @@ html {
     left: -5em;
   }
 }
+.contents__main__mokuji {
+  display: block;
+  background: #f4f5f2;
+  border-radius: 0.5em;
+  padding: 1em 2em 2em;
+  margin: 0 auto 2em;
+  position: relative;
+}
+.contents__main__mokuji::before {
+  content: "目次";
+  display: block;
+  text-align: center;
+  color: #74ba97;
+}
+@media print, screen and (min-width: 1280px) {
+  .contents__main__mokuji {
+    width: 80%;
+  }
+}
+.contents__main__mokuji a {
+  display: block;
+  position: relative;
+  padding-left: 1.2em;
+  margin-top: 0.5em;
+}
+.contents__main__mokuji a::before {
+  content: "";
+  display: block;
+  width: 0.4em;
+  height: 0.4em;
+  aspect-ratio: 1/cos(30deg);
+  -webkit-clip-path: polygon(50% 100%, 100% 0, 0 0);
+          clip-path: polygon(50% 100%, 100% 0, 0 0);
+  background: #92a48e;
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+}
 
 #wrapper .contents__mainInner img {
   max-width: 100%;
@@ -6390,7 +6428,6 @@ _:lang(x) + _:-webkit-full-screen-document,
 }
 
 #wrapper .pageTitle {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
