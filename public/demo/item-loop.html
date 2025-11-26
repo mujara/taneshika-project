@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="CSS,ループ,移動,画像,テキスト" />
+<meta name="description" content="複数の画像やテキストの無限ループCSS" />
+<title>複数の画像やテキストの無限ループCSS</title>
+
+<style>
+ .itemLoopBox__inner {
+    display: flex;
+    overflow: hidden;
+}
+.itemLoopBox__inner>ul {
+    display: flex;
+    list-style: none;
+    padding: 0
+}
+.itemLoopBox__inner>ul.--typeLeft {
+    animation: animeItemLoopLeft 80s infinite linear 0.5s both;
+}
+.itemLoopBox__inner>ul.--typeRight {
+    animation: animeItemLoopRight 80s infinite linear 0.5s both;
+}
+.itemLoopBox__inner>ul>li {
+    width: calc(100vw / 6);
+}
+.itemLoopBox__inner>ul>li img {
+    width: 100%;
+}
+
+@keyframes animeItemLoopLeft {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+@keyframes animeItemLoopRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+<br><br><br>
+<h1>複数の画像やテキストの無限ループCSS</h1>
+<h2>左へ無限に流れる画像CSS</h2>
+<br>
+<div class="itemLoopBox">
+    <div class="itemLoopBox__inner">
+        <ul class="--typeLeft">
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+        </ul>
+        <ul class="--typeLeft">
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+        </ul>
+    <!-- /.itemLoopBox__inner --></div>
+<!-- /.itemLoopBox --></div>
+<br><br>
+<h2>右へ無限に流れる画像CSS</h2>
+<br>
+<div class="itemLoopBox">
+    <div class="itemLoopBox__inner">
+        <ul class="--typeRight">
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+        </ul>
+        <ul class="--typeRight">
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+            <li><img src="../img/demo/sample3x2L.jpg" /></li>
+        </ul>
+    <!-- /.itemLoopBox__inner --></div>
+<!-- /.itemLoopBox --></div>
+<br><br>
+<h2>無限に流れるテキストCSS</h2>
+<br>
+<div class="itemLoopBox">
+    <div class="itemLoopBox__inner">
+        <ul class="--typeLeft">
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+        </ul>
+        <ul class="--typeLeft">
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+        </ul>
+    <!-- /.itemLoopBox__inner --></div>
+<!-- /.itemLoopBox --></div>
+<br><br>
+
+<!-- /#wrapper --></div>
+
+</body>
+</html>

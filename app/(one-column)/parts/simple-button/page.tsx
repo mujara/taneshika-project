@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+//import Link from "next/link";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
 
 // ページ情報
 const data = {
-  title: "パーツ一覧",
-  description: "WEB制作で使用するパーツをここに置いています。",
+  title: "シンプルなボタン",
+  description: "様々なデザインの文字主体のシンプルなボタンを紹介致します。",
   image: "/img/sample.jpg",
   classification01: "parts",
   classification02: "Parts",
@@ -44,9 +44,11 @@ export default async function Page() {
       <div className="contents__mainInner --typeFullSize">
         <div className="inBase">
           <div className="inBase__inner">
-            <ul>
-              <li><Link href="/parts/simple-button">シンプルなボタン</Link></li>
-            </ul>
+            <p>
+              このページは、現在鋭意製作中です。
+              <br />
+              もうしばらくお待ちください。
+            </p>
           </div>
         </div>
       </div>
