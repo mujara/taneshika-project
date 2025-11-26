@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="keywords" content="CSS,ループ,移動,画像,テキスト" />
+<meta name="description" content="複数の画像やテキストの無限ループCSS" />
+<title>複数の画像やテキストの無限ループCSS</title>
+
+<style>
+.chageImageBox{
+  width: 40em;
+  position: relative;
+  display:block;
+}
+
+.chageImageBox>figure {
+aspect-ratio: 3 / 2; //画像の比率はここで修正する
+width:100%;
+display:flex;
+align-content:center;
+justify-content:center;
+opacity: 0;
+margin:0;
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
+animation: animeImageSwitch 25s infinite;
+}
+.chageImageBox:hover>figure {
+animation-play-state: paused;//ホバーで一時停止
+}
+
+.chageImageBox>figure img{
+width:100%;
+object-fit: cover;
+}
+
+.chageImageBox>figure:nth-of-type(1) {
+  animation-delay: 0s;
+}
+.chageImageBox>figure:nth-of-type(2) {
+  animation-delay: 5s;
+}
+.chageImageBox>figure:nth-of-type(3) {
+  animation-delay: 10s;
+}
+.chageImageBox>figure:nth-of-type(4) {
+  animation-delay: 15s;
+}
+.chageImageBox>figure:nth-of-type(5) {
+  animation-delay: 20s;
+}
+
+@keyframes animeImageSwitch {
+0%{ opacity: 0;}
+5%{ opacity: 1;}
+25%{ opacity: 1;}
+30%{ opacity: 0;}
+100%{ opacity: 0;}
+}
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+<br><br><br>
+<h1>画像が変わっていくCSS</h1>
+<br>
+<div class="chageImageBox">
+      <figure><img src="../img/demo/sample3x2L.jpg" /></figure>
+      <figure><img src="../img/demo/sample3x2.jpg" /></figure>
+      <figure><img src="../img/demo/background-loop.jpg" /></figure>
+      <figure><img src="../img/demo/sample3x2.jpg" /></figure>
+      <figure><img src="../img/demo/sample3x2L.jpg" /></figure>
+      <figure><img src="../img/demo/background-loop.jpg" /></figure>
+<!-- /.chageImageBox --></div>
+<br><br>
+
+<!-- /#wrapper --></div>
+
+</body>
+</html>
