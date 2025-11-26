@@ -16,7 +16,7 @@
 .itemLoopBox__inner>ul {
     display: flex;
     list-style: none;
-    padding: 0
+    padding: 0;
 }
 .itemLoopBox__inner>ul.--typeLeft {
     animation: animeItemLoopLeft 80s infinite linear 0.5s both;
@@ -29,6 +29,15 @@
 }
 .itemLoopBox__inner>ul>li img {
     width: 100%;
+}
+.itemLoopBox__inner>ul.--typeText {
+    width:60em;
+}
+.itemLoopBox__inner>ul.--typeText li {
+    width:10em;
+}
+.itemLoopBox__inner>ul.--typeLeft.--typeText {
+    animation: animeItemLoopLeftText 80s infinite linear 0.5s both;
 }
 
 @keyframes animeItemLoopLeft {
@@ -47,7 +56,14 @@
         transform: translateX(0%);
     }
 }
-
+@keyframes animeItemLoopLeftText {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-60em);
+    }
+}
 </style>
 </head>
 
@@ -105,7 +121,7 @@
 <br>
 <div class="itemLoopBox">
     <div class="itemLoopBox__inner">
-        <ul class="--typeLeft">
+        <ul class="--typeLeft --typeText">
             <li>無限に流れるテキスト</li>
             <li>無限に流れるテキスト</li>
             <li>無限に流れるテキスト</li>
@@ -113,7 +129,15 @@
             <li>無限に流れるテキスト</li>
             <li>無限に流れるテキスト</li>
         </ul>
-        <ul class="--typeLeft">
+        <ul class="--typeLeft --typeText">
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+            <li>無限に流れるテキスト</li>
+        </ul>
+        <ul class="--typeLeft --typeText">
             <li>無限に流れるテキスト</li>
             <li>無限に流れるテキスト</li>
             <li>無限に流れるテキスト</li>
