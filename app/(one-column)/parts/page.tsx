@@ -37,7 +37,7 @@ export default async function Page() {
       </PageTitle>
       <Topicpath
         pageCategoty={data.classification02}
-        pageCategotyLink="/{data.classification01}"
+        pageCategotyLink={`/${data.classification01}`}
       >
         {data.title}
       </Topicpath>
@@ -45,7 +45,9 @@ export default async function Page() {
         <div className="inBase">
           <div className="inBase__inner">
             <ul>
-              <li><Link href="/parts/simple-button">シンプルなボタン</Link></li>
+              <li>
+                <Link href="/parts/simple-button">シンプルなボタン</Link>
+              </li>
             </ul>
           </div>
         </div>

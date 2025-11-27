@@ -1,4 +1,3 @@
-
 import { createClient } from "microcms-js-sdk";
 
 import type {
@@ -68,7 +67,7 @@ export type Page = {
   id: string;
   title: string;
   publishedAt: string;
-  content: string;
+  content: ContentBlock[];
   description: string;
   thumbnail?: MicroCMSImage;
 } & MicroCMSListContent;

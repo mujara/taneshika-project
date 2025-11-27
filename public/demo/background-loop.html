@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="keywords" content="CSS,ループ,移動,背景" />
-<meta name="description" content="背景がループしてずっと流れるCSS" />
-<title>背景がループしてずっと流れるCSS</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,user-scalable=no,maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="keywords" content="CSS,ループ,移動,背景" />
+    <meta name="description" content="背景がループしてずっと流れるCSS" />
+    <title>背景がループしてずっと流れるCSS</title>
 
-<style>
-    .backgroundLoopBox {
+    <style>
+      .backgroundLoopBox {
         position: relative;
-        width; 100vw;
+        width: 100vw;
         height: 100vh;
         overflow: hidden;
-        //padding-top: 17%;　//縦横比を保持する場合に記述
-    }
+      }
 
-    .backgroundLoopBox::before,
-    .backgroundLoopBox::after {
+      .backgroundLoopBox::before,
+      .backgroundLoopBox::after {
         content: "";
-        background-image: url("../img/demo/background-loop.jpg");//ループさせる画像のURL
+        background-image: url("../img/demo/background-loop.jpg");
         background-size: cover;
         background-repeat: no-repeat;
         position: absolute;
@@ -29,47 +31,45 @@
         right: 0px;
         bottom: 0px;
         z-index: -1;
-    }
+      }
 
-    .backgroundLoopBox::before {
-        animation: animeBackgroundLoopBefore 200s linear infinite;//速度は200sの数値を変更する
-    }
+      .backgroundLoopBox::before {
+        animation: animeBackgroundLoopBefore 200s linear infinite;
+      }
 
-    .backgroundLoopBox::after {
+      .backgroundLoopBox::after {
         left: -1px;
         right: 1px;
-        animation: animeBackgroundLoopAfter 200s linear infinite;//速度は200sの数値を変更する
-    }
+        animation: animeBackgroundLoopAfter 200s linear infinite;
+      }
 
-    @keyframes animeBackgroundLoopBefore {
+      @keyframes animeBackgroundLoopBefore {
         0% {
-            transform: translateX(0%);
+          transform: translateX(0%);
         }
         100% {
-            transform: translateX(-100%);
+          transform: translateX(-100%);
         }
-    }
+      }
 
-    @keyframes animeBackgroundLoopAfter {
+      @keyframes animeBackgroundLoopAfter {
         0% {
-            transform: translateX(100%);
+          transform: translateX(100%);
         }
         100% {
-            transform: translateX(0%);
+          transform: translateX(0%);
         }
-    }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-<div id="wrapper">
+  <body>
+    <div id="wrapper">
+      <div class="backgroundLoopBox">
+        このクラスの中の背景はループして移動します。
+      </div>
 
-<div class="backgroundLoopBox">
-このクラスの中の背景はループして移動します。
-</div>
-
-
-<!-- /#wrapper --></div>
-
-</body>
+      <!-- /#wrapper -->
+    </div>
+  </body>
 </html>

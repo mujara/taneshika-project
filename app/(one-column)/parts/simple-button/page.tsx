@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-//import Link from "next/link";
+import styles from "./page.module.css";
+import Link from "next/link";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
 
@@ -37,18 +38,35 @@ export default async function Page() {
       </PageTitle>
       <Topicpath
         pageCategoty={data.classification02}
-        pageCategotyLink="/{data.classification01}"
+        pageCategotyLink={`/${data.classification01}`}
       >
         {data.title}
       </Topicpath>
-      <div className="contents__mainInner --typeFullSize">
+      <div className={`contents__mainInner --typeFullSize ${styles.typeParts}`}>
         <div className="inBase">
           <div className="inBase__inner">
-            <p>
-              このページは、現在鋭意製作中です。
-              <br />
-              もうしばらくお待ちください。
-            </p>
+            <div className="column--type02">
+              <div className={styles.simpleButton}>
+                <div className={styles.type001}>
+                  <Link href="/parts/simple-button/type001">詳細はこちら</Link>
+                </div>
+              </div>
+              <div className={styles.simpleButton}>
+                <div className={styles.type001}>
+                  <a href="#">詳細はこちら</a>
+                </div>
+              </div>
+              <div className={styles.simpleButton}>
+                <div className={styles.type001}>
+                  <a href="#">詳細はこちら</a>
+                </div>
+              </div>
+              <div className={styles.simpleButton}>
+                <div className={styles.type001}>
+                  <a href="#">詳細はこちら</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
