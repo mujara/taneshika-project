@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
 
@@ -43,11 +44,17 @@ export default async function Page() {
       <div className="contents__mainInner --typeFullSize">
         <div className="inBase">
           <div className="inBase__inner">
-            <p>
-              このページは、現在鋭意製作中です。
-              <br />
-              もうしばらくお待ちください。
-            </p>
+
+
+            <div className="column--type01">
+              <ul className="list--type01 sM-l">
+                <li><Link href="/privacy-policy">プライバシーポリシー</Link></li>
+              </ul>
+            </div>
+
+
+
+
           </div>
         </div>
       </div>
