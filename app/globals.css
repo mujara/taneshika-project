@@ -3742,6 +3742,7 @@ a.over:hover {
 }
 #wrapper .header__inner .pageDecoration {
   display: none;
+  position: relative;
 }
 @media print, screen and (min-width: 768px) {
   #wrapper .header__inner .pageDecoration {
@@ -3759,7 +3760,8 @@ a.over:hover {
   }
 }
 #wrapper .header__inner .pageDecoration figure img {
-  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 #wrapper .header__inner .pageDecoration figure:nth-child(1) {
   top: 0;
