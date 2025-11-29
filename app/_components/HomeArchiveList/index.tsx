@@ -36,12 +36,12 @@ export default function HomeArchiveList({ archive }: Props) {
           className={cx("homeArchiveBox__card", `--type0${numList[index]}`)}
           key={article.id}
         >
-          <a href={`/archive/${article.id}`}>
+          <Link href={`/archive/${article.id}`}>
             <p>
               <Date date={article.publishedAt ?? article.createdAt} />
             </p>
             <h3>{article.title}</h3>
-          </a>
+          </Link>
           <ul>
             <li>
               <Link href={`/archive/category/${article.category.id}`}>

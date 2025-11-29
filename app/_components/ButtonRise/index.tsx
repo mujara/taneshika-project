@@ -1,18 +1,24 @@
 "use client";
-import React, { useEffect } from "react";
-import { useState } from "react";
+
+import React, { useEffect, useState } from "react";
 import cx from "classnames";
+
 export default function ButtonRise() {
   const [isActive, setStatus] = useState<boolean>(false);
+
   useEffect(() => {
-    window.addEventListener("scroll", function (): void {
-      if (window.outerHeight / 5 < window.scrollY) {
+    const handleScroll = () => {
+      if (window.innerHeight / 5 < window.scrollY) {
         setStatus(true);
       } else {
         setStatus(false);
       }
-    });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <div id="btnRise" className={cx("btn-rise", isActive && "is-active")}>
       <a href="#wrapper">

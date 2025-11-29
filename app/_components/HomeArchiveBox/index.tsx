@@ -14,7 +14,7 @@ export default function HomeArchiveBox({ data }: Props) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.outerHeight / 5 < window.scrollY) {
+      if (window.innerHeight / 5 < window.scrollY) {
         setStatus(true);
         window.removeEventListener("scroll", handleScroll); // 一度で解除
       }
