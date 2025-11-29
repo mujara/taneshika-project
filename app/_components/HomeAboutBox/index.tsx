@@ -268,6 +268,52 @@ export default function HomeAboutBox() {
           </div>
           {/* /.homeAboutBox__image */}
         </div>
+        <div className="homeAboutBox__content">
+          <div className="homeAboutBox__title">
+            <h2>What is this</h2>
+            {/* /.homeAboutBox__title */}
+          </div>
+          <p>
+            <span className="homeAboutBox__sentence01">
+              ヤッホー！当ページ<small>に</small>
+              <br />
+              ご訪問<small>いただき</small>、ありがとうございます。
+            </span>
+            <span className="homeAboutBox__sentence02">
+              感謝<small>感</small>
+              <small>激</small>雨<small>あら</small>れ！
+            </span>
+            <span className="homeAboutBox__sentence03">
+              当サイト<small>は</small>ご機嫌<small>な</small>
+              <span className="name__ara">
+                <span>十</span>
+                <span>十</span>
+                <span>亡</span>
+                <span>川</span>
+              </span>
+              <span className="name__kawa">
+                <span>一</span>
+                <span>一</span>
+                <span>一</span>
+              </span>
+              <small>が</small>備忘<small>や</small>
+              <br className="hidden-sp" />
+              アウトプット<small>的なかんじを</small>目的に
+              <br className="hidden-sp" />
+              <span className="homeAboutBox__sentence04">
+                <small>利用して</small>います。
+              </span>
+            </span>
+          </p>
+          <p>
+            Thank you for visiting.
+            <br />
+            This site serves as a memo pad, an output platform, <br />
+            and a storage repository for parts related to AraRiver&apos;s
+            creations.
+          </p>
+          {/* /.homeAboutBox__content */}
+        </div>
         <div className={cx("homeAboutBox__portrait", "parallax--type05")}>
           <figure>
             <Image

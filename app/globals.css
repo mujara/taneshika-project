@@ -5070,14 +5070,14 @@ _:lang(x) + _:-webkit-full-screen-document,
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  -webkit-animation: font-weight 20s infinite alternate;
-  animation: font-weight 20s infinite alternate;
   font-size: 1em;
   margin-bottom: 1em;
 }
 @media print, screen and (min-width: 768px) {
   #wrapper .homeAboutBox__title + p {
     font-size: 1.25em;
+    -webkit-animation: font-weight 20s infinite alternate;
+    animation: font-weight 20s infinite alternate;
     -webkit-transform: rotate(-5deg);
     transform: rotate(-5deg);
     margin-top: -1em;
