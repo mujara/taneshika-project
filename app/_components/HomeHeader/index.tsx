@@ -177,19 +177,19 @@ export default function HomeHeader() {
       <nav className="globalNavi">
         <ul className="globalNavi__menu__main">
           <li>
-            <a href="archive">Archive</a>
+            <Link href="archive">Archive</Link>
           </li>
           <li>
-            <a href="parts">Parts</a>
+            <Link href="parts">Parts</Link>
           </li>
           <li>
-            <a href="layout">Layout</a>
+            <Link href="layout">Layout</Link>
           </li>
           <li>
-            <a href="image">Image</a>
+            <Link href="image">Image</Link>
           </li>
           <li>
-            <a href="unclassifiable">Unclassifiable</a>
+            <Link href="unclassifiable">Unclassifiable</Link>
           </li>
         </ul>
       </nav>
@@ -221,19 +221,19 @@ export default function HomeHeader() {
             <div className="globalNaviSmall__menu__inner">
               <ul className="globalNaviSmall__menu__main">
                 <li>
-                  <a href="archive">Archive</a>
+                  <Link href="archive">Archive</Link>
                 </li>
                 <li>
-                  <a href="parts">Parts</a>
+                  <Link href="parts">Parts</Link>
                 </li>
                 <li>
-                  <a href="layout">Layout</a>
+                  <Link href="layout">Layout</Link>
                 </li>
                 <li>
-                  <a href="image">Image</a>
+                  <Link href="image">Image</Link>
                 </li>
                 <li>
-                  <a href="unclassifiable">Unclassifiable</a>
+                  <Link href="unclassifiable">Unclassifiable</Link>
                 </li>
               </ul>
             </div>
