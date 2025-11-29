@@ -2632,6 +2632,242 @@ a.over:hover {
   }
 }
 
+@media print, screen and (min-width: 768px) {
+  .parallax--type01 {
+    -webkit-animation: parallax-anime-type01 linear both;
+    animation: parallax-anime-type01 linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@media print, screen and (min-width: 768px) {
+  .parallax--type02 {
+    -webkit-animation: parallax-anime-type02 linear both;
+    animation: parallax-anime-type02 linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@media print, screen and (min-width: 768px) {
+  .parallax--type03 {
+    -webkit-animation: parallax-anime-type03 linear both;
+    animation: parallax-anime-type03 linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+.parallax--type0301 {
+  -webkit-animation: parallax-anime-type03 linear both;
+  animation: parallax-anime-type03 linear both;
+  animation-timeline: scroll();
+}
+@media print, screen and (min-width: 768px) {
+  .parallax--type04 {
+    -webkit-animation: parallax-anime-type04 linear both;
+    animation: parallax-anime-type04 linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@media print, screen and (min-width: 768px) {
+  .parallax--type05 {
+    -webkit-animation: parallax-anime-type05 linear both;
+    animation: parallax-anime-type05 linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@media print, screen and (min-width: 768px) {
+  .parallax--type06 {
+    -webkit-animation: parallax-anime-type06 linear both;
+    animation: parallax-anime-type06 linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@media print, screen and (min-width: 768px) {
+  .parallax--type07 {
+    -webkit-animation: parallax-anime-type07 linear both;
+    animation: parallax-anime-type07 linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+@-webkit-keyframes parallax-anime-typeGnavi {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(200em);
+    transform: translateY(200em);
+  }
+}
+
+@keyframes parallax-anime-typeGnavi {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(200em);
+    transform: translateY(200em);
+  }
+}
+@-webkit-keyframes parallax-anime-type01 {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(100em);
+    transform: translateY(100em);
+  }
+}
+@keyframes parallax-anime-type01 {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(100em);
+    transform: translateY(100em);
+  }
+}
+@-webkit-keyframes parallax-anime-type02 {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(50em);
+    transform: translateY(50em);
+  }
+}
+@keyframes parallax-anime-type02 {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(50em);
+    transform: translateY(50em);
+  }
+}
+@-webkit-keyframes parallax-anime-type03 {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-100em);
+    transform: translateY(-100em);
+  }
+}
+@keyframes parallax-anime-type03 {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-100em);
+    transform: translateY(-100em);
+  }
+}
+@-webkit-keyframes parallax-anime-type04 {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-150em);
+    transform: translateY(-150em);
+  }
+}
+@keyframes parallax-anime-type04 {
+  from {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  to {
+    -webkit-transform: translateY(-150em);
+    transform: translateY(-150em);
+  }
+}
+@-webkit-keyframes parallax-anime-type05 {
+  from {
+    -webkit-transform: translateY(70em);
+    transform: translateY(70em);
+  }
+  to {
+    -webkit-transform: translateY(-30em);
+    transform: translateY(-30em);
+  }
+}
+@keyframes parallax-anime-type05 {
+  from {
+    -webkit-transform: translateY(70em);
+    transform: translateY(70em);
+  }
+  to {
+    -webkit-transform: translateY(-30em);
+    transform: translateY(-30em);
+  }
+}
+@-webkit-keyframes parallax-anime-type06 {
+  from {
+    -webkit-transform: translateY(-40em);
+    transform: translateY(-40em);
+  }
+  to {
+    -webkit-transform: translateY(15em);
+    transform: translateY(15em);
+  }
+}
+@keyframes parallax-anime-type06 {
+  from {
+    -webkit-transform: translateY(-40em);
+    transform: translateY(-40em);
+  }
+  to {
+    -webkit-transform: translateY(15em);
+    transform: translateY(15em);
+  }
+}
+@-webkit-keyframes parallax-anime-type07 {
+  from {
+    -webkit-transform: translateY(62em);
+    transform: translateY(62em);
+  }
+  to {
+    -webkit-transform: translateY(-15em);
+    transform: translateY(-15em);
+  }
+}
+@keyframes parallax-anime-type07 {
+  from {
+    -webkit-transform: translateY(62em);
+    transform: translateY(62em);
+  }
+  to {
+    -webkit-transform: translateY(-15em);
+    transform: translateY(-15em);
+  }
+}
+@-moz-document url-prefix() {
+  @media print, screen and (min-width: 768px) {
+    .home #wrapper .globalNavi,
+    .parallax--type01,
+    .parallax--type02,
+    .parallax--type03,
+    .parallax--type04,
+    .parallax--type05,
+    .parallax--type06,
+    .parallax--type07 {
+      animation: none;
+    }
+  }
+}
 .contents__selectDate {
   display: block;
   margin-bottom: 1.5em;
