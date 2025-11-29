@@ -3,7 +3,6 @@ import Image from "next/image";
   /* import styles from "./page.module.css";*/
 }
 
-import HomeHeader from "@/app/_components/HomeHeader";
 import HomeArchiveBox from "@/app/_components/HomeArchiveBox";
 import HomeAboutBox from "@/app/_components/HomeAboutBox";
 import { getHomeArchiveList } from "@/app/_libs/microcms";
@@ -32,8 +31,6 @@ export default async function Home() {
             <Image src="/img/common/imgEdgeDecoration_bottom.svg" alt="" fill />
           </figure>
         </div>
-
-        <HomeHeader />
 
         <div id="contents" className="clearfix">
           <HomeArchiveBox data={data} />
