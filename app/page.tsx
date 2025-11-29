@@ -4,16 +4,13 @@ import Image from "next/image";
 }
 
 import HomeHeader from "@/app/_components/HomeHeader";
-import HomeArchiveBox from "@/app/_components/HomeArchiveBox";
-import { getHomeArchiveList } from "@/app/_libs/microcms";
-import { HOME_ARCHIVE_LIMIT } from "@/app/_constants";
+import HomeAboutBox from "@/app/_components/HomeAboutBox";
 import Footer from "./_components/Footer";
 import ButtonRise from "@/app/_components/ButtonRise";
 
 export const revalidate = 60;
 
 export default async function Home() {
-  const data = await getHomeArchiveList({ limit: HOME_ARCHIVE_LIMIT });
   return (
     <div className="home">
       <div id="wrapper">
@@ -35,7 +32,7 @@ export default async function Home() {
         <HomeHeader />
 
         <div id="contents" className="clearfix">
-          <HomeArchiveBox data={data} />
+          <HomeAboutBox />
         </div>
         {/* /#contents */}
         <Footer />
