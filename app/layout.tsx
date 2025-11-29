@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" data-scroll-behavior="smooth">
-      {children}
+      <body>{children}</body>
       <GoogleTagManager gtmId="GTM-K6T7W7T9" />
     </html>
   );

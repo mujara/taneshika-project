@@ -9,17 +9,15 @@ export const revalidate = 60;
 
 export default function RootLayout({ children }: Props) {
   return (
-    <body>
-      <div id="wrapper">
-        <Header />
-        <div id="contents" className="clearfix">
-          {children}
-          {/*<!-- /#contents -->*/}
-        </div>
-        <Footer />
-        <ButtonRise />
-        {/* /#wrapper */}
+    <div id="wrapper">
+      <Header />
+      <div id="contents" className="clearfix">
+        {children}
+        {/*<!-- /#contents -->*/}
       </div>
-    </body>
+      <Footer />
+      <ButtonRise />
+      {/* /#wrapper */}
+    </div>
   );
 }
