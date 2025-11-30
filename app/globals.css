@@ -3348,6 +3348,20 @@ a.over:hover {
   -webkit-transform: rotate(-2deg);
   transform: rotate(-2deg);
 }
+#wrapper .contents__subInner .sideTitle span strong {
+  position: relative;
+  display: inline-block;
+}
+#wrapper .contents__subInner .sideTitle span strong::before {
+  content: "";
+  display: block;
+  width: 0.5em;
+  height: 1em;
+  background: #26502c;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 @media print, screen and (min-width: 768px) {
   .sample {
@@ -5095,7 +5109,7 @@ _:lang(x) + _:-webkit-full-screen-document,
 }
 #wrapper .homeAboutBox__spell {
   width: 50em;
-  height: 16em;
+  height: 14em;
   position: absolute;
   bottom: -6em;
   left: -1em;
@@ -5903,6 +5917,8 @@ _:lang(x) + _:-webkit-full-screen-document,
   font-style: normal;
 }
 #wrapper .homeArchiveBox__card > a > h3 {
+  width: 100%;
+  height: 6.2em;
   font-size: 1.15em;
   text-align: center;
   color: #26502c;
@@ -5914,15 +5930,27 @@ _:lang(x) + _:-webkit-full-screen-document,
   line-height: 1.7em;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-box-orient: vertical;
-  line-clamp: 3;
-  -webkit-line-clamp: 3; /* 任意の行数を指定 */
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 @media print, screen and (min-width: 768px) {
   #wrapper .homeArchiveBox__card > a > h3 {
     font-size: 1.25em;
     padding: 1em 0.5em 0;
   }
+}
+#wrapper .homeArchiveBox__card > a > h3 span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  -webkit-line-clamp: 3; /* 任意の行数を指定 */
+  overflow: hidden; /* はみ出た部分を非表示 */
 }
 #wrapper .homeArchiveBox__card > a:hover > h3 {
   color: #74ba97;

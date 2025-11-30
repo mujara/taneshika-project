@@ -40,7 +40,9 @@ export default function HomeArchiveList({ archive }: Props) {
             <p>
               <Date date={article.publishedAt ?? article.createdAt} />
             </p>
-            <h3>{article.title}</h3>
+            <h3>
+              <span>{article.title}</span>
+            </h3>
           </Link>
           <ul>
             <li>

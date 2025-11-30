@@ -27,8 +27,9 @@ export default async function ContentsSub() {
             <Image src="/img/common/icon01.svg" alt="最新の記事" fill />
           </figure>
           <span>
-            The Interval Between <br />
-            the Suffering and Joy of Continuing
+            The In<strong>t</strong>erval Betw<strong>e</strong>en <br />
+            the Suf<strong>f</strong>
+            <strong>e</strong>ring and Joy of Contin<strong>u</strong>ing
           </span>
           {/* /.sideTitle */}
         </div>
@@ -40,8 +41,9 @@ export default async function ContentsSub() {
             <Image src="/img/common/icon02.svg" alt="カテゴリー" fill />
           </figure>
           <span>
-            Classification pizza mocks <br />
-            for flapping
+            Clas<strong>s</strong>ification pizza mo<strong>c</strong>k
+            <strong>s</strong> <br />
+            for fla<strong>p</strong>ping
           </span>
           {/* /.sideTitle */}
         </div>
@@ -53,8 +55,11 @@ export default async function ContentsSub() {
             <Image src="/img/common/icon03.svg" alt="タグ" fill />
           </figure>
           <span>
-            What flavor was the roasted <br />
-            sweet potato you ate yesterday?
+            What fla<strong>v</strong>o<strong>r</strong> was the roas
+            <strong>t</strong>ed <br />s<strong>w</strong>eet po
+            <strong>t</strong>
+            <strong>a</strong>to <strong>y</strong>ou ate yest<strong>e</strong>
+            r<strong>d</strong>ay?
           </span>
           {/* /.sideTitle */}
         </div>
