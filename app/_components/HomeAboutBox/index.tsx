@@ -268,39 +268,64 @@ export default function HomeAboutBox() {
           </div>
           {/* /.homeAboutBox__image */}
         </div>
+        <figure class="homeAboutBox__spell">
+          <img src="img/home/imgSpell.png" alt="" />
+        </figure>
+        <figure class="homeAboutBox__coin">
+          <img src="img/home/imgCoin.png" alt="" />
+        </figure>
+        <div class="homeAboutBox__knifeBox">
+          <div class="homeAboutBox__knifeBox__inner">
+            <ul>
+              <li>
+                <img src="img/home/imgKnife.png" />
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <img src="img/home/imgKnife.png" />
+              </li>
+            </ul>
+            {/* <!-- /.homeAboutBox__knifeBox__inner --> */}
+          </div>
+          {/* <!-- /.homeAboutBox__knifeBox --> */}
+        </div>
         <div className="homeAboutBox__content">
           <div className="homeAboutBox__title">
             <h2>What is this</h2>
             {/* /.homeAboutBox__title */}
           </div>
           <p>
-            <span className="homeAboutBox__sentence01">
-              ヤッホー！当ページ<small>に</small>
+            <span class="homeAboutBox__sentence01">
+              こんにちは！当ページ<small>に</small>
               <br />
               ご訪問<small>いただき</small>、ありがとうございます。
             </span>
-            <span className="homeAboutBox__sentence02">
+            <span class="homeAboutBox__sentence02">
               感謝<small>感</small>
               <small>激</small>雨<small>あら</small>れ！
             </span>
-            <span className="homeAboutBox__sentence03">
-              当サイト<small>は</small>ご機嫌<small>な</small>
-              <span className="name__ara">
+            <span class="homeAboutBox__sentence03">
+              当サイト<small>は</small>
+              <span class="hidden--sp">
+                ご機嫌<small>な</small>
+              </span>
+              <span class="name__ara">
                 <span>十</span>
                 <span>十</span>
                 <span>亡</span>
                 <span>川</span>
               </span>
-              <span className="name__kawa">
+              <span class="name__kawa">
                 <span>一</span>
                 <span>一</span>
                 <span>一</span>
               </span>
               <small>が</small>備忘<small>や</small>
-              <br className="hidden-sp" />
-              アウトプット<small>的なかんじを</small>目的に
-              <br className="hidden-sp" />
-              <span className="homeAboutBox__sentence04">
+              <br />
+              アウトプット<small>を</small>目的に
+              <br class="hidden-sp" />
+              <span class="homeAboutBox__sentence04">
                 <small>利用して</small>います。
               </span>
             </span>
