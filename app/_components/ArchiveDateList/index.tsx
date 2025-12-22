@@ -37,9 +37,11 @@ export default function ArchiveDateList({ articles }: Props) {
   // セレクトボックスを選ぶと移動
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const value = e.target.value;
-    if (value) {
-      router.push(`/archive/date/${value}`);
-    }
+    if (!value) return;
+
+    const { year, month } = JSON.parse(value);
+
+    router.push(`/archive/date/${year}/${month}`);
   };
 
   return (
@@ -51,7 +53,7 @@ export default function ArchiveDateList({ articles }: Props) {
         {sortedKeys.map((key) => {
           const [year, month] = key.split("/");
           return (
-            <option key={key} value={`${year}${month}`}>
+            <option key={key} value={JSON.stringify({ year, month })}>
               {year}年{month}月 ({grouped[key].length})
             </option>
           );
