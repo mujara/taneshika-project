@@ -105,6 +105,31 @@ export const getArchiveList = async (
   });
   return listData;
 };
+// アーカイブページで記事一覧を取得（全件）
+export const getAllArchiveItems = async () => {
+  const LIMIT = 100;
+  let offset = 0;
+  let allItems: Archive[] = [];
+
+  while (true) {
+    const data = await client.getList<Archive>({
+      endpoint: "archive",
+      queries: {
+        limit: LIMIT,
+        offset,
+        orders: "-publishedAt",
+      },
+    });
+
+    allItems = [...allItems, ...data.contents];
+
+    if (data.contents.length < LIMIT) break;
+
+    offset += LIMIT;
+  }
+
+  return allItems;
+};
 
 // microCMS 全件取得（汎用関数）
 const fetchAll = async <T>(endpoint: string): Promise<T[]> => {
