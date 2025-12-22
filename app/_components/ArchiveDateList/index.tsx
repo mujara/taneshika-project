@@ -51,7 +51,7 @@ export default function ArchiveDateList({ articles }: Props) {
         {sortedKeys.map((key) => {
           const [year, month] = key.split("/");
           return (
-            <option key={key} value={key}>
+            <option key={key} value={`${year}${month}`}>
               {year}年{month}月 ({grouped[key].length})
             </option>
           );
