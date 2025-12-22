@@ -1,5 +1,26 @@
 /* =======================================
 
+	Base CSS
+
+ -----------------------------------------
+ 	Reset CSS
+	Structure CSS
+	Basis Decorations CSS
+	Parts CSS
+
+	[768px Above Layout]
+
+	Structure CSS Wide_Tablet
+	Text Decorations CSS Wide_Tablet
+	Basis Decorations_Tablet
+	Parts CSS Wide_Tablet
+
+	[1200px Above Layout]
+ -----------------------------------------
+
+========================================== */
+/* =======================================
+
 	Browser Reset CSS
 
 ========================================== */
@@ -1400,12 +1421,20 @@ html {
   top: 0;
   left: 0;
 }
+.contents__inBase__inner main > ul:nth-last-child(1) li {
+  display: inline-block;
+  padding-left: 0;
+}
+.contents__inBase__inner main > ul:nth-last-child(1) li::before {
+  content: none;
+}
 .contents__inBase__inner main > ul:nth-last-child(1) li a {
   font-size: 1em;
   background: #eaece6;
-  padding: 0.1em 0.5em;
+  padding: 0.2em 0.5em;
   border-radius: 0.3em;
   color: #0f1d02;
+  line-height: 1.4em;
 }
 .contents__inBase__inner main > ul:nth-last-child(1) li a:hover {
   background: #d7dfc7;
@@ -2163,6 +2192,34 @@ html {
 }
 #wrapper .contents__mainInner pre > code.language-php::before {
   content: "PHP";
+}
+
+.contents__main__article hr {
+  color: #92a48e;
+  border-width: 0.7px;
+  margin-bottom: 1em;
+}
+.contents__main__article ul {
+  display: block;
+  margin-bottom: 2em;
+}
+.contents__main__article ul li {
+  padding-left: 0.7em;
+  position: relative;
+  display: block;
+  line-height: 1.5em;
+  margin-bottom: 0.5em;
+}
+.contents__main__article ul li::before {
+  content: "";
+  width: 0.2em;
+  height: 0.2em;
+  border-radius: 50%;
+  display: block;
+  background: #26502c;
+  position: absolute;
+  top: 0.6em;
+  left: 0;
 }
 
 #wrapper .box--type01 {
@@ -5101,13 +5158,13 @@ _:lang(x) + _:-webkit-full-screen-document,
   #wrapper .homeAboutBox__spell {
     width: 96.8em;
     height: 28.4em;
-    bottom: 10em;
+    bottom: 0;
     left: 18em;
   }
 }
 @media print, screen and (min-width: 1280px) {
   #wrapper .homeAboutBox__spell {
-    bottom: 6em;
+    bottom: -3em;
     left: 18em;
   }
 }

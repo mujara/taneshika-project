@@ -39,101 +39,102 @@
   right: 1em;
 }
 
-
 .type002 a {
-	display: inline-block;
-	color: #FFF;
-	background: rgba(0, 0, 0, 0.6);
-	border-bottom:  rgba(0, 0, 0, 0.8) solid 2px ;
+  display: inline-block;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: rgba(0, 0, 0, 0.8) solid 2px;
   line-height: 1.4;
-	padding: 0.6em 2.8em 0.6em 1.5em;
-	border-radius: 0.2em;
-	position: relative;
-	transition: all 0.3s ease;
+  padding: 0.6em 2.8em 0.6em 1.5em;
+  border-radius: 0.2em;
+  position: relative;
+  transition: all 0.3s ease;
 }
 .type002 a::after {
-	content: "";
+  content: "";
   width: 0.8em;
   height: 0.8em;
   display: block;
   background: url("/img/icon/chevron-circle-right.svg") no-repeat center center;
   background-size: 100% auto;
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%);
-	position: absolute;
-	top: 50%;
-	right: 1em;
+  position: absolute;
+  top: 50%;
+  right: 1em;
   margin-top: -0.4em;
-	transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .type002 a:hover {
-	color:#FFF;
+  color: #fff;
   background: rgba(0, 0, 0, 0.8);
-	transform: translateY(2px);
+  transform: translateY(2px);
 }
 .type002 a:active {
-	border-bottom:  rgba(0, 0, 0, 0.6) solid 0 ;
-	transform: translateY(4px);
+  border-bottom: rgba(0, 0, 0, 0.6) solid 0;
+  transform: translateY(4px);
 }
-
-
 
 .type003 a {
-	color: #FFF;
-	background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
   line-height: 1.4;
-	padding: 0.6em 2.8em 0.6em 1.5em;
-	border-radius: 2.6em;
-	display: inline-block;
-	position: relative;
-	transition: all 0.3s ease;
+  padding: 0.6em 2.8em 0.6em 1.5em;
+  border-radius: 2.6em;
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
 }
 .type003 a::after {
-	content: "";
+  content: "";
   width: 0.8em;
   height: 0.8em;
   display: block;
   background: url("/img/icon/arrow-right.svg") no-repeat center center;
   background-size: 100% auto;
-  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(106%) contrast(101%);
-	position: absolute;
-	top: 50%;
-	right: 1.4em;
-	margin-top:-0.4em;
-	transition: all 0.3s ease;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+    hue-rotate(228deg) brightness(106%) contrast(101%);
+  position: absolute;
+  top: 50%;
+  right: 1.4em;
+  margin-top: -0.4em;
+  transition: all 0.3s ease;
 }
-.type003 a:hover{
-	color: #FFF;
-	background: rgba(0, 0, 0, 0.8);
+.type003 a:hover {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
 }
-.type003 a:hover::after{
-	right: 1em;
+.type003 a:hover::after {
+  right: 1em;
 }
-
 
 .type004 a {
-	color: #000;
-	text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
+  color: #000;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 1);
   line-height: 1.4;
-	padding: 0.6em 2.8em 0.6em 1.5em;
-	display: inline-block;
-	position: relative;
-	border-radius: 0.2em;
-	transition: all 0.3s ease;
-  z-index:1;
-  overflow:hidden;
+  padding: 0.6em 2.8em 0.6em 1.5em;
+  display: inline-block;
+  position: relative;
+  border-radius: 0.2em;
+  transition: all 0.3s ease;
+  z-index: 1;
+  overflow: hidden;
 }
 .type004 a::before {
   content: "";
-  width:100%;
-  height:200%;
-	display: block;
-	background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
-	border-radius: 0.3em;
-  position:absolute;
-  top:0;
-  left:0;
-  z-index:-1;
-	transition: all 0.3s ease;
+  width: 100%;
+  height: 200%;
+  display: block;
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.3)
+  );
+  border-radius: 0.3em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s ease;
 }
 .type004 a::after {
   content: "";
@@ -142,127 +143,125 @@
   display: block;
   background: url("/img/icon/arrow-circle-o-right.svg") no-repeat center center;
   background-size: 100% auto;
-  filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 1)); 
+  filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 1));
   position: absolute;
   top: 50%;
   right: 1.4em;
-  margin-top:-0.4em;
-	transition: all 0.3s ease;
+  margin-top: -0.4em;
+  transition: all 0.3s ease;
 }
 .type004 a:hover {
   color: #000;
 }
-.type004 a:hover::before{
-  top:-50%;
+.type004 a:hover::before {
+  top: -50%;
 }
-.type004 a:hover::after{
+.type004 a:hover::after {
   right: 1em;
 }
-
-
 
 .type005 a {
   color: #000;
   display: inline-block;
   line-height: 1.4;
-  position:relative;
-  padding-right:2.5em;
-	transition: all 0.3s ease;
+  position: relative;
+  padding-right: 2.5em;
+  transition: all 0.3s ease;
 }
 .type005 a::before {
   content: "";
-	width:2em;
-	height:2em;
-	text-align:center;
-	padding:0.5em 0 0 0;
-	display:inline-block;
-  background:rgba(0,0,0,.3);
-  position:absolute;
-  top:50%;
-  right:0;
-  margin-top:-1em;
-	transition: all 0.3s ease;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  padding: 0.5em 0 0 0;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -1em;
+  transition: all 0.3s ease;
 }
 .type005 a::after {
   content: "";
   width: 0.8em;
   height: 1em;
-	display:inline-block;
-  background:url("/img/icon/chevron-right.svg") no-repeat center center;
-  background-size: 100% auto;filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(106%) contrast(101%);
-  position:absolute;
-  top:50%;
-  right:0.6em;
-  margin-top:-0.5em;
-	transition: all 0.3s ease;
+  display: inline-block;
+  background: url("/img/icon/chevron-right.svg") no-repeat center center;
+  background-size: 100% auto;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+    hue-rotate(228deg) brightness(106%) contrast(101%);
+  position: absolute;
+  top: 50%;
+  right: 0.6em;
+  margin-top: -0.5em;
+  transition: all 0.3s ease;
 }
 .type005 a:hover {
-	color:#000;
-  transform:translateX(0.5em);
+  color: #000;
+  transform: translateX(0.5em);
 }
 .type005 a:hover::before {
-  opacity:.5;
+  opacity: 0.5;
 }
 .type005 a:hover::after {
   filter: unset;
 }
 
-
 .type006 a {
   color: #000;
   display: inline-block;
   line-height: 1.4;
-  position:relative;
-  background:rgba(0,0,0,.1);
-  padding:0.5em 3em 0.5em 1em;
-	transition: all 0.3s ease;
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0.5em 3em 0.5em 1em;
+  transition: all 0.3s ease;
 }
 .type006 a::before {
   content: "";
-	width:2em;
-	height:2em;
-	text-align:center;
-	padding:0.5em 0 0 0;
-	display:inline-block;
-  background:#FFF;
-  position:absolute;
-  top:50%;
-  right:0.2em;
-  margin-top:-1em;
-	transition: all 0.3s ease;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  padding: 0.5em 0 0 0;
+  display: inline-block;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  right: 0.2em;
+  margin-top: -1em;
+  transition: all 0.3s ease;
 }
 .type006 a::after {
   content: "";
   width: 0.5em;
   height: 1em;
-	display:block;
-  background:url("/img/icon/angle-right.svg") no-repeat center center;
-  background-size:100% auto;
-  position:absolute;
-  top:50%;
-  right:0.9em;
-  margin-top:-0.5em;
-	transition: all 0.3s ease;
+  display: block;
+  background: url("/img/icon/angle-right.svg") no-repeat center center;
+  background-size: 100% auto;
+  position: absolute;
+  top: 50%;
+  right: 0.9em;
+  margin-top: -0.5em;
+  transition: all 0.3s ease;
 }
 .type006 a:hover {
-	color:#000;
-  transform:translateX(0.3em);
+  color: #000;
+  transform: translateX(0.3em);
 }
 .type006 a:hover::before {
-  opacity:0;
+  opacity: 0;
 }
-
 
 .type007 a {
   color: #000;
-  background: rgba(0,0,0,.2);
-  border: #FFF solid 1px;
-  box-shadow: 0px 0px 0px 5px rgba(0,0,0,.2);/* box-shadowで外枠を */
+  background: rgba(0, 0, 0, 0.2);
+  border: #fff solid 1px;
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.2); /* box-shadowで外枠を */
   display: inline-block;
   position: relative;
   padding: 0.6em 3em 0.6em 1.2em;
-	transition: all 0.3s ease;
-  margin-bottom:5px;
+  transition: all 0.3s ease;
+  margin-bottom: 5px;
 }
 .type007 a::after {
   content: "";
@@ -274,31 +273,34 @@
   position: absolute;
   top: 50%;
   right: 1.2em;
-  margin-top:-0.4em;
+  margin-top: -0.4em;
   transition: all 0.5s;
 }
 .type007 a:hover {
   color: #000;
-  background:rgba(0,0,0,.3);
-  box-shadow: 0px 0px 0px 5px rgba(0,0,0,.3);/* box-shadowで外枠を */
-  border: #FFF dotted 1px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.3); /* box-shadowで外枠を */
+  border: #fff dotted 1px;
 }
 .type007 a:hover::after {
   right: 1em;
 }
 
-
 .type008 a {
-  color: #FFF;
+  color: #fff;
   display: inline-block;
   padding: 0.6em 2.8em 0.6em 1.5em;
   position: relative;
   border-radius: 2px;
-  background-image: linear-gradient(-90deg,rgba(0,0,0,.2), rgba(0,0,0,.7));
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
-  transition: .5s;
+  background-image: linear-gradient(
+    -90deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.7)
+  );
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.5s;
   background-size: 200%;
-  border-radius:0.2em;
+  border-radius: 0.2em;
 }
 .type008 a::after {
   content: "";
@@ -307,22 +309,21 @@
   display: block;
   background: url("/img/icon/arrow-right.svg") no-repeat center center;
   background-size: 100% auto;
-  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(228deg) brightness(106%) contrast(101%);
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+    hue-rotate(228deg) brightness(106%) contrast(101%);
   position: absolute;
   top: 50%;
   right: 1.4em;
-  margin-top:-0.5em;
+  margin-top: -0.4em;
   transition: all 0.5s;
 }
 .type008 a:hover {
-  color: #FFF;
+  color: #fff;
   background-position: right center;
 }
-.type008 a:hover::after{
+.type008 a:hover::after {
   right: 1.2em;
 }
-
-
 
 .type009 a {
   color: #000;
@@ -341,20 +342,20 @@
   position: absolute;
   top: 50%;
   right: 1em;
-  margin-top:-0.4em;
+  margin-top: -0.4em;
   transition: all 0.5s;
 }
 .type009 a::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 0.2em;
-  display:block;
-  background: rgba(0,0,0,.6);
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
   position: absolute;
-  top:100%;
+  top: 100%;
   left: 0;
   border-radius: 0.1em;
-  transition: .4s;
+  transition: 0.4s;
 }
 .type009 a:hover {
   color: #000;
@@ -364,4 +365,416 @@
 }
 .type009 a:hover::before {
   top: calc(100% - 0.2em);
+}
+
+.type010 a {
+  color: #000;
+  background-image: linear-gradient(-45deg, #f0f0f0, #ebebeb);
+  border-top: #fff solid 1px;
+  border-left: #ebebeb solid 1px;
+  border-right: #ebebeb solid 1px;
+  border-bottom: #ccc solid 1px;
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0.6em 3em 0.6em 1.6em;
+  border-radius: 0.25em;
+  vertical-align: bottom;
+  position: relative;
+  box-shadow: 0 1.31em 0 0 rgba(255, 255, 255, 0.5) inset;
+  transition: 0.3s all ease;
+}
+.type010 a::after {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  display: block;
+  background: url("/img/icon/chevron-circle-right.svg") no-repeat center center;
+  background-size: 100% auto;
+  position: absolute;
+  top: 50%;
+  right: 1.4em;
+  margin-top: -0.4em;
+  transition: 0.3s all ease;
+}
+.type010 a:hover {
+  color: #000;
+  box-shadow: 0 1.31em 0 0 rgba(255, 255, 255, 0.2) inset;
+}
+.type010 a:hover::after {
+  right: 1.2em;
+}
+
+.type011 a {
+  color: #cccccc;
+  background-color: #000;
+  background-image: -webkit-linear-gradient(135deg, #000, #666666);
+  background-image: linear-gradient(-45deg, #000, #666666);
+  border-top: #666666 solid 1px;
+  border-left: #4d4d4d solid 1px;
+  border-right: #4d4d4d solid 1px;
+  border-bottom: #000 solid 1px;
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0.6em 3em 0.6em 1.6em;
+  border-radius: 0.25em;
+  vertical-align: bottom;
+  box-shadow: 0 1.31em 0 0 rgba(255, 255, 255, 0.1) inset;
+  transition: 0.3s all ease;
+  position: relative;
+}
+.type011 a::after {
+  content: "";
+  width: 0.4em;
+  height: 0.8em;
+  display: block;
+  background: url("/img/icon/angle-right.svg") no-repeat center center;
+  background-size: 100% auto;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+    hue-rotate(228deg) brightness(106%) contrast(101%);
+  position: absolute;
+  top: 50%;
+  right: 1.4em;
+  margin-top: -0.4em;
+  transition: 0.3s all ease;
+}
+.type011 a:hover {
+  color: #fff;
+  background-image: linear-gradient(-45deg, #1a1a1a, #666666);
+  box-shadow: 0 1.31em 0 0 rgba(255, 255, 255, 0.05) inset;
+}
+.type011 a:hover::after {
+  right: 1.2em;
+}
+
+.type012 a {
+  color: #fff;
+  background-color: #333333;
+  border: #1a1a1a solid 2px;
+  border-bottom: #0d0d0d solid 2px;
+  box-shadow: 0 1px 1px -1px rgba(255, 255, 255, 0.9) inset,
+    0 40px 20px -20px rgba(255, 255, 255, 0.15) inset,
+    0 -1px 1px -1px rgba(0, 0, 0, 0.7) inset,
+    0 -40px 20px -20px rgba(0, 0, 0, 0.06) inset;
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0.5em 3em 0.5em 1.8em;
+  font-weight: normal;
+  border-radius: 0.2em;
+  vertical-align: bottom;
+  overflow: hidden;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s all ease;
+  position: relative;
+}
+.type012 a::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: rotate(-19deg) translateY(-1.3em) scale(1.05);
+  filter: blur(1px);
+  background-image: linear-gradient(
+    -90deg,
+    rgba(255, 255, 255, 0.12) 20%,
+    rgba(255, 255, 255, 0)
+  );
+  transition: 0.3s all ease;
+}
+.type012 a::after {
+  content: "";
+  width: 0.4em;
+  height: 0.8em;
+  display: block;
+  background: url("/img/icon/caret-right.svg") no-repeat center center;
+  background-size: 100% auto;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+    hue-rotate(228deg) brightness(106%) contrast(101%);
+  position: absolute;
+  top: 50%;
+  right: 1.4em;
+  margin-top: -0.4em;
+  transition: all 0.5s;
+}
+.type012 a:hover {
+  color: #fff;
+  transition: all 0.5s;
+  background-color: #000;
+}
+.type012 a:hover::after {
+  right: 1.2em;
+}
+
+.type013 a {
+  color: #000;
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0.5em 3em 0.5em 2.2em;
+  background: transparent;
+  border-radius: 1.46em;
+  vertical-align: bottom;
+  position: relative;
+  background-color: #ccc;
+  background-image: linear-gradient(0deg, #e0e0e0, #fafafa);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.2),
+    0 2px 7px rgba(0, 0, 0, 0.3);
+  transition: 0.3s all ease;
+}
+.type013 a::after {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  display: block;
+  background: url("/img/icon/arrow-circle-o-right.svg") no-repeat center center;
+  background-size: 100% auto;
+  position: absolute;
+  top: 50%;
+  right: 1.4em;
+  margin-top: -0.4em;
+  transition: 0.3s all ease;
+}
+.type013 a:hover {
+  color: #000;
+  background-color: #ccc;
+  background-image: linear-gradient(0deg, #eee, #ddd);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.1),
+    0 2px 7px rgba(0, 0, 0, 0.1);
+}
+.type013 a:hover::after {
+  right: 1em;
+}
+
+.type014 a {
+  color: #000;
+  border: #000 solid 2px;
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0.5em 3em 0.5em 1.8em;
+  background: transparent;
+  border-radius: 1.4em;
+  vertical-align: bottom;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s all ease;
+}
+.type014 a::after {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  display: block;
+  background: url("/img/icon/arrow-circle-right.svg") no-repeat center center;
+  background-size: 100% auto;
+  position: absolute;
+  top: 50%;
+  right: 1.4em;
+  margin-top: -0.4em;
+  transition: 0.3s all ease;
+}
+.type014 a:hover {
+  color: #fff;
+  background-color: #000;
+}
+.type014 a:hover::after {
+  right: 1em;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+    hue-rotate(228deg) brightness(106%) contrast(101%);
+}
+
+.type015 {
+  position: relative;
+  display: inline-block;
+}
+.type015::before {
+  content: "";
+  width: 0.4em;
+  height: 0.8em;
+  display: block;
+  background: url("/img/icon/angle-right.svg") no-repeat center center;
+  background-size: 100% auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.4em;
+  margin-left: 3.2em;
+  transition: 0.3s all ease;
+}
+.type015:hover::before {
+  margin-left: 3.5em;
+}
+.type015 a {
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0.8em 2.5em 0.8em 1.8em;
+  position: relative;
+  border: #000 solid 1px;
+}
+.type015 a::before {
+  content: "";
+  border: #000 solid 1px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+}
+.type015 a::after {
+  content: "";
+  border: #000 solid 1px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+}
+.type015 a:hover {
+  color: #666;
+}
+
+.type016 a {
+  color: ＃000;
+  box-shadow: 0 3px 0 0 #ccc, 0 4px 4px -1px rgba(0, 0, 0, 0.6),
+    0 4px 6px 1px rgba(0, 0, 0, 0.3), 0 1px 2px 1px rgba(0, 0, 0, 0) inset,
+    0 18px 32px -2px rgba(255, 255, 255, 0.1) inset;
+  background-color: #fff;
+  background-image: linear-gradient(-45deg, #fafafa, #ebebeb);
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0.8em 3em 0.8em 1.6em;
+  border-width: 0;
+  border-style: solid;
+  border-radius: 0.27em;
+  vertical-align: bottom;
+  transition: 0.3s all ease;
+  position: relative;
+}
+.type016 a::after {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  display: block;
+  background: url("/img/icon/arrow-circle-right.svg") no-repeat center center;
+  background-size: 100% auto;
+  position: absolute;
+  top: 50%;
+  right: 1.4em;
+  margin-top: -0.4em;
+  transition: 0.3s all ease;
+}
+.type016 a:hover {
+  color: #000;
+  box-shadow: 0 3px 0 0 #ccc, 0 6px 4px -1px rgba(0, 0, 0, 0.3),
+    0 4px 16px rgba(0, 0, 0, 0.5), 0 1px 2px 1px rgba(0, 0, 0, 0) inset,
+    0 18px 32px -2px rgba(255, 255, 255, 0.14) inset;
+}
+.type016 a:hover::after {
+  right: 1em;
+}
+.type016 a:hover:active {
+  box-shadow: 0 0px 0 0 #ccc, 0 3px 0 0 rgba(0, 0, 0, 0),
+    0 4px 16px rgba(0, 0, 0, 0), 0 1px 2px 1px rgba(0, 0, 0, 0.5) inset,
+    0 -18px 32px -2px rgba(255, 255, 255, 0.1) inset;
+  transition: 0s;
+  color: #ccc;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(3px);
+}
+
+.type017 a {
+  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 1), 0 4px 4px -1px rgba(0, 0, 0, 0.6),
+    0 4px 6px 1px rgba(0, 0, 0, 0.3), 0 1px 2px 1px rgba(0, 0, 0, 0) inset,
+    0 18px 32px -2px rgba(255, 255, 255, 0.1) inset;
+  background-color: #000;
+  background-image: linear-gradient(-45deg, #1a1a1a, #333333);
+  color: #fff;
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0.8em 3em 0.8em 1.6em;
+  border-width: 0;
+  border-style: solid;
+  border-radius: 0.27em;
+  vertical-align: bottom;
+  transition: 0.3s all ease;
+  position: relative;
+}
+.type017 a::after {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  display: block;
+  background: url("/img/icon/arrow-circle-right.svg") no-repeat center center;
+  background-size: 100% auto;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+    hue-rotate(228deg) brightness(106%) contrast(101%);
+  position: absolute;
+  top: 50%;
+  right: 1.4em;
+  margin-top: -0.4em;
+  transition: 0.3s all ease;
+}
+.type017 a:hover {
+  color: #fff;
+  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 1), 0 6px 4px -1px rgba(0, 0, 0, 0.3),
+    0 4px 16px rgba(0, 0, 0, 0.5), 0 1px 2px 1px rgba(0, 0, 0, 0) inset,
+    0 18px 32px -2px rgba(255, 255, 255, 0.14) inset;
+}
+.type017 a:hover::after {
+  right: 1em;
+}
+.type017 a:hover:active {
+  box-shadow: 0 0px 0 0 rgba(0, 0, 0, 1), 0 3px 0 0 rgba(0, 0, 0, 0),
+    0 4px 16px rgba(0, 0, 0, 0), 0 1px 2px 1px rgba(0, 0, 0, 0.5) inset,
+    0 -18px 32px -2px rgba(255, 255, 255, 0.1) inset;
+  transition: 0s;
+  color: #666;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(3px);
+}
+.type017 a:hover:active::after {
+  opacity: 0.4;
+}
+
+.type018 a {
+  color: #fff;
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0.8em 3em 0.8em 2.2em;
+  border-radius: 2.8em;
+  position: relative;
+  background: #aaa;
+  background: linear-gradient(135deg, #aaa 0%, #646464 99%);
+}
+.type018 a::after {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  display: block;
+  background: url("/img/icon/chevron-circle-right.svg") no-repeat center center;
+  background-size: 100% auto;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+    hue-rotate(228deg) brightness(106%) contrast(101%);
+  position: absolute;
+  top: 50%;
+  right: 1.4em;
+  margin-top: -0.4em;
+  transition: 0.3s all ease;
+}
+.type018 a::before {
+  content: "";
+  border: #fff solid 1px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 2.8em;
+}
+.type018 a:hover {
+  color: #fff;
+  opacity: 0.9;
+}
+.type018 a:hover::after {
+  right: 1em;
+  color: #fff;
 }

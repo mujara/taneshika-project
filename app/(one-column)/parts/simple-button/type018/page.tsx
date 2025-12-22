@@ -6,7 +6,7 @@ import Topicpath from "@/app/_components/Topicpath";
 
 // ページ情報
 const data = {
-  title: "シンプルなボタン 8",
+  title: "シンプルなボタン 18",
   description: "様々なデザインの文字主体のシンプルなボタン",
   image: "/img/sample.jpg",
   classification01: "parts",
@@ -53,7 +53,7 @@ export default async function Page() {
               <Link href={`/parts/simple-button`}>戻る</Link>
             </div>
 
-            <div className={`tC sM-l ${styles.type008}`}>
+            <div className={`tC sM-l ${styles.type018}`}>
               <a href="#">詳細はこちら</a>
             </div>
 
@@ -71,29 +71,21 @@ export default async function Page() {
               <code className="language-css">
                 {`
 .simpleButton a {
-  color: #cccccc;
-  background-color: #000;
-  background-image: -webkit-linear-gradient(135deg, #000, #666666);
-  background-image: linear-gradient(-45deg, #000, #666666);
-  border-top: #666666 solid 1px;
-  border-left: #4d4d4d solid 1px;
-  border-right: #4d4d4d solid 1px;
-  border-bottom: #000 solid 1px;
+  color: #fff;
   display: inline-block;
   line-height: 1.4em;
-  padding: 0.6em 3em 0.6em 1.6em;
-  border-radius: 0.25em;
-  vertical-align: bottom;
-  box-shadow: 0 1.31em 0 0 rgba(255, 255, 255, 0.1) inset;
-  transition: 0.3s all ease;
+  padding: 0.8em 3em 0.8em 2.2em;
+  border-radius: 2.8em;
   position: relative;
+  background: #aaa;
+  background: linear-gradient(135deg, #aaa 0%, #646464 99%);
 }
 .simpleButton a::after {
   content: "";
-  width: 0.4em;
+  width: 0.8em;
   height: 0.8em;
   display: block;
-  background: url("/img/icon/angle-right.svg") no-repeat center center;
+  background: url("/img/icon/chevron-circle-right.svg") no-repeat center center;
   background-size: 100% auto;
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
     hue-rotate(228deg) brightness(106%) contrast(101%);
@@ -103,13 +95,23 @@ export default async function Page() {
   margin-top: -0.4em;
   transition: 0.3s all ease;
 }
+.simpleButton a::before {
+  content: "";
+  border: #fff solid 1px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 2.8em;
+}
 .simpleButton a:hover {
   color: #fff;
-  background-image: linear-gradient(-45deg, #1a1a1a, #666666);
-  box-shadow: 0 1.31em 0 0 rgba(255, 255, 255, 0.05) inset;
+  opacity: 0.9;
 }
 .simpleButton a:hover::after {
-  right: 1.2em;
+  right: 1em;
+  color: #fff;
 }
               `}
               </code>
@@ -119,51 +121,53 @@ export default async function Page() {
               <code className="language-sass">
                 {`
 .simpleButton a {
-	color: #cccccc;
-	background-color: #000;
-	background-image: -webkit-linear-gradient(135deg, #000, #666666);
-	background-image: linear-gradient(-45deg, #000, #666666);
-	border-top: #666666 solid 1px;
-	border-left: #4d4d4d solid 1px;
-	border-right: #4d4d4d solid 1px;
-	border-bottom: #000 solid 1px;
-	display: inline-block;
-	line-height: 1.4em;
-	padding: 0.6em 3em 0.6em 1.6em;
-	border-radius: 0.25em;
-	vertical-align: bottom;
-	box-shadow: 0 1.31em 0 0 rgba(255, 255, 255, 0.1) inset;
-	transition: 0.3s all ease;
-	position: relative;
-	&::after {
-		content: "";
-		width: 0.4em;
-		height: 0.8em;
-		display: block;
-		background: url("/img/icon/angle-right.svg") no-repeat center center;
-		background-size: 100% auto;
-		filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
-			hue-rotate(228deg) brightness(106%) contrast(101%);
-		position: absolute;
-		top: 50%;
-		right: 1.4em;
-		margin-top: -0.4em;
-		transition: 0.3s all ease;
-	}
-	&:hover {
-		color: #fff;
-		background-image: linear-gradient(-45deg, #1a1a1a, #666666);
-		box-shadow: 0 1.31em 0 0 rgba(255, 255, 255, 0.05) inset;
-		&::after {
-			right: 1.2em;
-		}
-	}
+  color: #fff;
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0.8em 3em 0.8em 2.2em;
+  border-radius: 2.8em;
+  position: relative;
+  background: #aaa;
+  background: linear-gradient(135deg, #aaa 0%, #646464 99%);
+  &::after {
+    content: "";
+    width: 0.8em;
+    height: 0.8em;
+    display: block;
+    background: url("/img/icon/chevron-circle-right.svg") no-repeat center center;
+    background-size: 100% auto;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+      hue-rotate(228deg) brightness(106%) contrast(101%);
+    position: absolute;
+    top: 50%;
+    right: 1.4em;
+    margin-top: -0.4em;
+    transition: 0.3s all ease;
+  }
+  &::before {
+    content: "";
+    border: #fff solid 1px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    border-radius: 2.8em;
+  }
+  &:hover {
+    color: #fff;
+    opacity: 0.9;
+    &::after {
+      right: 1em;
+      color: #fff;
+    }
+  }
 }
                 `}
               </code>
             </pre>
             <div className="button--typeDownLoad sM-l tC">
-              <a href="/img/icon/angle-right.svg" download="icon">
+              <a href="/img/icon/chevron-circle-right.svg" download="icon">
                 画像アイコンデータ　ダウンロード
               </a>
             </div>

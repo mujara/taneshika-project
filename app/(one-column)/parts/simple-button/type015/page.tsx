@@ -6,7 +6,7 @@ import Topicpath from "@/app/_components/Topicpath";
 
 // ページ情報
 const data = {
-  title: "シンプルなボタン 8",
+  title: "シンプルなボタン 15",
   description: "様々なデザインの文字主体のシンプルなボタン",
   image: "/img/sample.jpg",
   classification01: "parts",
@@ -53,8 +53,10 @@ export default async function Page() {
               <Link href={`/parts/simple-button`}>戻る</Link>
             </div>
 
-            <div className={`tC sM-l ${styles.type008}`}>
-              <a href="#">詳細はこちら</a>
+            <div className={`tC sM-l`}>
+              <div className={`${styles.type015}`}>
+                <a href="#">詳細はこちら</a>
+              </div>
             </div>
 
             <pre>
@@ -70,47 +72,56 @@ export default async function Page() {
             <pre>
               <code className="language-css">
                 {`
-.simpleButton a {
-  color: #cccccc;
-  background-color: #000;
-  background-image: -webkit-linear-gradient(135deg, #000, #666666);
-  background-image: linear-gradient(-45deg, #000, #666666);
-  border-top: #666666 solid 1px;
-  border-left: #4d4d4d solid 1px;
-  border-right: #4d4d4d solid 1px;
-  border-bottom: #000 solid 1px;
-  display: inline-block;
-  line-height: 1.4em;
-  padding: 0.6em 3em 0.6em 1.6em;
-  border-radius: 0.25em;
-  vertical-align: bottom;
-  box-shadow: 0 1.31em 0 0 rgba(255, 255, 255, 0.1) inset;
-  transition: 0.3s all ease;
+.simpleButton {
   position: relative;
+  display: inline-block;
 }
-.simpleButton a::after {
+.simpleButton::before {
   content: "";
   width: 0.4em;
   height: 0.8em;
   display: block;
   background: url("/img/icon/angle-right.svg") no-repeat center center;
   background-size: 100% auto;
-  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
-    hue-rotate(228deg) brightness(106%) contrast(101%);
   position: absolute;
   top: 50%;
-  right: 1.4em;
+  left: 50%;
   margin-top: -0.4em;
+  margin-left: 3.2em;
   transition: 0.3s all ease;
 }
+.simpleButton:hover::before {
+  margin-left: 3.5em;
+}
+.simpleButton a {
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0.8em 2.5em 0.8em 1.8em;
+  position: relative;
+  border: #000 solid 1px;
+}
+.simpleButton a::before {
+  content: "";
+  border: #000 solid 1px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+}
+.simpleButton a::after {
+  content: "";
+  border: #000 solid 1px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+}
 .simpleButton a:hover {
-  color: #fff;
-  background-image: linear-gradient(-45deg, #1a1a1a, #666666);
-  box-shadow: 0 1.31em 0 0 rgba(255, 255, 255, 0.05) inset;
+  color: #666;
 }
-.simpleButton a:hover::after {
-  right: 1.2em;
-}
+
               `}
               </code>
             </pre>
@@ -118,46 +129,56 @@ export default async function Page() {
             <pre>
               <code className="language-sass">
                 {`
-.simpleButton a {
-	color: #cccccc;
-	background-color: #000;
-	background-image: -webkit-linear-gradient(135deg, #000, #666666);
-	background-image: linear-gradient(-45deg, #000, #666666);
-	border-top: #666666 solid 1px;
-	border-left: #4d4d4d solid 1px;
-	border-right: #4d4d4d solid 1px;
-	border-bottom: #000 solid 1px;
-	display: inline-block;
-	line-height: 1.4em;
-	padding: 0.6em 3em 0.6em 1.6em;
-	border-radius: 0.25em;
-	vertical-align: bottom;
-	box-shadow: 0 1.31em 0 0 rgba(255, 255, 255, 0.1) inset;
-	transition: 0.3s all ease;
-	position: relative;
-	&::after {
-		content: "";
-		width: 0.4em;
-		height: 0.8em;
-		display: block;
-		background: url("/img/icon/angle-right.svg") no-repeat center center;
-		background-size: 100% auto;
-		filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
-			hue-rotate(228deg) brightness(106%) contrast(101%);
-		position: absolute;
-		top: 50%;
-		right: 1.4em;
-		margin-top: -0.4em;
-		transition: 0.3s all ease;
-	}
-	&:hover {
-		color: #fff;
-		background-image: linear-gradient(-45deg, #1a1a1a, #666666);
-		box-shadow: 0 1.31em 0 0 rgba(255, 255, 255, 0.05) inset;
-		&::after {
-			right: 1.2em;
-		}
-	}
+.simpleButton {
+  position: relative;
+  display: inline-block;
+  &::before {
+    content: "";
+    width: 0.4em;
+    height: 0.8em;
+    display: block;
+    background: url("/img/icon/angle-right.svg") no-repeat center center;
+    background-size: 100% auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -0.4em;
+    margin-left: 3.2em;
+    transition: 0.3s all ease;
+  }
+  &:hover{
+    &::before {
+      margin-left: 3.5em;
+    }
+  }
+  a{
+    display: inline-block;
+    line-height: 1.4em;
+    padding: 0.8em 2.5em 0.8em 1.8em;
+    position: relative;
+    border: #000 solid 1px;
+    &::before {
+      content: "";
+      border: #000 solid 1px;
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+    }
+    &::after {
+      content: "";
+      border: #000 solid 1px;
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: calc(100% - 6px);
+      height: calc(100% - 6px);
+    }
+    &:hover{
+      color: #666;
+    }
+  }
 }
                 `}
               </code>

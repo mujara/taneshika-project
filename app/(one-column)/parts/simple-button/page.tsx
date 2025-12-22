@@ -97,13 +97,51 @@ export default async function Page() {
               </div>
               <div className={styles.simpleButton}>
                 <div className={styles.type010}>
-                  <a href="#">詳細はこちら</a>
+                  <Link href="/parts/simple-button/type010">詳細はこちら</Link>
+                </div>
+              </div>
+              <div className={styles.simpleButton}>
+                <div className={styles.type011}>
+                  <Link href="/parts/simple-button/type011">詳細はこちら</Link>
+                </div>
+              </div>
+              <div className={styles.simpleButton}>
+                <div className={styles.type012}>
+                  <Link href="/parts/simple-button/type012">詳細はこちら</Link>
+                </div>
+              </div>
+              <div className={styles.simpleButton}>
+                <div className={styles.type013}>
+                  <Link href="/parts/simple-button/type013">詳細はこちら</Link>
+                </div>
+              </div>
+              <div className={styles.simpleButton}>
+                <div className={styles.type014}>
+                  <Link href="/parts/simple-button/type014">詳細はこちら</Link>
+                </div>
+              </div>
+              <div className={styles.simpleButton}>
+                <div className={styles.type015}>
+                  <Link href="/parts/simple-button/type015">詳細はこちら</Link>
+                </div>
+              </div>
+              <div className={styles.simpleButton}>
+                <div className={styles.type016}>
+                  <Link href="/parts/simple-button/type016">詳細はこちら</Link>
+                </div>
+              </div>
+              <div className={styles.simpleButton}>
+                <div className={styles.type017}>
+                  <Link href="/parts/simple-button/type017">詳細はこちら</Link>
+                </div>
+              </div>
+              <div className={styles.simpleButton}>
+                <div className={styles.type018}>
+                  <Link href="/parts/simple-button/type018">詳細はこちら</Link>
                 </div>
               </div>
             </div>
 
-
-            
             <div className="button--typeBack sM-l">
               <Link href={`/parts`}>戻る</Link>
             </div>

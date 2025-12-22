@@ -351,11 +351,12 @@ export default function HomeAboutBox() {
             </span>
           </p>
           <p>
-            Thank you for visiting.
+            {`My favorite foods are okonomiyaki, deep-fried tofu, and grilled ray
+            fin.`}
             <br />
-            This site serves as a memo pad, an output platform, <br />
-            and a storage repository for parts related to AraRiver&apos;s
-            creations.
+            {`When I'm outside, I always want to go home.`}
+            <br />
+            {`Even sometimes when I'm at home, I still want to go home.`}
           </p>
           {/* /.homeAboutBox__content */}
         </div>
