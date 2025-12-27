@@ -44,30 +44,67 @@ export default async function Page() {
       <div className="contents__mainInner --typeFullSize">
         <div className="inBase">
           <div className="inBase__inner">
-
             <div className="column--type01">
               <ul className="list--type01 sM-l">
-                <li><Link href="/parts/simple-button">シンプルなボタン</Link></li>
-                <li><Link href="/parts/image-button">画像・イメージを使用したボタン</Link></li>
-                <li><Link href="/parts/divider">区切り線</Link></li>
-                <li><Link href="/parts/headline">見出し</Link></li>
-                <li><Link href="/parts/image-frame">画像の縁・フレーム・額</Link></li>
-                <li><Link href="/parts/accordion-parts">アコーディオンパーツ</Link></li>
-                <li><Link href="/parts/gallery-parts">ギャラリーパーツ</Link></li>
-                <li><Link href="/parts/tab-parts">タブ切り替えパーツ</Link></li>
-                <li><Link href="/parts/hamburger-button">ハンバーガーボタン</Link></li>
-                <li><Link href="/parts/global-navi">グローバルナビ</Link></li>
-                <li><Link href="/parts/contents-navi">コンテンツ内ナビ</Link></li>
-                <li><Link href="/parts/smartphone-navi">スマートフォン用ナビ</Link></li>
-                <li><Link href="/parts/speech-bubble">ふきだし</Link></li>
-                <li><Link href="/parts/flow-parts">手順や流れの表示</Link></li>
-                <li><Link href="/parts/call-to-action">お問い合わせパーツ</Link></li>
-                <li><Link href="/parts/plan-parts">プランの表示</Link></li>
-                <li><Link href="/parts/archive-list">記事リスト</Link></li>
+                <li>
+                  <Link href="/parts/simple-button">シンプルなボタン</Link>
+                </li>
+                <li>
+                  <Link href="/parts/image-button">
+                    画像・イメージを使用したボタン
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/parts/divider">区切り線</Link>
+                </li>
+                <li>
+                  <Link href="/parts/headline">見出し</Link>
+                </li>
+                <li>
+                  <Link href="/parts/image-frame">画像の縁・フレーム・額</Link>
+                </li>
+                <li>
+                  <Link href="/parts/accordion-parts">
+                    開閉を利用したパーツ
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/parts/gallery-parts">ギャラリーパーツ</Link>
+                </li>
+                <li>
+                  <Link href="/parts/tab-parts">タブ切り替えパーツ</Link>
+                </li>
+                <li>
+                  <Link href="/parts/hamburger-button">ハンバーガーボタン</Link>
+                </li>
+                <li>
+                  <Link href="/parts/global-navi">グローバルナビ</Link>
+                </li>
+                <li>
+                  <Link href="/parts/contents-navi">コンテンツ内ナビ</Link>
+                </li>
+                <li>
+                  <Link href="/parts/smartphone-navi">
+                    スマートフォン用ナビ
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/parts/speech-bubble">ふきだし</Link>
+                </li>
+                <li>
+                  <Link href="/parts/flow-parts">手順や流れの表示</Link>
+                </li>
+                <li>
+                  <Link href="/parts/call-to-action">お問い合わせパーツ</Link>
+                </li>
+                <li>
+                  <Link href="/parts/plan-parts">プランの表示</Link>
+                </li>
+                <li>
+                  <Link href="/parts/archive-list">記事リスト</Link>
+                </li>
               </ul>
             </div>
-
-            
           </div>
         </div>
       </div>
