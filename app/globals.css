@@ -1727,6 +1727,9 @@ html {
   -webkit-transform: rotate(-20deg);
   transform: rotate(-20deg);
 }
+#wrapper .button--typeDownLoad a > .icon01 {
+  margin-top: 0.7em;
+}
 
 #wrapper .button--typeBack {
   display: block;
@@ -4056,6 +4059,7 @@ a.over:hover {
   display: block;
   background: none;
   margin: 0;
+  border: none;
 }
 #wrapper .globalNaviSmall__check {
   display: none;

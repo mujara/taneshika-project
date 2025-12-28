@@ -6,7 +6,7 @@ import Topicpath from "@/app/_components/Topicpath";
 
 // ページ情報
 const data = {
-  title: "開閉を利用したパーツ 1",
+  title: "開閉を利用したパーツ 3",
   description: "様々なデザインの開閉を利用したアコーディオンのパーツ",
   image: "/img/sample.jpg",
   classification01: "parts",
@@ -55,12 +55,16 @@ export default async function Page() {
 
             <div className="column--type01">
               <div
-                className={`sM-l w80-pc sC ${styles["accordionBox--type01"]}`}
+                className={`sM-l w80-pc sC ${styles["accordionBox--type03"]}`}
               >
                 <div className={styles.accordion}>
-                  <input type="checkbox" id="accordion--type01__label001" />
-                  <label htmlFor="accordion--type01__label001">
-                    項目タイトル 01
+                  <input type="checkbox" id="accordion--type03__label001" />
+                  <label htmlFor="accordion--type03__label001">
+                    <span>項目タイトル 01</span>
+                    <div className={styles["accordion__icon"]}>
+                      <div></div>
+                      <div></div>
+                    </div>
                   </label>
                   <div className={styles["accordion__content"]}>
                     「accordion__content」というクラス名の中に隠す内容を入れる。
@@ -70,9 +74,13 @@ export default async function Page() {
                 </div>
 
                 <div className={styles.accordion}>
-                  <input type="checkbox" id="accordion--type01__label002" />
-                  <label htmlFor="accordion--type01__label002">
-                    項目タイトル 02
+                  <input type="checkbox" id="accordion--type03__label002" />
+                  <label htmlFor="accordion--type03__label002">
+                    <span>項目タイトル 02</span>
+                    <div className={styles["accordion__icon"]}>
+                      <div></div>
+                      <div></div>
+                    </div>
                   </label>
                   <div className={styles["accordion__content"]}>
                     「accordion__content」というクラス名の中に隠す内容を入れる。
@@ -82,9 +90,13 @@ export default async function Page() {
                 </div>
 
                 <div className={styles.accordion}>
-                  <input type="checkbox" id="accordion--type01__label003" />
-                  <label htmlFor="accordion--type01__label003">
-                    項目タイトル 03
+                  <input type="checkbox" id="accordion--type03__label003" />
+                  <label htmlFor="accordion--type03__label003">
+                    <span>項目タイトル 03</span>
+                    <div className={styles["accordion__icon"]}>
+                      <div></div>
+                      <div></div>
+                    </div>
                   </label>
                   <div className={styles["accordion__content"]}>
                     「accordion__content」というクラス名の中に隠す内容を入れる。
@@ -104,11 +116,18 @@ export default async function Page() {
             <pre>
               <code className="language-html">
                 {`
-<div class="accordionBox--type01">
+<div class="accordionBox--type03">
   <!--項目ここから-->
   <div class="accordion">
-    <input type="checkbox" id="accordion--type01__label001" />
-    <label for="accordion--type01__label001">項目タイトル 01</label>
+    <input type="checkbox" id="accordion--type03__label001" />
+    <label for="accordion--type03__label001">
+      <span>項目タイトル 01</span>
+      <div class="accordion__icon">
+        <div></div>
+        <div></div>
+        <!-- /.accordion__icon -->
+      </div>
+    </label>
     <div class="accordion__content">
       <!--隠す中身ここから-->
       項目タイトルをクリックすると現れる内容はここに書く。
@@ -121,8 +140,15 @@ export default async function Page() {
 
   <!--項目ここから-->
   <div class="accordion">
-    <input type="checkbox" id="accordion--type01__label002" />
-    <label for="accordion--type01__label002">項目タイトル 02</label>
+    <input type="checkbox" id="accordion--type03__label002" />
+    <label for="accordion--type03__label002">
+      <span>項目タイトル 02</span>
+      <div class="accordion__icon">
+        <div></div>
+        <div></div>
+        <!-- /.accordion__icon -->
+      </div>
+    </label>
     <div class="accordion__content">
       <!--隠す中身ここから-->
       項目タイトルをクリックすると現れる内容はここに書く。
@@ -135,8 +161,15 @@ export default async function Page() {
 
   <!--項目ここから-->
   <div class="accordion">
-    <input type="checkbox" id="accordion--type01__label003" />
-    <label for="accordion--type01__label003">項目タイトル 03</label>
+    <input type="checkbox" id="accordion--type03__label003" />
+    <label for="accordion--type03__label003">
+      <span>項目タイトル 03</span>
+      <div class="accordion__icon">
+        <div></div>
+        <div></div>
+        <!-- /.accordion__icon -->
+      </div>
+    </label>
     <div class="accordion__content">
       <!--隠す中身ここから-->
       項目タイトルをクリックすると現れる内容はここに書く。
@@ -155,51 +188,55 @@ export default async function Page() {
             <pre>
               <code className="language-css">
                 {`
-.accordionBox--type01 {
-  border-radius: 0.5em;
+.accordionBox--type03 {
   overflow: hidden;
-  border: #000 solid 1px;
 }
-.accordionBox--type01 .accordion + .accordion {
-  border-top: #000 solid 1px;
-}
-.accordionBox--type01 .accordion > label {
+.accordionBox--type03 .accordion > label {
   display: block;
-  padding: 0.9em 1em;
-  color: #000;
+  padding: 1em 5em 1em 3em;
   background: #fff;
   cursor: pointer;
-  transition: all 0.5s;
+  transition: 0.3s all ease;
+  border-radius: 3.7em;
   position: relative;
+  box-shadow: 0px 0px 0.5em rgba(0, 0, 0, 0.2);
+  margin: 0.5em;
 }
-.accordionBox--type01 .accordion > label::after {
-  content: "";
-  width: 0.8em;
-  height: 0.8em;
+.accordionBox--type03 .accordion > label:hover {
+  background: #efefef;
+}
+.accordionBox--type03 .accordion > label .accordion__icon {
+  width: 1em;
+  height: 2px;
   display: block;
-  border-right: #000 solid 0.2em;
-  border-bottom: #000 solid 0.2em;
-  transform: rotate(45deg);
   position: absolute;
+  right: 2em;
   top: 50%;
-  right: 1.4em;
-  margin-top: -0.4em;
-  transition: all 0.5s;
+  margin-top: -1px;
 }
-.accordionBox--type01 .accordion > label:hover {
-  background: #ddd;
+.accordionBox--type03 .accordion > label .accordion__icon > div {
+  background: #000;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.4s ease;
 }
-.accordionBox--type01 .accordion > input[type="checkbox"] {
+.accordionBox--type03 .accordion > label .accordion__icon > div:last-child {
+  transform: rotate(90deg);
+}
+.accordionBox--type03 .accordion > input[type="checkbox"] {
   display: none;
 }
-.accordionBox--type01 .accordion > .accordion__content {
+.accordionBox--type03 .accordion > .accordion__content {
   height: 0;
   padding: 0;
   overflow: hidden;
   opacity: 0;
   transition: 0.5s;
 }
-.accordionBox--type01
+.accordionBox--type03
   .accordion
   > input[type="checkbox"]:checked
   + label
@@ -208,14 +245,24 @@ export default async function Page() {
   padding: 0.5em 1em;
   opacity: 1;
 }
-.accordionBox--type01 .accordion > input[type="checkbox"]:checked + label {
+.accordionBox--type03 .accordion > input[type="checkbox"]:checked + label {
   background: #ddd;
+  color: #000;
 }
-.accordionBox--type01
+.accordionBox--type03
   .accordion
   > input[type="checkbox"]:checked
-  + label::after {
-  transform: scale(1, -1) rotate(45deg);
+  + label:hover {
+  background: #ddd;
+  color: #000;
+}
+.accordionBox--type03
+  .accordion
+  > input[type="checkbox"]:checked
+  + label
+  .accordion__icon
+  div:last-child {
+  transform: none;
 }
               `}
               </code>
@@ -224,66 +271,82 @@ export default async function Page() {
             <pre>
               <code className="language-sass">
                 {`
-.accordionBox--type01 {
-	border-radius: 0.5em;
-	overflow: hidden;
-	border: #000 solid 1px;
-	.accordion{
-		&+ .accordion {
-			border-top: #000 solid 1px;
-		}
-		&> label {
-			display: block;
-			padding: 0.9em 1em;
-			color: #000;
-			background: #fff;
-			cursor: pointer;
-			transition: all 0.5s;
-			position: relative;
-			&::after {
-				content: "";
-				width: 0.8em;
-				height: 0.8em;
-				display: block;
-				border-right: #000 solid 0.2em;
-				border-bottom: #000 solid 0.2em;
-				transform: rotate(45deg);
-				position: absolute;
-				top: 50%;
-				right: 1.4em;
-				margin-top: -0.4em;
-				transition: all 0.5s;
-			}
-			&:hover{
-				background: #ddd;
-			}
-		}
-		&> input[type="checkbox"] {
-			display: none;
-			&:checked + label{
-				background: #ddd;
-				&+ .accordion__content {
-					height: auto;
-					padding: 0.5em 1em;
-					opacity: 1;
-				}
-				&::after{
-					transform: scale(1, -1) rotate(45deg);
-				}
-			}
-		}
-		&> .accordion__content {
-			height: 0;
-			padding: 0;
-			overflow: hidden;
-			opacity: 0;
-			transition: 0.5s;
-		}
-	}
+.accordionBox--type03 {
+  overflow: hidden;
+  .accordion {
+    & > label {
+      display: block;
+      padding: 1em 5em 1em 3em;
+      background: #fff;
+      cursor: pointer;
+      transition: 0.3s all ease;
+      border-radius: 3.7em;
+      position: relative;
+      box-shadow: 0px 0px 0.5em rgba(0, 0, 0, 0.2);
+      margin: 0.5em;
+      &:hover {
+        background: #efefef;
+      }
+      .accordion__icon {
+        width: 1em;
+        height: 2px;
+        display: block;
+        position: absolute;
+        right: 2em;
+        top: 50%;
+        margin-top: -1px;
+        & > div {
+          background: #000;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          transition: 0.4s ease;
+          &:last-child {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+    & > input[type="checkbox"] {
+      display: none;
+      & + label + .accordion__content {
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: 0.5s;
+      }
+      &:checked {
+        & + label {
+          background: #ddd;
+          color: #000;
+          &:hover {
+            background: #ddd;
+            color: #000;
+          }
+          & + .accordion__content {
+            height: auto;
+            padding: 0.5em 1em;
+            opacity: 1;
+          }
+          .accordion__icon > div:last-child {
+            transform: none;
+          }
+        }
+      }
+    }
+  }
 }
                 `}
               </code>
             </pre>
+            <div className="button--typeDownLoad sM-l tC">
+              <a href="/img/icon/arrow-circle-right.svg" download="icon">
+                画像アイコンデータ　ダウンロード
+              </a>
+            </div>
 
             <div className="button--typeBack sM-l">
               <Link href={`/parts/accordion-parts`}>戻る</Link>
