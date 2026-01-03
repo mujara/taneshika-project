@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
 
 // ページ情報
 const data = {
   title: "イメージ一覧",
-  description: "WEB制作で画像やイメージに関するものを集めています。。",
+  description: "WEB制作で画像やイメージに関するものを集めています。",
   image: "/img/sample.jpg",
   classification01: "image",
   classification02: "Image",
@@ -27,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
 // ページ本体
 export default async function Page() {
   return (
-    <section className="contents__main">
+    <section className="contents__main --isFirstLevel">
       <PageTitle
         image="/img/common/iconSquare.svg"
         pageCategoty={data.classification02}
@@ -43,11 +44,13 @@ export default async function Page() {
       <div className="contents__mainInner --typeFullSize">
         <div className="inBase">
           <div className="inBase__inner">
-            <p>
-              このページは、現在鋭意製作中です。
-              <br />
-              もうしばらくお待ちください。
-            </p>
+            <div className="column--type01">
+              <ul className="list--type01 sM-l">
+                <li>
+                  <Link href="/image/icon">アイコン画像</Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

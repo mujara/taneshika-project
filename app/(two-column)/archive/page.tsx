@@ -10,7 +10,7 @@ export default async function Page() {
     limit: ARCHIVE_LIST_LIMIT,
   });
   return (
-    <section className="contents__main">
+    <section className="contents__main --isFirstLevel">
       <PageTitle image="/img/common/iconCircle.svg" pageCategoty="Archive">
         記事一覧
       </PageTitle>

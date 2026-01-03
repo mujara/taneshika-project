@@ -317,7 +317,6 @@ export default async function Page() {
                   height={16}
                 />
               </a>
-              　
             </div>
 
             <div className="button--typeBack sM-l">

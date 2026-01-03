@@ -342,11 +342,6 @@ export default async function Page() {
                 `}
               </code>
             </pre>
-            <div className="button--typeDownLoad sM-l tC">
-              <a href="/img/icon/arrow-circle-right.svg" download="icon">
-                画像アイコンデータ　ダウンロード
-              </a>
-            </div>
 
             <div className="button--typeBack sM-l">
               <Link href={`/parts/accordion-parts`}>戻る</Link>

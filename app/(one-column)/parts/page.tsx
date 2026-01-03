@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
 // ページ本体
 export default async function Page() {
   return (
-    <section className="contents__main">
+    <section className="contents__main --isFirstLevel">
       <PageTitle
         image="/img/common/iconCross.svg"
         pageCategoty={data.classification02}
