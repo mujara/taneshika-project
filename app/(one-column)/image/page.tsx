@@ -49,6 +49,9 @@ export default async function Page() {
                 <li>
                   <Link href="/image/icon">アイコン画像</Link>
                 </li>
+                <li>
+                  <Link href="/image/icon-common">よく使うアイコン</Link>
+                </li>
               </ul>
             </div>
           </div>

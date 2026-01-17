@@ -56,7 +56,8 @@ figure {
 @font-face {
   font-family: "YuGothic-M";
   font-weight: normal;
-  src: local("YuGothic-Medium"), local("Yu Gothic Medium"),
+  src:
+    local("YuGothic-Medium"), local("Yu Gothic Medium"),
     local("YuGothic-Regular");
 }
 @font-face {
@@ -70,7 +71,8 @@ html {
 
 body {
   font-size: 3.5vw;
-  font-family: -apple-system, blinkMacSystemFont, YuGothic-M, YuGothic,
+  font-family:
+    -apple-system, blinkMacSystemFont, YuGothic-M, YuGothic,
     "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "palt";
@@ -1929,8 +1931,8 @@ html {
 @media print, screen and (min-width: 768px) {
   .contents__main::before {
     content: "";
-    width: 65em;
-    height: 15em;
+    width: 125em;
+    height: 74.7em;
     left: -5em;
   }
 }
@@ -5133,7 +5135,9 @@ _:lang(x) + _:-webkit-full-screen-document,
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
+  transition:
+    transform 0.5s,
+    -webkit-transform 0.5s;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
