@@ -1931,7 +1931,7 @@ html {
 @media print, screen and (min-width: 768px) {
   .contents__main::before {
     content: "";
-    width: 125em;
+    width: 140em;
     height: 74.7em;
     left: -5em;
   }
