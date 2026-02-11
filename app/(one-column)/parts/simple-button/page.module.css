@@ -451,7 +451,8 @@
   background-color: #333333;
   border: #1a1a1a solid 2px;
   border-bottom: #0d0d0d solid 2px;
-  box-shadow: 0 1px 1px -1px rgba(255, 255, 255, 0.9) inset,
+  box-shadow:
+    0 1px 1px -1px rgba(255, 255, 255, 0.9) inset,
     0 40px 20px -20px rgba(255, 255, 255, 0.15) inset,
     0 -1px 1px -1px rgba(0, 0, 0, 0.7) inset,
     0 -40px 20px -20px rgba(0, 0, 0, 0.06) inset;
@@ -518,7 +519,9 @@
   position: relative;
   background-color: #ccc;
   background-image: linear-gradient(0deg, #e0e0e0, #fafafa);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 4px rgba(0, 0, 0, 0.2),
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.2),
+    0 1px 4px rgba(0, 0, 0, 0.2),
     0 2px 7px rgba(0, 0, 0, 0.3);
   transition: 0.3s all ease;
 }
@@ -539,7 +542,9 @@
   color: #000;
   background-color: #ccc;
   background-image: linear-gradient(0deg, #eee, #ddd);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.1),
+    0 1px 4px rgba(0, 0, 0, 0.1),
     0 2px 7px rgba(0, 0, 0, 0.1);
 }
 .type013 a:hover::after {
@@ -634,8 +639,11 @@
 
 .type016 a {
   color: ＃000;
-  box-shadow: 0 3px 0 0 #ccc, 0 4px 4px -1px rgba(0, 0, 0, 0.6),
-    0 4px 6px 1px rgba(0, 0, 0, 0.3), 0 1px 2px 1px rgba(0, 0, 0, 0) inset,
+  box-shadow:
+    0 3px 0 0 #ccc,
+    0 4px 4px -1px rgba(0, 0, 0, 0.6),
+    0 4px 6px 1px rgba(0, 0, 0, 0.3),
+    0 1px 2px 1px rgba(0, 0, 0, 0) inset,
     0 18px 32px -2px rgba(255, 255, 255, 0.1) inset;
   background-color: #fff;
   background-image: linear-gradient(-45deg, #fafafa, #ebebeb);
@@ -664,16 +672,22 @@
 }
 .type016 a:hover {
   color: #000;
-  box-shadow: 0 3px 0 0 #ccc, 0 6px 4px -1px rgba(0, 0, 0, 0.3),
-    0 4px 16px rgba(0, 0, 0, 0.5), 0 1px 2px 1px rgba(0, 0, 0, 0) inset,
+  box-shadow:
+    0 3px 0 0 #ccc,
+    0 6px 4px -1px rgba(0, 0, 0, 0.3),
+    0 4px 16px rgba(0, 0, 0, 0.5),
+    0 1px 2px 1px rgba(0, 0, 0, 0) inset,
     0 18px 32px -2px rgba(255, 255, 255, 0.14) inset;
 }
 .type016 a:hover::after {
   right: 1em;
 }
 .type016 a:hover:active {
-  box-shadow: 0 0px 0 0 #ccc, 0 3px 0 0 rgba(0, 0, 0, 0),
-    0 4px 16px rgba(0, 0, 0, 0), 0 1px 2px 1px rgba(0, 0, 0, 0.5) inset,
+  box-shadow:
+    0 0px 0 0 #ccc,
+    0 3px 0 0 rgba(0, 0, 0, 0),
+    0 4px 16px rgba(0, 0, 0, 0),
+    0 1px 2px 1px rgba(0, 0, 0, 0.5) inset,
     0 -18px 32px -2px rgba(255, 255, 255, 0.1) inset;
   transition: 0s;
   color: #ccc;
@@ -682,8 +696,11 @@
 }
 
 .type017 a {
-  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 1), 0 4px 4px -1px rgba(0, 0, 0, 0.6),
-    0 4px 6px 1px rgba(0, 0, 0, 0.3), 0 1px 2px 1px rgba(0, 0, 0, 0) inset,
+  box-shadow:
+    0 3px 0 0 rgba(0, 0, 0, 1),
+    0 4px 4px -1px rgba(0, 0, 0, 0.6),
+    0 4px 6px 1px rgba(0, 0, 0, 0.3),
+    0 1px 2px 1px rgba(0, 0, 0, 0) inset,
     0 18px 32px -2px rgba(255, 255, 255, 0.1) inset;
   background-color: #000;
   background-image: linear-gradient(-45deg, #1a1a1a, #333333);
@@ -715,16 +732,22 @@
 }
 .type017 a:hover {
   color: #fff;
-  box-shadow: 0 3px 0 0 rgba(0, 0, 0, 1), 0 6px 4px -1px rgba(0, 0, 0, 0.3),
-    0 4px 16px rgba(0, 0, 0, 0.5), 0 1px 2px 1px rgba(0, 0, 0, 0) inset,
+  box-shadow:
+    0 3px 0 0 rgba(0, 0, 0, 1),
+    0 6px 4px -1px rgba(0, 0, 0, 0.3),
+    0 4px 16px rgba(0, 0, 0, 0.5),
+    0 1px 2px 1px rgba(0, 0, 0, 0) inset,
     0 18px 32px -2px rgba(255, 255, 255, 0.14) inset;
 }
 .type017 a:hover::after {
   right: 1em;
 }
 .type017 a:hover:active {
-  box-shadow: 0 0px 0 0 rgba(0, 0, 0, 1), 0 3px 0 0 rgba(0, 0, 0, 0),
-    0 4px 16px rgba(0, 0, 0, 0), 0 1px 2px 1px rgba(0, 0, 0, 0.5) inset,
+  box-shadow:
+    0 0px 0 0 rgba(0, 0, 0, 1),
+    0 3px 0 0 rgba(0, 0, 0, 0),
+    0 4px 16px rgba(0, 0, 0, 0),
+    0 1px 2px 1px rgba(0, 0, 0, 0.5) inset,
     0 -18px 32px -2px rgba(255, 255, 255, 0.1) inset;
   transition: 0s;
   color: #666;
@@ -777,4 +800,39 @@
 .type018 a:hover::after {
   right: 1em;
   color: #fff;
+}
+
+.type019 a {
+  color: #000;
+  display: inline-block;
+  line-height: 1.4em;
+  padding: 0.6em 3em 0.6em 2.2em;
+  border-radius: 2.8em;
+  border: #fff solid 0.2em;
+  position: relative;
+  background: #ccc;
+  box-shadow: 0 0.3em 0 0 rgba(0, 0, 0, 1);
+  transition: 0.3s all ease;
+}
+.type019 a::after {
+  content: "";
+  width: 1em;
+  height: 1em;
+  display: block;
+  background: url("/img/icon/long-arrow-right.svg") no-repeat center center;
+  background-size: 100% auto;
+  position: absolute;
+  top: 50%;
+  right: 1.4em;
+  margin-top: -0.5em;
+  transition: 0.3s all ease;
+}
+.type019 a:hover {
+  color: #000;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transform: translateY(0.3em);
+}
+.type019 a:hover:active {
+  box-shadow: 0 -0.3em 0 0 rgba(0, 0, 0, 0.3);
+  transform: translateY(0.5em);
 }

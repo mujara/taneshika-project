@@ -140,6 +140,11 @@ export default async function Page() {
                   <Link href="/parts/simple-button/type018">詳細はこちら</Link>
                 </div>
               </div>
+              <div className={styles.simpleButton}>
+                <div className={styles.type019}>
+                  <Link href="/parts/simple-button/type019">詳細はこちら</Link>
+                </div>
+              </div>
             </div>
 
             <div className="button--typeBack sM-l">
