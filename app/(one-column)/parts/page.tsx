@@ -72,7 +72,7 @@ export default async function Page() {
                   <Link href="/parts/gallery-parts">ギャラリーパーツ</Link>
                 </li>
                 <li>
-                  <Link href="/parts/tab-parts">タブ切り替えパーツ</Link>
+                  <Link href="/parts/tab-parts">タブのパーツ</Link>
                 </li>
                 <li>
                   <Link href="/parts/hamburger-button">ハンバーガーボタン</Link>
