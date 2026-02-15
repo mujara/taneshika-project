@@ -1,0 +1,82 @@
+.tabBox--type03 {
+  display: block;
+}
+.tabBox--type03 > label {
+  width: 25%;
+  font-size: 1.1em;
+  text-align: center;
+  display: block;
+  float: left;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  padding: 0.5em;
+}
+.tabBox--type03 > label:hover span {
+  opacity: 0.5;
+}
+.tabBox--type03 > label span {
+  display: block;
+  height: 100%;
+  border-radius: 0.3em;
+  padding: 0.3em 0.6em;
+  background: #ddd;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.tabBox--type03 > input[type="radio"] {
+  display: none;
+}
+.tabBox--type03 .tab__content {
+  clear: both;
+}
+.tabBox--type03 .tab__content > li {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  display: none;
+}
+.tabBox--type03 input:checked ~ .tab__content > li {
+  -webkit-animation-name: tab--type03--fade;
+  animation-name: tab--type03--fade;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.tabBox--type03 input:nth-of-type(1):checked ~ .tab__content > li {
+  display: block;
+}
+.tabBox--type03 input:nth-of-type(2):checked ~ .tab__content > li.--category01 {
+  display: block;
+}
+.tabBox--type03 input:nth-of-type(3):checked ~ .tab__content > li.--category02 {
+  display: block;
+}
+.tabBox--type03 input:nth-of-type(4):checked ~ .tab__content > li.--category03 {
+  display: block;
+}
+.tabBox--type03 > input:checked + label span {
+  background: #000;
+  color: #fff;
+  pointer-events: none;
+}
+.tabBox--type03 > input:checked + label span:hover {
+  opacity: 1;
+}
+
+@-webkit-keyframes tab--type03--fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes tab--type03--fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

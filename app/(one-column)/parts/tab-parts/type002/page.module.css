@@ -3,7 +3,7 @@
   text-align: center;
 }
 .tabBox--type02 > label {
-  width: auto;
+  width: calc(100% / 3);
   padding: 0 0.2em;
   font-size: 1.1em;
   text-align: center;

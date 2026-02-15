@@ -4,6 +4,7 @@ import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
 import TabType01 from "./type001/tab";
 import TabType02 from "./type002/tab";
+import TabType03 from "./type003/tab";
 
 // ページ情報
 const data = {
@@ -53,6 +54,7 @@ export default async function Page() {
             <div className="column--type01">
               <TabType01 />
               <TabType02 />
+              <TabType03 />
             </div>
 
             <div className="button--typeBack sM-l">

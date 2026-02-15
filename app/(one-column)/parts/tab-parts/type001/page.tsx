@@ -76,21 +76,21 @@ export default async function Page() {
             <p className={`sM-l`}>
               「tab__content」というクラス名の中に隠す内容を入れる。
               <br />
-              「label」のfoa名と「input」のid名は項目ごとにかぶらない名前を付ける。
+              「label」のfor名と「input」のid名は項目ごとにかぶらない名前を付ける。
             </p>
 
             <pre>
               <code className="language-html">
                 {`
 <div class="tabBox--type01">
-  <input type="radio" name="tab--type01__button" id="tab--type01__label001" checked>
-  <label class="tab--type01__button" for="tab--type01__label001">タブタイトル01</label>
+  <input type="radio" name="tab--type01__input" id="tab--type01__label001" checked>
+  <label for="tab--type01__label001">タブタイトル01</label>
 
-  <input type="radio" name="tab--type01__button" id="tab--type01__label002">
-  <label class="tab--type01__button" for="tab--type01__label002">タブタイトル02</label>
+  <input type="radio" name="tab--type01__input" id="tab--type01__label002">
+  <label for="tab--type01__label002">タブタイトル02</label>
 
-  <input type="radio" name="tab--type01__button" id="tab--type01__label003">
-  <label class="tab--type01__button" for="tab--type01__label003">タブタイトル03</label>
+  <input type="radio" name="tab--type01__input" id="tab--type01__label003">
+  <label for="tab--type01__label003">タブタイトル03</label>
 
   <div class="tab__content">
     <!--タブの内容ここから-->
