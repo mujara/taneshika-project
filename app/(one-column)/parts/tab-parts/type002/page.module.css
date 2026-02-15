@@ -1,0 +1,83 @@
+.tabBox--type02 {
+  display: block;
+  text-align: center;
+}
+.tabBox--type02 > label {
+  width: auto;
+  padding: 0 0.2em;
+  font-size: 1.1em;
+  text-align: center;
+  color: #565656;
+  display: inline-block;
+}
+.tabBox--type02 > label:hover span {
+  opacity: 0.5;
+}
+.tabBox--type02 > label span {
+  display: block;
+  height: 100%;
+  border-right: #ccc solid 0.5px;
+  border-left: #fff solid 0.5px;
+  border-radius: 0.3em 0.3em 0 0;
+  padding: 1em 1em;
+  background: #ddd;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.tabBox--type02 > input[type="radio"] {
+  display: none;
+}
+.tabBox--type02 .tab__content {
+  display: none;
+  clear: both;
+  position: relative;
+  text-align: left;
+  padding-top: 1.5em;
+}
+.tabBox--type02 .tab__content::before {
+  content: " ";
+  width: 100vw;
+  height: 1px;
+  background: #000;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -50vw;
+}
+.tabBox--type02 input:nth-of-type(1):checked ~ .tab__content:nth-of-type(1),
+.tabBox--type02 input:nth-of-type(2):checked ~ .tab__content:nth-of-type(2),
+.tabBox--type02 input:nth-of-type(3):checked ~ .tab__content:nth-of-type(3) {
+  display: block;
+  -webkit-animation-name: tab--type02--fade;
+  animation-name: tab--type02--fade;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.tabBox--type02 > input:checked + label span {
+  background: #000;
+  color: #fff;
+  pointer-events: none;
+}
+.tabBox--type02 > input:checked + label span:hover {
+  opacity: 1;
+}
+
+@-webkit-keyframes tab--type02--fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes tab--type02--fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

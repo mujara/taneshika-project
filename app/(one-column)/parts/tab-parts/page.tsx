@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import styles from "./page.module.css";
 import Link from "next/link";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
+import TabType01 from "./type001/tab";
+import TabType02 from "./type002/tab";
 
 // ページ情報
 const data = {
@@ -42,7 +43,7 @@ export default async function Page() {
       >
         {data.title}
       </Topicpath>
-      <div className={`contents__mainInner --typeFullSize ${styles.typeParts}`}>
+      <div className={`contents__mainInner --typeFullSize typeParts`}>
         <div className="inBase">
           <div className="inBase__inner">
             <div className="button--typeBack sM-l">
@@ -50,76 +51,8 @@ export default async function Page() {
             </div>
 
             <div className="column--type01">
-              <div className={`sM-l w80-pc sC ${styles["tabBox--type01"]}`}>
-                <input
-                  type="radio"
-                  name="tab--type01__input"
-                  id="tab--type01__label001"
-                  defaultChecked
-                />
-                <label htmlFor="tab--type01__label001">
-                  一つ目のタブの名前
-                </label>
-
-                <input
-                  type="radio"
-                  name="tab--type01__input"
-                  id="tab--type01__label002"
-                />
-                <label htmlFor="tab--type01__label002">
-                  二つ目のタブの名前
-                </label>
-
-                <input
-                  type="radio"
-                  name="tab--type01__input"
-                  id="tab--type01__label003"
-                />
-                <label htmlFor="tab--type01__label003">
-                  三つ目のタブの名前
-                </label>
-
-                <div className={styles["tab__content"]}>
-                  「tab__content」というクラス名の中に隠す内容を入れる。
-                  <br />
-                  「label」のfor名と「input」のid名は項目ごとにかぶらない名前を付ける。
-                  <br />
-                  <br />
-                  <Link href="/parts/tab-parts/type001">
-                    コードの詳細はこちら
-                  </Link>
-                </div>
-
-                <div className={styles["tab__content"]}>
-                  二つ目の内容です。二つ目の内容です。二つ目の内容です。
-                  <br />
-                  二つ目の内容です。二つ目の内容です。二つ目の内容です。
-                  <br />
-                  二つ目の内容です。二つ目の内容です。二つ目の内容です。
-                  <br />
-                  二つ目の内容です。二つ目の内容です。二つ目の内容です。
-                  <br />
-                  <br />
-                  <Link href="/parts/tab-parts/type001">
-                    コードの詳細はこちら
-                  </Link>
-                </div>
-
-                <div className={styles["tab__content"]}>
-                  三つ目の内容です。三つ目の内容です。三つ目の内容です。
-                  <br />
-                  三つ目の内容です。三つ目の内容です。三つ目の内容です。
-                  <br />
-                  三つ目の内容です。三つ目の内容です。三つ目の内容です。
-                  <br />
-                  三つ目の内容です。三つ目の内容です。三つ目の内容です。
-                  <br />
-                  <br />
-                  <Link href="/parts/tab-parts/type001">
-                    コードの詳細はこちら
-                  </Link>
-                </div>
-              </div>
+              <TabType01 />
+              <TabType02 />
             </div>
 
             <div className="button--typeBack sM-l">

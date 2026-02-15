@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
-import TabType01 from "./tab";
+import TabType02 from "./tab";
 
 // ページ情報
 const data = {
-  title: "タブのパーツ 1",
+  title: "タブのパーツ 2",
   description: "様々なデザインのタブのパーツ",
   image: "/img/sample.jpg",
   classification01: "parts",
@@ -54,20 +54,20 @@ export default async function Page() {
             </div>
 
             <div className="column--type01 sM">
-              <TabType01 />
+              <TabType02 />
               <p>■URLでタブの内容を開く場合のリンク（※Javascript追加必要）</p>【
               {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-              <a href="/parts/tab-parts/type001?tab=type01Label001">
+              <a href="/parts/tab-parts/type002?tab=type02Label001">
                 一つ目のタブの内容を開く
               </a>
               】　 【
               {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-              <a href="/parts/tab-parts/type001?tab=type01Label002">
+              <a href="/parts/tab-parts/type002?tab=type02Label002">
                 二つ目のタブの内容を開く
               </a>
               】　 【
               {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-              <a href="/parts/tab-parts/type001?tab=type01Label003">
+              <a href="/parts/tab-parts/type002?tab=type02Label003">
                 三つ目のタブの内容を開く
               </a>
               】
@@ -82,15 +82,15 @@ export default async function Page() {
             <pre>
               <code className="language-html">
                 {`
-<div class="tabBox--type01">
-  <input type="radio" name="tab--type01__button" id="tab--type01__label001" checked>
-  <label class="tab--type01__button" for="tab--type01__label001">タブタイトル01</label>
+<div class="tabBox--type02">
+  <input type="radio" name="tab--type02__button" id="tab--type02__label001" checked>
+  <label class="tab--type02__button" for="tab--type02__label001"><span>タブタイトル01</span></label>
 
-  <input type="radio" name="tab--type01__button" id="tab--type01__label002">
-  <label class="tab--type01__button" for="tab--type01__label002">タブタイトル02</label>
+  <input type="radio" name="tab--type02__button" id="tab--type02__label002">
+  <label class="tab--type02__button" for="tab--type02__label002"><span>タブタイトル02</span></label>
 
-  <input type="radio" name="tab--type01__button" id="tab--type01__label003">
-  <label class="tab--type01__button" for="tab--type01__label003">タブタイトル03</label>
+  <input type="radio" name="tab--type02__button" id="tab--type02__label003">
+  <label class="tab--type02__button" for="tab--type02__label003"><span>タブタイトル03</span></label>
 
   <div class="tab__content">
     <!--タブの内容ここから-->
@@ -117,56 +117,70 @@ export default async function Page() {
             <pre>
               <code className="language-css">
                 {`
-.tabBox--type01 {
-  background-color: #fff;
+.tabBox--type02 {
   display: block;
+  text-align: center;
 }
-.tabBox--type01 > label {
-  width: calc(100% / 3);
+.tabBox--type02 > label {
+  width: auto;
+  padding: 0 0.2em;
   font-size: 1.1em;
-  padding: 1em 0.5em;
   text-align: center;
   color: #565656;
-  background: #ddd;
-  border-right: #ccc solid 0.5px;
-  border-left: #fff solid 0.5px;
-  border-radius: 0.3em 0.3em 0 0;
-  float: left;
-  transition: all 0.5s ease;
-  cursor: pointer;
-  display: block;
+  display: inline-block;
 }
-.tabBox--type01 > label:hover {
+.tabBox--type02 > label:hover span {
   opacity: 0.5;
 }
-.tabBox--type01 > input[type="radio"] {
-  display: none;
-}
-.tabBox--type01 .tab__content {
-  clear: both;
-  overflow: hidden;
-  padding: 1em 2em;
-  border: #808080 solid 1px;
-  border-top: #000 solid 3px;
-  transition: 0.4s;
-  display: none;
-}
-.tabBox--type01 input:nth-of-type(1):checked ~ .tab__content:nth-of-type(1),
-.tabBox--type01 input:nth-of-type(2):checked ~ .tab__content:nth-of-type(2),
-.tabBox--type01 input:nth-of-type(3):checked ~ .tab__content:nth-of-type(3) {
+.tabBox--type02 > label span {
   display: block;
-  animation-name: tab--type01--fade;
+  height: 100%;
+  border-right: #CCC solid 0.5px;
+  border-left: #FFF solid 0.5px;
+  border-radius: 0.3em 0.3em 0 0;
+  padding: 1em 1em;
+  background: #DDD;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.tabBox--type02 > input[type=radio] {
+  display: none;
+}
+.tabBox--type02 .tab__content {
+  display: none;
+  clear: both;
+  position: relative;
+  text-align: left;
+  padding-top: 1.5em;
+}
+.tabBox--type02 .tab__content::before {
+  content: " ";
+  width: 100vw;
+  height: 1px;
+  background: #000;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -50vw;
+}
+.tabBox--type02 input:nth-of-type(1):checked ~ .tab__content:nth-of-type(1),
+.tabBox--type02 input:nth-of-type(2):checked ~ .tab__content:nth-of-type(2),
+.tabBox--type02 input:nth-of-type(3):checked ~ .tab__content:nth-of-type(3) {
+  display: block;
+  animation-name: tab--type02--fade;
   animation-duration: 1s;
 }
-.tabBox--type01 > input:checked + label {
-  background-color: #000;
+.tabBox--type02 > input:checked + label span {
+  background: #000;
   color: #fff;
   pointer-events: none;
 }
-.tabBox--type01 > input:checked + label:hover {
+.tabBox--type02 > input:checked + label span:hover {
   opacity: 1;
 }
-@keyframes tab--type01--fade {
+@keyframes tab--type02--fade {
   0% {
     opacity: 0;
   }
@@ -181,60 +195,73 @@ export default async function Page() {
             <pre>
               <code className="language-sass">
                 {`
-.tabBox--type01 {
-  background-color: #fff;
+.tabBox--type02 {
   display: block;
-  &>label {
-    width: calc(100% / 3);
-    font-size: 1.1em;
-    padding: 1em 0.5em;
-    text-align: center;
-    color: #565656;
-    background: #ddd;
-    border-right: #ccc solid 0.5px;
-    border-left: #fff solid 0.5px;
-    border-radius: 0.3em 0.3em 0 0;
-    float: left;
-    transition: all 0.5s ease;
-    cursor: pointer;
-    display: block;
-    &:hover {
+  text-align:center;
+  &>label{
+  	width: auto;
+  	padding:0 0.2em;
+  	font-size: 1.1em;
+  	text-align: center;
+  	color: #565656;
+  	display: inline-block;
+    &:hover span{
       opacity: 0.5;
     }
-  }
-  &>input[type="radio"] {
-    display: none;
-  }
-  .tab__content {
-    clear: both;
-    overflow: hidden;
-    padding: 1em 2em;
-    border: #808080 solid 1px;
-    border-top: #000 solid 3px;
-    transition: 0.4s;
-    display: none;
-  }
-  input:nth-of-type(1):checked ~ .tab__content:nth-of-type(1),
-  input:nth-of-type(2):checked ~ .tab__content:nth-of-type(2),
-  input:nth-of-type(3):checked ~ .tab__content:nth-of-type(3) {
-    display: block;
-    animation-name: tab--type01--fade;
-    animation-duration: 1s;
-  }
-  &> input:checked + label {
-    background-color: #000;
-    color: #fff;
-    pointer-events: none;
-    &:hover {
-      opacity: 1;
-    }
-  }
+	  span{
+			display:block;
+			height:100%;
+	  	border-right:#CCC solid 0.5px;
+	  	border-left:#FFF solid 0.5px;
+			border-radius: 0.3em 0.3em 0 0;
+	  	padding: 1em 1em;
+  		background: #DDD;
+	    cursor :pointer;
+			transition: all 0.5s ease;
+		}
+	}
+	&>input[type="radio"] {
+		display: none;
+	}
+	.tab__content {
+	  display: none;
+		clear: both;
+  	position:relative;
+  	text-align:left;
+		padding-top:1.5em;
+		&::before {
+			content:" ";
+			width:100vw;
+			height:1px;
+			background:#000;
+			display:block;
+			position:absolute;
+			top:0;
+			left:50%;
+			margin-left:-50vw;
+		}
+	}
+	input:nth-of-type(1):checked ~ .tab__content:nth-of-type(1),
+	input:nth-of-type(2):checked ~ .tab__content:nth-of-type(2),
+	input:nth-of-type(3):checked ~ .tab__content:nth-of-type(3) {
+		display: block;
+		animation-name: tab--type02--fade;
+		animation-duration: 1s;
+	}
+	&>input:checked + label span{
+		background: #000;
+		color: #fff;
+		pointer-events: none;
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
-@keyframes tab--type01--fade {
-  0% {
+@keyframes tab--type02--fade{
+  0%{
     opacity: 0;
   }
-  100% {
+  100%{
     opacity: 1;
   }
 }
@@ -248,11 +275,11 @@ export default async function Page() {
               <br />
               パラメータは
               <br />
-              一つ目が「?tab=type01Label001」
+              一つ目が「?tab=type02Label001」
               <br />
-              二つ目が「?tab=type01Label002」
+              二つ目が「?tab=type02Label002」
               <br />
-              三つ目が「?tab=type01Label003」
+              三つ目が「?tab=type02Label003」
               <br />
             </p>
 
@@ -263,7 +290,7 @@ export default async function Page() {
 let urlParam = location.search.substring(1);
 	 
 // タブのinputの要素を取得
-let tabType01Elements = document.getElementsByName( "tab--type01__input" ) ;
+let tabType02Elements = document.getElementsByName( "tab--type02__input" ) ;
 
 // URLにパラメータが存在する場合
 if(urlParam) {
@@ -280,12 +307,12 @@ if(urlParam) {
 	}
 	 
 	// パラメータtabで判断し、タブにチェックをつける
-	if (paramArray.tab == 'type01Label001') {
-		tabType01Elements[0].checked = true;
-	} else if (paramArray.tab == 'type01Label002') {
-		tabType01Elements[1].checked = true;
-	} else if (paramArray.tab == 'type01Label003') {
-		tabType01Elements[2].checked = true;
+	if (paramArray.tab == 'type02Label001') {
+		tabType02Elements[0].checked = true;
+	} else if (paramArray.tab == 'type02Label002') {
+		tabType02Elements[1].checked = true;
+	} else if (paramArray.tab == 'type02Label003') {
+		tabType02Elements[2].checked = true;
 	}
 }
                 `}
