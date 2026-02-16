@@ -133,6 +133,8 @@ export default async function Page() {
               <code className="language-css">
                 {`
 .tabBox--type03 {
+  border: #000 solid 1px;
+  padding: 2em;
   display: block;
 }
 .tabBox--type03 > label {
@@ -209,55 +211,57 @@ export default async function Page() {
               <code className="language-sass">
                 {`
 .tabBox--type03 {
-  	display: block;
-  	&>label{
-  		width: calc(100%/4);
-  		font-size: 1.1em;
-  		text-align: center;
-  		display: block;
-  		float: left;
-		transition: all 0.5s ease;
-	    cursor :pointer;
-  		padding:0.5em;
-		&:hover span{
-			opacity: 0.5;
-		}
-		span{
-			display:block;
-			height:100%;
-			border-radius: 0.3em;
-			padding: 0.3em 0.6em;
-			background: #DDD;
-			cursor :pointer;
-			transition: all 0.5s ease;
-		}
-	}
-	&>input[type="radio"] {
-		display: none;
-	}
-	.tab__content{
-	  	clear: both;
-		&>li{
-			transition: .4s;
-			display:none;
-		}
-	}
-	input:checked ~ .tab__content>li {
-		animation-name: tab--type03--fade;
-		animation-duration: 1s;
-	}
-	input:nth-of-type(1):checked ~ .tab__content>li{ display:block;}
-	input:nth-of-type(2):checked ~ .tab__content>li.--category01{ display:block;}
-	input:nth-of-type(3):checked ~ .tab__content>li.--category02{ display:block;}
-	input:nth-of-type(4):checked ~ .tab__content>li.--category03{ display:block;}
-	&>input:checked + label span{
-		background: #000;
-		color: #fff;
-		pointer-events: none;
-		&:hover {
-			opacity: 1;
-		}
-	}
+  border: #000 solid 1px;
+  padding: 2em;
+  display: block;
+  &>label{
+    width: calc(100%/4);
+    font-size: 1.1em;
+    text-align: center;
+    display: block;
+    float: left;
+    transition: all 0.5s ease;
+    cursor :pointer;
+    padding: 0.2em;
+    &:hover span{
+      opacity: 0.5;
+    }
+    span{
+      display:block;
+      height:100%;
+      border-radius: 0.3em;
+      padding: 0.3em 0.6em;
+      background: #DDD;
+      cursor :pointer;
+      transition: all 0.5s ease;
+    }
+  }
+  &>input[type="radio"] {
+    display: none;
+  }
+  .tab__content{
+    clear: both;
+    &>li{
+      transition: .4s;
+      display:none;
+    }
+  }
+  input:checked ~ .tab__content>li {
+    animation-name: tab--type03--fade;
+    animation-duration: 1s;
+  }
+  input:nth-of-type(1):checked ~ .tab__content>li{ display:block;}
+  input:nth-of-type(2):checked ~ .tab__content>li.--category01{ display:block;}
+  input:nth-of-type(3):checked ~ .tab__content>li.--category02{ display:block;}
+  input:nth-of-type(4):checked ~ .tab__content>li.--category03{ display:block;}
+  &>input:checked + label span{
+    background: #000;
+    color: #fff;
+    pointer-events: none;
+    &:hover {
+      opacity: 1;
+    }
+  }
 }
 @keyframes tab--type03--fade{
   0%{

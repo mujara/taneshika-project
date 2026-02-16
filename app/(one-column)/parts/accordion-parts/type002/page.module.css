@@ -1,0 +1,76 @@
+.accordionBox--type02 {
+  overflow: hidden;
+}
+
+.accordionBox--type02 .accordion > label {
+  display: block;
+  padding: 0.9em 1em 0.9em 3em;
+  color: #fff;
+  background: #666;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  position: relative;
+}
+.accordionBox--type02 .accordion > label::after {
+  content: "";
+  width: 0.8em;
+  height: 0.8em;
+  display: block;
+  background: url("/img/icon/plus-circle.svg") no-repeat center center;
+  background-size: 100% auto;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%);
+  position: absolute;
+  top: 50%;
+  left: 1.4em;
+  margin-top: -0.4em;
+  transition: all 0.5s;
+}
+.accordionBox--type02 .accordion > label:hover {
+  background: #888;
+}
+.accordionBox--type02 .accordion:nth-child(even) label {
+  background: #444;
+}
+.accordionBox--type02 .accordion:nth-child(even) label:hover {
+  background: #888;
+}
+.accordionBox--type02 .accordion > input[type="checkbox"] {
+  display: none;
+}
+.accordionBox--type02
+  .accordion
+  > input[type="checkbox"]
+  + label
+  + .accordion__content {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+.accordionBox--type02
+  .accordion
+  > input[type="checkbox"]:checked
+  + label
+  + .accordion__content {
+  height: auto;
+  padding: 0.5em 1em;
+  opacity: 1;
+}
+.accordionBox--type02 .accordion > input[type="checkbox"]:checked + label {
+  background: #ddd;
+  color: #000;
+}
+.accordionBox--type02
+  .accordion
+  > input[type="checkbox"]:checked
+  + label:hover {
+  background: #ccc;
+}
+.accordionBox--type02
+  .accordion
+  > input[type="checkbox"]:checked
+  + label::after {
+  background: url("/img/icon/minus-circle.svg") no-repeat center center;
+  background-size: 100% auto;
+}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "../page.module.css";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
+import AccordionType01 from "./accordion";
 
 // ページ情報
 const data = {
@@ -54,51 +55,13 @@ export default async function Page() {
             </div>
 
             <div className="column--type01">
-              <div
-                className={`sM-l w80-pc sC ${styles["accordionBox--type01"]}`}
-              >
-                <div className={styles.accordion}>
-                  <input type="checkbox" id="accordion--type01__label001" />
-                  <label htmlFor="accordion--type01__label001">
-                    項目タイトル 01
-                  </label>
-                  <div className={styles["accordion__content"]}>
-                    「accordion__content」というクラス名の中に隠す内容を入れる。
-                    <br />
-                    「label」のfoa名と「input」のid名は項目ごとにかぶらない名前を付ける。
-                  </div>
-                </div>
-
-                <div className={styles.accordion}>
-                  <input type="checkbox" id="accordion--type01__label002" />
-                  <label htmlFor="accordion--type01__label002">
-                    項目タイトル 02
-                  </label>
-                  <div className={styles["accordion__content"]}>
-                    「accordion__content」というクラス名の中に隠す内容を入れる。
-                    <br />
-                    「label」のfoa名と「input」のid名は項目ごとにかぶらない名前を付ける。
-                  </div>
-                </div>
-
-                <div className={styles.accordion}>
-                  <input type="checkbox" id="accordion--type01__label003" />
-                  <label htmlFor="accordion--type01__label003">
-                    項目タイトル 03
-                  </label>
-                  <div className={styles["accordion__content"]}>
-                    「accordion__content」というクラス名の中に隠す内容を入れる。
-                    <br />
-                    「label」のfoa名と「input」のid名は項目ごとにかぶらない名前を付ける。
-                  </div>
-                </div>
-              </div>
+              <AccordionType01 />
             </div>
 
             <p className={`sM-l`}>
               「accordion__content」というクラス名の中に隠す内容を入れる。
               <br />
-              「label」のfoa名と「input」のid名は項目ごとにかぶらない名前を付ける。
+              「label」のfor名と「input」のid名は項目ごとにかぶらない名前を付ける。
             </p>
 
             <pre>
