@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 
-export default function AccordionType01() {
+export default function AccordionType03() {
   return (
     <div className={`sM-l w80-pc sC ${styles["accordionBox--type03"]}`}>
       <div className={styles.accordion}>

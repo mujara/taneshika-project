@@ -1,0 +1,144 @@
+.accordionBox--type04 {
+  overflow: hidden;
+}
+.accordionBox--type04 .accordion {
+  position: relative;
+  display: block;
+  padding-bottom: 3em;
+  text-align: center;
+}
+.accordionBox--type04 .accordion > label {
+  width: 100%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.accordionBox--type04 .accordion > label > .accordion__button {
+  display: inline-block;
+  padding: 0.5em 3em 0.5em 1.5em;
+  background: #000;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  border-radius: 3.7em;
+  position: relative;
+}
+.accordionBox--type04 .accordion > label > .accordion__button > p {
+  margin: 0;
+  position: relative;
+}
+.accordionBox--type04 .accordion > label > .accordion__button > p > span {
+  display: block;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+.accordionBox--type04
+  .accordion
+  > label
+  > .accordion__button
+  > p
+  > span:nth-child(2) {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.3s all ease;
+}
+.accordionBox--type04 .accordion > label > .accordion__button:hover {
+  background: #666;
+}
+.accordionBox--type04 .accordion > label > .accordion__button .accordion__icon {
+  width: 1em;
+  height: 2px;
+  display: block;
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  margin-top: -1px;
+}
+.accordionBox--type04
+  .accordion
+  > label
+  > .accordion__button
+  .accordion__icon
+  > div {
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.4s ease;
+}
+.accordionBox--type04
+  .accordion
+  > label
+  > .accordion__button
+  .accordion__icon
+  > div:last-child {
+  transform: rotate(90deg);
+}
+.accordionBox--type04 .accordion > input[type="checkbox"] {
+  display: none;
+}
+.accordionBox--type04 .accordion > .accordion__content {
+  text-align: left;
+  height: 8em;
+  padding: 0.5em 1em;
+  overflow: hidden;
+  transition: 0.5s;
+  display: block;
+  mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1));
+}
+.accordionBox--type04
+  .accordion
+  > input[type="checkbox"]:checked
+  + label
+  + .accordion__content {
+  height: auto;
+  mask-image: linear-gradient(0deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1));
+}
+.accordionBox--type04
+  .accordion
+  > input[type="checkbox"]:checked
+  + label
+  > .accordion__button {
+  background: #999;
+  color: #fff;
+}
+.accordionBox--type04
+  .accordion
+  > input[type="checkbox"]:checked
+  + label
+  > .accordion__button
+  > p
+  > span:nth-child(1) {
+  opacity: 0;
+}
+.accordionBox--type04
+  .accordion
+  > input[type="checkbox"]:checked
+  + label
+  > .accordion__button
+  > p
+  > span:nth-child(2) {
+  opacity: 1;
+}
+.accordionBox--type04
+  .accordion
+  > input[type="checkbox"]:checked
+  + label
+  > .accordion__button:hover {
+  background: #666;
+  color: #000;
+}
+.accordionBox--type04
+  .accordion
+  > input[type="checkbox"]:checked
+  + label
+  .accordion__icon
+  div:last-child {
+  transform: none;
+}

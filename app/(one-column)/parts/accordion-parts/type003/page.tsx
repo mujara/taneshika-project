@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import styles from "../page.module.css";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
 import AccordionType03 from "./accordion";
@@ -47,7 +46,7 @@ export default async function Page() {
       >
         {data.title}
       </Topicpath>
-      <div className={`contents__mainInner --typeFullSize ${styles.typeParts}`}>
+      <div className={`contents__mainInner --typeFullSize typeParts`}>
         <div className="inBase">
           <div className="inBase__inner">
             <div className="button--typeBack sM-l">

@@ -5,6 +5,7 @@ import Topicpath from "@/app/_components/Topicpath";
 import AccordionType01 from "./type001/accordion";
 import AccordionType02 from "./type002/accordion";
 import AccordionType03 from "./type003/accordion";
+import AccordionType04 from "./type004/accordion";
 
 // ページ情報
 const data = {
@@ -55,6 +56,7 @@ export default async function Page() {
               <AccordionType01 />
               <AccordionType02 />
               <AccordionType03 />
+              <AccordionType04 />
             </div>
 
             <div className="button--typeBack sM-l">
