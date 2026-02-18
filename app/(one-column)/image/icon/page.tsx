@@ -57,6 +57,9 @@ export default async function Page() {
                     チェック・増やす・減る・閉じるのアイコン
                   </Link>
                 </li>
+                <li>
+                  <Link href="/image/icon/icon-contact">連絡手段のアイコン</Link>
+                </li>
               </ul>
             </div>
           </div>
