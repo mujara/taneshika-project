@@ -79,14 +79,7 @@ export default async function Page() {
                 <span>f</span>
               </div>
 
-
-
-
-
-
-
-
-
+              <div className={`hidden-sp ${styles["iconCommonItem"]}`}></div>
             </div>
 
             <div className="button--typeBack sM-l">

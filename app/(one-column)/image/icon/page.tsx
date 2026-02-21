@@ -60,6 +60,9 @@ export default async function Page() {
                 <li>
                   <Link href="/image/icon/icon-contact">連絡手段のアイコン</Link>
                 </li>
+                <li>
+                  <Link href="/image/icon/icon-system">システムに関するアイコン</Link>
+                </li>
               </ul>
             </div>
           </div>
