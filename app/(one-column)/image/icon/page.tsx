@@ -72,6 +72,9 @@ export default async function Page() {
                     メディアに関するアイコン
                   </Link>
                 </li>
+                <li>
+                  <Link href="/image/icon/icon-place">場所のアイコン</Link>
+                </li>
               </ul>
             </div>
           </div>
