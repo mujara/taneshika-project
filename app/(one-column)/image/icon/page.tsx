@@ -64,16 +64,51 @@ export default async function Page() {
                 </li>
                 <li>
                   <Link href="/image/icon/icon-system">
-                    システムに関するアイコン
+                    システムのアイコン
                   </Link>
                 </li>
                 <li>
                   <Link href="/image/icon/icon-media">
-                    メディアに関するアイコン
+                    メディアのアイコン
                   </Link>
                 </li>
                 <li>
                   <Link href="/image/icon/icon-place">場所のアイコン</Link>
+                </li>
+                <li>
+                  <Link href="/image/icon/icon-shop">
+                    ショップサイトのアイコン
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/image/icon/icon-member">
+                    会員のアイコン
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/image/icon/icon-hand">
+                    ハンドサインのアイコン
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/image/icon/icon-file">
+                    ファイルやフォルダのアイコン
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/image/icon/icon-time">
+                    時間に関するアイコン
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/image/icon/icon-logo">
+                    サービスロゴアイコン
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/image/icon/icon-other">
+                    その他のアイコン
+                  </Link>
                 </li>
               </ul>
             </div>
