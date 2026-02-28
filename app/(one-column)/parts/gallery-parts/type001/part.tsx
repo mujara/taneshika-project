@@ -5,20 +5,24 @@ import styles from "./page.module.css";
 import Link from "next/link";
 
 export default function PartType01() {
-  const galleryRef = useRef(null);
+  const galleryRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const gallery = galleryRef.current;
     if (!gallery) return;
 
-    const radios = gallery.querySelectorAll('input[type="radio"]');
+    const radios = gallery.querySelectorAll<HTMLInputElement>(
+      'input[type="radio"]'
+    );
     const length = radios.length;
     if (!length) return;
 
-    let intervalId = null;
+    let intervalId: NodeJS.Timeout | null = null;
 
     function nextSlide() {
-      const currentIndex = [...radios].findIndex(radio => radio.checked);
+      const currentIndex = Array.from(radios).findIndex(
+        (radio) => radio.checked
+      );
       const nextIndex = (currentIndex + 1) % length;
       radios[nextIndex].checked = true;
     }
@@ -41,7 +45,7 @@ export default function PartType01() {
 
     // cleanup
     return () => {
-      clearInterval(intervalId);
+      if (intervalId) clearInterval(intervalId);
       gallery.removeEventListener("mouseenter", stop);
       gallery.removeEventListener("mouseleave", start);
     };
