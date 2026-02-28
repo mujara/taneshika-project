@@ -1,0 +1,69 @@
+.imageGalleryBox--type01 {
+  display: block;
+  position: relative;
+  padding-top: 20em;
+}
+.imageGalleryBox--type01 input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+}
+.imageGalleryBox--type01 input[type=radio]:checked + figure {
+  opacity: 1;
+  z-index: 1;
+}
+.imageGalleryBox--type01 input[type=radio] + figure {
+  width: 100%;
+  height: 20em;
+  background: #EEE;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  overflow: hidden;
+}
+.imageGalleryBox--type01 input[type=radio] + figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.imageGalleryBox--type01 input[type=radio] + figure a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.imageGalleryBox--type01 input:nth-of-type(1):checked ~ .imageGallery label:nth-of-type(1) img,
+.imageGalleryBox--type01 input:nth-of-type(2):checked ~ .imageGallery label:nth-of-type(2) img,
+.imageGalleryBox--type01 input:nth-of-type(3):checked ~ .imageGallery label:nth-of-type(3) img,
+.imageGalleryBox--type01 input:nth-of-type(4):checked ~ .imageGallery label:nth-of-type(4) img {
+  -webkit-box-shadow: 0 0 0 3px #000;
+          box-shadow: 0 0 0 3px #000;
+  opacity: 0.8;
+}
+.imageGalleryBox--type01 > .imageGallery {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 0.25em;
+}
+.imageGalleryBox--type01 > .imageGallery label {
+  width: 25%;
+  padding: 0.5em;
+  display: block;
+  cursor: pointer;
+}
+.imageGalleryBox--type01 > .imageGallery label img {
+  width: 100%;
+  -webkit-transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
+}
+.imageGalleryBox--type01 > .imageGallery label img:hover {
+  opacity: 0.8;
+}
