@@ -14,6 +14,7 @@ export default function PartType01() {
     const radios = gallery.querySelectorAll<HTMLInputElement>(
       'input[type="radio"]'
     );
+
     const length = radios.length;
     if (!length) return;
 
@@ -34,8 +35,10 @@ export default function PartType01() {
     }
 
     function stop() {
-      clearInterval(intervalId);
-      intervalId = null;
+      if (intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+      }
     }
 
     start();
@@ -43,7 +46,6 @@ export default function PartType01() {
     gallery.addEventListener("mouseenter", stop);
     gallery.addEventListener("mouseleave", start);
 
-    // cleanup
     return () => {
       if (intervalId) clearInterval(intervalId);
       gallery.removeEventListener("mouseenter", stop);
