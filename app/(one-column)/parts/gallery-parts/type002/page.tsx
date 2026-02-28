@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
-import PartType01 from "./part";
+import PartType02 from "./part";
 
 // ページ情報
 const data = {
-  title: "画像ギャラリーのパーツ 1",
+  title: "画像ギャラリーのパーツ 2",
   description: "様々なデザインの画像ギャラリーのパーツ",
   image: "/img/sample.jpg",
   classification01: "parts",
@@ -54,7 +54,7 @@ export default async function Page() {
             </div>
 
             <div className="column--type01 sM">
-              <PartType01 />
+              <PartType02 />
             </div>
 
             <p className={`sM-l`}>
@@ -69,25 +69,33 @@ export default async function Page() {
             <pre>
               <code className="language-html">
                 {`
-<div class="imageGalleryBox--type01">
-	<input type="radio" id="imageGallery--type01__label001" name="imageGallery--type01__input" checked/>
-	<figure><img src="メイン画像の一枚目の画像パス" alt="メイン画像01"/></figure>
+<div class="imageGalleryBox--type02 --autoImageGallery">
+    <input type="radio" id="imageGallery--type02__label001" name="imageGallery--type02__input" checked/>
+    <figure><img src="メイン画像の一枚目の画像パス" alt="メイン画像01"/></a></figure>
 
-	<input type="radio" id="imageGallery--type01__label002" name="imageGallery--type01__input"/>
-	<figure><img src="メイン画像の二枚目の画像パス" alt="メイン画像02"/></figure>
+    <input type="radio" id="imageGallery--type02__label002" name="imageGallery--type02__input"/>
+    <figure><img src="メイン画像の二枚目の画像パス" alt="メイン画像02"/></figure>
 
-	<input type="radio" id="imageGallery--type01__label003" name="imageGallery--type01__input"/>
-	<figure><img src="メイン画像の三枚目の画像パス" alt="メイン画像03"/></figure>
+    <input type="radio" id="imageGallery--type02__label003" name="imageGallery--type02__input"/>
+    <figure><img src="メイン画像の三枚目の画像パス" alt="メイン画像03"/></figure>
 
-	<input type="radio" id="imageGallery--type01__label004" name="imageGallery--type01__input"/>
-	<figure><img src="メイン画像の四枚目の画像パス" alt="メイン画像04"/></figure>
+    <input type="radio" id="imageGallery--type02__label004" name="imageGallery--type02__input"/>
+    <figure><img src="メイン画像の四枚目の画像パス" alt="メイン画像04"/></figure>
 
-	<div class="imageGallery">
-		<label for="imageGallery--type01__label001"><img src="サムネイル画像の一枚目の画像パス" alt="サムネイル画像01"/></label>
-		<label for="imageGallery--type01__label002"><img src="サムネイル画像の二枚目の画像パス" alt="サムネイル画像02"/></label>
-		<label for="imageGallery--type01__label003"><img src="サムネイル画像の三枚目の画像パス" alt="サムネイル画像03"/></label>
-		<label for="imageGallery--type01__label004"><img src="サムネイル画像の四枚目の画像パス" alt="サムネイル画像04"/></label>
-	<!-- /.imageGallery --></div>
+    <input type="radio" id="imageGallery--type02__label005" name="imageGallery--type02__input" checked/>
+    <figure><img src="メイン画像の五枚目の画像パス" alt="メイン画像05"/></figure>
+
+    <input type="radio" id="imageGallery--type02__label006" name="imageGallery--type02__input"/>
+    <figure><img src="メイン画像の六枚目の画像パス" alt="メイン画像06"/></figure>
+
+    <div class="imageGallery">
+        <label for="imageGallery--type02__label001"><img src="サムネイル画像の一枚目の画像パス" alt="サムネイル画像01"/></label>
+        <label for="imageGallery--type02__label002"><img src="サムネイル画像の二枚目の画像パス" alt="サムネイル画像02"/></label>
+        <label for="imageGallery--type02__label003"><img src="サムネイル画像の三枚目の画像パス" alt="サムネイル画像03"/></label>
+        <label for="imageGallery--type02__label004"><img src="サムネイル画像の四枚目の画像パス" alt="サムネイル画像04"/></label>
+        <label for="imageGallery--type02__label005"><img src="サムネイル画像の五枚目の画像パス" alt="サムネイル画像05"/></label>
+        <label for="imageGallery--type02__label006"><img src="サムネイル画像の六枚目の画像パス" alt="サムネイル画像06"/></label>
+    <!-- /.imageGallery --></div>
 <!-- /.imageGalleryBox --></div>
                 `}
               </code>
@@ -96,10 +104,14 @@ export default async function Page() {
             <pre>
               <code className="language-css">
                 {`
-.imageGalleryBox--type01 {
+.imageGalleryBox--type02 {
 	display: block;
 	position: relative;
-	padding-top: 20em;
+	padding-top: 20em; /* メイン画像の高さ */
+	min-height: 20em; /* メイン画像の高さ */
+	@media print, screen and (min-width: 768px) {
+		padding-top:0;
+	}
 	input[type=radio] {
 		position: absolute;
 		opacity: 0;
@@ -111,7 +123,7 @@ export default async function Page() {
 	}
 	input[type=radio] + figure {
 		width: 100%;
-		height: 20em;
+		height: 20em; /* メイン画像の高さ */
 		background: #EEE;
 		position: absolute;
 		display: block;
@@ -121,6 +133,9 @@ export default async function Page() {
 		-webkit-transition: opacity 0.3s ease-in-out;
 		transition: opacity 0.3s ease-in-out;
 		overflow: hidden;
+		@media print, screen and (min-width: 768px) {
+			width: 78%;
+		}
 	}
 	input[type=radio] + figure img {
 		width: 100%;
@@ -135,7 +150,9 @@ export default async function Page() {
 	input:nth-of-type(1):checked ~ .imageGallery label:nth-of-type(1) img,
 	input:nth-of-type(2):checked ~ .imageGallery label:nth-of-type(2) img,
 	input:nth-of-type(3):checked ~ .imageGallery label:nth-of-type(3) img,
-	input:nth-of-type(4):checked ~ .imageGallery label:nth-of-type(4) img {
+	input:nth-of-type(4):checked ~ .imageGallery label:nth-of-type(4) img,
+	input:nth-of-type(5):checked ~ .imageGallery label:nth-of-type(5) img,
+	input:nth-of-type(6):checked ~ .imageGallery label:nth-of-type(6) img {
 		box-shadow: 0 0 0 3px #000;
 		opacity: 0.8;
 	}
@@ -144,14 +161,19 @@ export default async function Page() {
 		display: flex;
 		flex-wrap: wrap;
 		margin-top: 0.25em;
+		@media print, screen and (min-width: 768px) {
+			padding-left:80%;
+		}
 		label {
-			width: 25%;
+			width: calc(100% / 6);
 			padding: 0.5em;
 			display: block;
 			cursor: pointer;
+			@media print, screen and (min-width: 768px) {
+				width: calc(100% / 2);
+			}
 			img {
 				width: 100%;
-				-webkit-transition: opacity 0.1s ease-in-out;
 				transition: opacity 0.1s ease-in-out;
 				&:hover{
 					opacity: 0.8;
@@ -167,14 +189,18 @@ export default async function Page() {
             <pre>
               <code className="language-sass">
                 {`
-.imageGalleryBox--type01 {
+.imageGalleryBox--type02 {
   // 変数
-  $imageGalleryBoxType01Height: 20em; // メイン画像の高さ
-  $imageGalleryBoxType01Count: 4; // ギャラリーのスライド数
+  $imageGalleryBoxType02Height: 20em; // メイン画像の高さ
+  $imageGalleryBoxType02Count: 6; // ギャラリーのスライド数
 
   display: block;
   position: relative;
-  padding-top: $imageGalleryBoxType01Height;
+  padding-top: $imageGalleryBoxType02Height;
+  min-height: $imageGalleryBoxType02Height;
+  @media print, screen and (min-width: 768px) {
+    padding-top:0;
+  }
   input[type="radio"] {
     position: absolute;
     opacity: 0;
@@ -185,7 +211,7 @@ export default async function Page() {
     }
     + figure {
       width: 100%;
-      height: $imageGalleryBoxType01Height;
+      height: $imageGalleryBoxType02Height;
       background: #EEE;
       position: absolute;
       top: 0;
@@ -194,6 +220,9 @@ export default async function Page() {
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
       overflow: hidden;
+      @media print, screen and (min-width: 768px) {
+        width: 78%;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -207,7 +236,7 @@ export default async function Page() {
     }
   }
   //メイン画像が表示すると対応するサムネイル画像が変化
-  @for $i from 1 through $imageGalleryBoxType01Count {
+  @for $i from 1 through $imageGalleryBoxType02Count {
     input:nth-of-type(#{$i}):checked ~ .imageGallery
     label:nth-of-type(#{$i}) img {
       box-shadow: 0 0 0 3px #000;
@@ -219,11 +248,17 @@ export default async function Page() {
     display: flex;
     flex-wrap: wrap;
     margin-top: 0.25em;
+    @media print, screen and (min-width: 768px) {
+      padding-left:80%;
+    }
     label {
-      width: calc(100% / #{$imageGalleryBoxType01Count});
+      width: calc(100% / #{$imageGalleryBoxType02Count});
       padding: 0.5em;
       display: block;
       cursor: pointer;
+      @media print, screen and (min-width: 768px) {
+        width: calc(100% / 2);
+      }
       img {
         width: 100%;
         transition: opacity 0.1s ease-in-out;

@@ -118,79 +118,10 @@ export default async function Page() {
             <pre>
               <code className="language-css">
                 {`
-.accordionBox--type01 {
-  border-radius: 0.5em;
-  overflow: hidden;
-  border: #000 solid 1px;
-}
-.accordionBox--type01 .accordion + .accordion {
-  border-top: #000 solid 1px;
-}
-.accordionBox--type01 .accordion > label {
-  display: block;
-  padding: 0.9em 1em;
-  color: #000;
-  background: #fff;
-  cursor: pointer;
-  transition: all 0.5s;
-  position: relative;
-}
-.accordionBox--type01 .accordion > label::after {
-  content: "";
-  width: 0.8em;
-  height: 0.8em;
-  display: block;
-  border-right: #000 solid 0.2em;
-  border-bottom: #000 solid 0.2em;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 50%;
-  right: 1.4em;
-  margin-top: -0.4em;
-  transition: all 0.5s;
-}
-.accordionBox--type01 .accordion > label:hover {
-  background: #ddd;
-}
-.accordionBox--type01 .accordion > input[type="checkbox"] {
-  display: none;
-}
-.accordionBox--type01 .accordion > .accordion__content {
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: 0.5s;
-}
-.accordionBox--type01
-  .accordion
-  > input[type="checkbox"]:checked
-  + label
-  + .accordion__content {
-  height: auto;
-  padding: 0.5em 1em;
-  opacity: 1;
-}
-.accordionBox--type01 .accordion > input[type="checkbox"]:checked + label {
-  background: #ddd;
-}
-.accordionBox--type01
-  .accordion
-  > input[type="checkbox"]:checked
-  + label::after {
-  transform: scale(1, -1) rotate(45deg);
-}
-              `}
-              </code>
-            </pre>
-
-            <pre>
-              <code className="language-sass">
-                {`
 .accordionBox--type02 {
   overflow: hidden;
   .accordion {
-    & > label {
+    > label {
       display: block;
       padding: 0.9em 1em 0.9em 3em;
       color: #fff;
@@ -222,9 +153,9 @@ export default async function Page() {
         background: #888;
       }
     }
-    & > input[type="checkbox"] {
+    > input[type="checkbox"] {
       display: none;
-      & + label + .accordion__content {
+      + label + .accordion__content {
         height: 0;
         padding: 0;
         overflow: hidden;
@@ -232,18 +163,17 @@ export default async function Page() {
         transition: 0.5s;
       }
       &:checked {
-        & + label {
+        + label {
           background: #ddd;
           color: #000;
           &:hover {
             background: #ccc;
           }
           &::after {
-            background: url("/img/icon/minus-circle.svg") no-repeat center
-              center;
+            background: url("/img/icon/minus-circle.svg") no-repeat center center;
             background-size: 100% auto;
           }
-          &+ .accordion__content {
+          + .accordion__content {
             height: auto;
             padding: 0.5em 1em;
             opacity: 1;
@@ -253,10 +183,10 @@ export default async function Page() {
     }
   }
 }
-
-                `}
+              `}
               </code>
             </pre>
+
             <div className="button--typeDownLoad sM-l tC">
               <a href="/img/icon/plus-circle.svg" download="icon">
                 画像アイコンデータ　ダウンロード　
