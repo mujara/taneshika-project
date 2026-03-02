@@ -1,0 +1,78 @@
+.imageGalleryBox--type02 {
+	display: block;
+	position: relative;
+	padding-top: 20em;
+	min-height: 20em;
+	@media print, screen and (min-width: 768px) {
+		padding-top:0;
+	}
+	input[type=radio] {
+		position: absolute;
+		opacity: 0;
+		visibility: hidden;
+	}
+	input[type=radio]:checked + figure {
+		opacity: 1;
+		z-index: 1;
+	}
+	input[type=radio] + figure {
+		width: 100%;
+		height: 20em;
+		background: #EEE;
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		-webkit-transition: opacity 0.3s ease-in-out;
+		transition: opacity 0.3s ease-in-out;
+		overflow: hidden;
+		@media print, screen and (min-width: 768px) {
+			width: 78%;
+		}
+	}
+	input[type=radio] + figure img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	input[type=radio] + figure a {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	input:nth-of-type(1):checked ~ .imageGallery label:nth-of-type(1) img,
+	input:nth-of-type(2):checked ~ .imageGallery label:nth-of-type(2) img,
+	input:nth-of-type(3):checked ~ .imageGallery label:nth-of-type(3) img,
+	input:nth-of-type(4):checked ~ .imageGallery label:nth-of-type(4) img,
+	input:nth-of-type(5):checked ~ .imageGallery label:nth-of-type(5) img,
+	input:nth-of-type(6):checked ~ .imageGallery label:nth-of-type(6) img {
+		box-shadow: 0 0 0 3px #000;
+		opacity: 0.8;
+	}
+	> .imageGallery {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 0.25em;
+		@media print, screen and (min-width: 768px) {
+			padding-left:80%;
+		}
+		label {
+			width: calc(100% / 6);
+			padding: 0.5em;
+			display: block;
+			cursor: pointer;
+			@media print, screen and (min-width: 768px) {
+				width: calc(100% / 2);
+			}
+			img {
+				width: 100%;
+				transition: opacity 0.1s ease-in-out;
+				&:hover{
+					opacity: 0.8;
+				}
+			}
+		}
+	}
+}
