@@ -5,6 +5,7 @@ import Topicpath from "@/app/_components/Topicpath";
 import PartType01 from "./type001/part";
 import PartType02 from "./type002/part";
 import PartType03 from "./type003/part";
+import PartType04 from "./type004/part";
 
 // ページ情報
 const data = {
@@ -55,6 +56,7 @@ export default async function Page() {
               <PartType01 />
               <PartType02 />
               <PartType03 />
+              <PartType04 />
             </div>
 
             <div className="button--typeBack sM-l">

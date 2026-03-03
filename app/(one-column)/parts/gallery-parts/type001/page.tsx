@@ -60,10 +60,13 @@ export default async function Page() {
             <p className={`sM-l`}>
               「input」のnameは設置するギャラリーごとに名前を付ける。
               <br />
-				画像はメイン画像とサムネイル画像を用意する。<br />
-              「label」のfor名と「input」のid名は項目ごとにかぶらない名前を付ける。<br />
-				メイン画像とそれに対応するサムネイルを紐づけている。<br />
-				※自動で表示を切り替えるにはjavascriptが必要。
+              画像はメイン画像とサムネイル画像を用意する。
+              <br />
+              「label」のfor名と「input」のid名は項目ごとにかぶらない名前を付ける。
+              <br />
+              メイン画像とそれに対応するサムネイルを紐づけている。
+              <br />
+              ※自動で表示を切り替えるにはjavascriptが必要。
             </p>
 
             <pre>
@@ -238,13 +241,13 @@ export default async function Page() {
               </code>
             </pre>
 
-
-
             <h2>ギャラリー内の画像を自動で切り替えるJavascript</h2>
             <p className={`sM-l`}>
-              ギャラリー内のinputを取得して、setIntervalで切り替えています。<br />
-				ギャラリーを囲う要素に「--autoImageGallery」というクラスをつけると動作します。<br />
-				ホバーすると、一時停止します。
+              ギャラリー内のinputを取得して、setIntervalで切り替えています。
+              <br />
+              ギャラリーを囲う要素に「--autoImageGallery」というクラスをつけると動作します。
+              <br />
+              ホバーすると、一時停止します。
             </p>
 
             <pre>
