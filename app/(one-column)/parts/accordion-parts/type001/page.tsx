@@ -75,10 +75,8 @@ export default async function Page() {
       <!--隠す中身ここから-->
       項目タイトルをクリックすると現れる内容はここに書く。
       <!--隠す中身ここまで-->
-      <!--//.accordion__content-->
-    </div>
-    <!--//.accordion-->
-  </div>
+    <!--//.accordion__content--></div>
+  <!--//.accordion--></div>
   <!--//項目ここまで-->
 
   <!--項目ここから-->
@@ -89,10 +87,8 @@ export default async function Page() {
       <!--隠す中身ここから-->
       項目タイトルをクリックすると現れる内容はここに書く。
       <!--隠す中身ここまで-->
-      <!--//.accordion__content-->
-    </div>
-    <!--//.accordion-->
-  </div>
+    <!--//.accordion__content--></div>
+  <!--//.accordion--></div>
   <!--//項目ここまで-->
 
   <!--項目ここから-->
@@ -103,13 +99,10 @@ export default async function Page() {
       <!--隠す中身ここから-->
       項目タイトルをクリックすると現れる内容はここに書く。
       <!--隠す中身ここまで-->
-      <!--//.accordion__content-->
-    </div>
-    <!--//.accordion-->
-  </div>
+    <!--//.accordion__content--></div>
+  <!--//.accordion--></div>
   <!--//項目ここまで-->
-  <!--//.accordionBox-->
-</div>
+<!--//.accordionBox--></div>
                 `}
               </code>
             </pre>

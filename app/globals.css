@@ -2407,6 +2407,26 @@ html {
   }
 }
 
+#wrapper .column--type03 {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+#wrapper .column--type03 > div {
+  width: 80%;
+  padding: 0 1em 1em;
+  display: block;
+}
+@media print, screen and (min-width: 768px) {
+  #wrapper .column--type03 > div {
+    width: 33.3%;
+  }
+}
+
+
 body {
   background: #f4f5f2;
   color: #000;
