@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
-import PartType01 from "./type001/part";
+import PartType001 from "./type001/part";
+import PartType002 from "./type002/part";
 
 // ページ情報
 const data = {
@@ -50,7 +51,13 @@ export default async function Page() {
             </div>
 
             <div className="column--type03">
-              <PartType01 />
+              <PartType001 />
+              <div className="hidden-sp"><PartType001 /></div>
+              <div className="hidden-sp"><PartType001 /></div>
+
+              <PartType002 />
+              <div className="hidden-sp"><PartType002 /></div>
+              <div className="hidden-sp"><PartType002 /></div>
             </div>
 
             <div className="button--typeBack sM-l">

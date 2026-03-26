@@ -1,0 +1,57 @@
+.imageButton--type002 {
+	a{
+		display:inline-block;
+		position:relative;
+		z-index:1;
+		>.button__image{
+			overflow:hidden;
+			img{
+				width:100%;
+				height:auto;
+				transition: transform 0.3s ease;
+				z-index:-1;
+			}
+		}
+		>.button__title{
+			width:96%;
+			height:92%;
+			display:table;
+			color:#FFF;
+			font-size:1.2em;
+			position:absolute;
+			top:4%;
+			left:2%;
+			transition: 0.3s ease-in-out;
+			background:rgba(0,0,0,.7);
+			line-height:1.2em;
+			&::after{
+				content: "";
+				width: 0.8em;
+				height: 0.8em;
+				display: block;
+				background: url("/img/icon/arrow-right.svg") no-repeat center center;
+				background-size: 100% auto;
+				filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+						hue-rotate(228deg) brightness(106%) contrast(101%);
+				position:absolute;
+				bottom:0.5em;
+				right:0.5em;
+			}
+			span{
+				display: table-cell;
+				vertical-align: middle;
+				padding:0 0.5em;
+				text-align:center;
+			}
+		}
+		&:hover{
+			>.button__title{
+				background:rgba(0,0,0,.1);
+				width:100%;
+				height:100%;
+				top:0;
+				left:0;
+			}
+		}
+	}
+}
