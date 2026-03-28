@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageTitle from "@/app/_components/PageTitle";
 import Topicpath from "@/app/_components/Topicpath";
-import PartType001 from "./part";
+import PartType003 from "./part";
 
 // ページ情報
 const data = {
-  title: "画像・イメージを使用するボタンのパーツ 1",
+  title: "画像・イメージを使用するボタンのパーツ 3",
   description: "画像・イメージを使用するボタンのパーツ",
   image: "/img/sample.jpg",
   classification01: "parts",
@@ -54,18 +54,15 @@ export default async function Page() {
             </div>
 
             <div className="column--type03 sM">
-              <PartType001 />
+              <PartType003 />
             </div>
 
             <pre>
               <code className="language-html">
                 {`
-<div class="imageButton--type001">
+<div class="imageButton--type003">
 	<a href="#">
-		<figure class="button__image">
-			<img src="通常状態の画像のパス" width="" height="" alt="" />
-			<img src="ホバーすると現れる画像のパス" width="" height="" alt="" />
-		</figure>
+		<figure class="button__image"><img src="画像のパス" width="" height="" alt="" /></figure>
 		<p class="button__title"><span>ボタンタイトルのテキスト</span></p>
 	</a>
 </div>
@@ -76,9 +73,9 @@ export default async function Page() {
             <pre>
               <code className="language-css">
                 {`
-.imageButton--type001 {
+.imageButton--type003 {
 	a{
-		display:block;
+		display:inline-block;
 		position:relative;
 		z-index:1;
 		>.button__image{
@@ -86,66 +83,61 @@ export default async function Page() {
 			img{
 				width:100%;
 				height:auto;
+				transition: transform 0.3s ease;
 				z-index:-1;
-				&:nth-child(1){
-					transition: opacity 0.3s ease;
-				}
-				&:nth-child(2){
-					position:absolute;
-					top:0;
-					left:0;
-				}
-			}
-			&::after {
-				content: "";
-				width: 1.5em;
-				height: 1.5em;
-				display: block;
-				background: url("/img/icon/long-arrow-right.svg") no-repeat center center;
-				background-size: 100% auto;
-				position: absolute;
-				bottom:0.5em;
-				right:0.5em;
-				z-index:1;
 			}
 		}
 		>.button__title{
+			opacity:0;
 			width:100%;
 			height:100%;
 			display:flex;
 			justify-content:center;
 			align-content:center;
 			flex-wrap:wrap;
-			color:#000;
-			font-size:1em;
-			line-height:1.2em;
-			background:rgba(255,255,255,.5);
+			color:#FFF;
+			font-size:0.9em;
 			position:absolute;
 			top:0;
 			left:0;
-			transition: opacity 0.3s ease;
+			transition: 0.3s ease-in-out;
+			background:rgba(0,0,0,.5);
+			line-height:1.2em;
+			&::after{
+				content: "";
+				width: 0.8em;
+				height: 0.8em;
+				display: block;
+				background: url("/img/icon/arrow-right.svg") no-repeat center center;
+				background-size: 100% auto;
+				filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%)
+						hue-rotate(228deg) brightness(106%) contrast(101%);
+				position:absolute;
+				bottom:0.5em;
+				right:0.5em;
+			}
 			span{
 				display: inline-block;
 				padding:0 0.5em;
+				text-align:center;
 			}
 		}
 		&:hover{
-			>.button__image img:nth-child(1){
-				opacity:0;
-			}
 			>.button__title{
-				opacity:0;
-			}
-			&::before{
-				opacity:.2;
+				opacity:1;
+				width:94%;
+				height:86%;
+				position:absolute;
+				top:7%;
+				left:3%;
 			}
 		}
 	}
 }
 @media print, screen and (min-width: 768px) {
-	.imageButton--type001 a{
+	.imageButton--type003 a{
 		>.button__title{
-			font-size:1.3em;
+			font-size:1.2em;
 		}
 	}
 }
@@ -153,7 +145,7 @@ export default async function Page() {
               </code>
             </pre>
             <div className="button--typeDownLoad sM-l tC">
-              <a href="/img/icon/long-arrow-right.svg" download="icon">
+              <a href="/img/icon/arrow-right.svg" download="icon">
                 画像アイコンデータ　ダウンロード
               </a>
             </div>

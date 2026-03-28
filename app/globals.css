@@ -2416,13 +2416,14 @@ html {
       flex-wrap: wrap;
 }
 #wrapper .column--type03 > div {
-  width: 80%;
-  padding: 0 1em 1em;
+  width: 50%;
   display: block;
+  padding: 0 0.3em;
 }
 @media print, screen and (min-width: 768px) {
   #wrapper .column--type03 > div {
     width: 33.3%;
+    padding: 0 1em 1em;
   }
 }
 
@@ -3469,8 +3470,8 @@ a.over:hover {
 }
 @media print, screen and (min-width: 768px) {
   .footer__image {
-    width: 105%;
-    margin: -1em -2.5% 0;
+    width: 108%;
+    margin: -1em -4% 0;
     position: relative;
     z-index: 1;
   }

@@ -51,7 +51,7 @@ export default async function Page() {
                 </li>
                 <li>
                   <Link href="/parts/image-button">
-                    画像・イメージを使用したボタン
+                    画像・イメージを使用するボタン
                   </Link>
                 </li>
                 <li>

@@ -6,12 +6,12 @@ import PartType002 from "./part";
 
 // ページ情報
 const data = {
-  title: "画像を使ったボタンのパーツ 2",
-  description: "画像を使ったボタンのパーツ",
+  title: "画像・イメージを使用するボタンのパーツ 2",
+  description: "画像・イメージを使用するボタンのパーツ",
   image: "/img/sample.jpg",
   classification01: "parts",
   classification02: "Parts",
-  affiliation_page_name01: "画像を使ったボタンのパーツ",
+  affiliation_page_name01: "画像・イメージを使用するボタンのパーツ",
   affiliation_page_slug01: "image-button",
 };
 
@@ -90,9 +90,12 @@ export default async function Page() {
 		>.button__title{
 			width:96%;
 			height:92%;
-			display:table;
+			display:flex;
+			justify-content:center;
+			align-content:center;
+			flex-wrap:wrap;
 			color:#FFF;
-			font-size:1.2em;
+			font-size:0.9em;
 			position:absolute;
 			top:4%;
 			left:2%;
@@ -113,10 +116,11 @@ export default async function Page() {
 				right:0.5em;
 			}
 			span{
-				display: table-cell;
+				display: inline-block;
 				vertical-align: middle;
-				text-align:center;
 				padding:0 0.5em;
+				text-align:center;
+				transition:opacity .3s ease;
 			}
 		}
 		&:hover{
@@ -126,7 +130,17 @@ export default async function Page() {
 				height:100%;
 				top:0;
 				left:0;
+				span{
+					opacity:0;
+				}
 			}
+		}
+	}
+}
+@media print, screen and (min-width: 768px) {
+	.imageButton--type002 a{
+		>.button__title{
+			font-size:1.2em;
 		}
 	}
 }
