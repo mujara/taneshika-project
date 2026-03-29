@@ -1,0 +1,149 @@
+
+.hr--type001 {
+  border: none;/* リセット */
+  border-top: 1px solid #000;
+}
+
+.hr--type002 {
+  border: none;/* リセット */
+  border-top: 3px double #000;
+}
+
+.hr--type003 {
+  border: none;/* リセット */
+  border-top: 1px dashed #000;
+}
+
+.hr--type004 {
+  border: none;/* リセット */
+  border-top: 2px dotted #000;
+}
+
+.hr--type005 {
+  border: none;/* リセット */
+  /* 背景色と線の色と長さの設定 */
+  background-color: #74ba97;
+  background-image: linear-gradient(90deg, #000 50%, rgba(255, 255, 255, 0) 0%);
+  /* 線の太さと間隔（0.6emの長さで0.1emの太さ） */
+  height:0.1em;
+  background-position: center;
+  background-size: 0.6em 0.1em;
+  background-repeat: repeat-x;
+}
+
+.hr--type006 {
+  border: none;/* リセット */
+  /* 背景色と線の色と長さの設定 */
+  background-color: #74ba97;
+  background-image: linear-gradient(90deg, #000 50%, rgba(255, 255, 255, 0) 0%);
+  /* 線の太さと間隔（0.4emの長さで0.2emの太さ　点にする場合は長さに対して太さを2/1にする） */
+  height:0.2em;
+  background-position: center;
+  background-size: 0.4em 0.2em;
+  background-repeat: repeat-x;
+}
+
+.hr--type007 {
+  border: none;/* リセット */
+  border-top: 0.3em solid #000;
+  border-bottom: 0.3em solid #74ba97;
+}
+
+.hr--type008 {
+  border: none;/* リセット */
+  border-top: 0.2em solid #000;/* 1番目の線 */
+  border-bottom: 0.2em solid #74ba97;/* 4番目の線 */
+  overflow:visible;
+  &::after {
+    content: " ";
+    display: block;
+    border-top: 0.2em solid #74ba97;/* 2番目の線 */
+    border-bottom: 0.2em solid #000;/* 3番目の線 */
+  }
+}
+
+.hr--type009 {
+  border: none;/* リセット */
+  border-top: 0.2em solid #000;/* 1番目の線 */
+  border-bottom: 0.2em solid #74ba97;/* 6番目の線 */
+  overflow:visible;
+  &::before {
+    content: " ";
+    display: block;
+    border-top: 0.2em solid #74ba97;/* 2番目の線 */
+    border-bottom: 0.2em solid #000;/* 3番目の線 */
+  }
+  &::after {
+    content: " ";
+    display: block;
+    border-top: 0.2em solid #74ba97;/* 4番目の線 */
+    border-bottom: 0.2em solid #000;/* 5番目の線 */
+  }
+}
+
+.hr--type010 {
+  border: none;/* リセット */
+  border-top: 0.3em dashed #000;
+  border-bottom: 0.3em dashed #74ba97;
+}
+
+.hr--type011 {
+  border: none;/* リセット */
+  height:0.7em;
+  border-top: 0.3em dotted #000;
+  border-bottom: 0.3em dotted #74ba97;
+}
+
+.hr--type012 {
+  border: none;/* リセット */
+  height: 0.5em;
+  box-shadow: 0 0.5em 0.5em -0.5em rgba(0,0,0,.5) inset;
+}
+
+.hr--type013 {
+  border: none;/* リセット */
+  height: 1px;
+  background: linear-gradient(90deg, #FFF, #000, #FFF);
+}
+
+.hr--type014 {
+  border: none;/* リセット */
+  border-top: 1px solid #000;
+  text-align: center;
+  overflow:visible;
+  &::after {
+    content: 'テキスト';
+    font-size: 1.5em;
+    line-height:1.6;
+    display: inline-block;
+    padding: 0 0.5em;
+    color: #000;
+    background: #FFF;/* 背景色 */
+    position: relative;
+    top: -0.8em;
+  }
+}
+
+.hr--type015 {
+  border: none;/* リセット */
+  border-top: 4px double #000;
+  text-align: center;
+  overflow:visible;
+	&::after {
+		content: "";
+		width: 3em;
+		height: 3em;
+		display: inline-block;
+		background:#FFF url("/img/icon/exclamation-circle.svg") no-repeat center center;
+		background-size: 70% auto;
+		position: relative;
+		top: -1.5em;
+	}
+}
+
+.hr--type016 {
+  border: none;/* リセット */
+  height: 0.5em;
+  background:url("/img/icon/plus.svg") repeat-x center center;
+  background-size:  0.5em 0.5em;
+}
